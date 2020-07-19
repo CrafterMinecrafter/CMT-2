@@ -1,0 +1,11 @@
+C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT_2.Main.resources
+C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT_2.Properties.Resources.resources
+C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT 2.csproj.GenerateResource.cache
+C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT 2.csproj.CoreCompileInputs.cache
+C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\bin\Debug\CMT 2.exe.config
+C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\bin\Debug\CMT 2.exe
+C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\bin\Debug\CMT 2.pdb
+C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT 2.exe
+C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT 2.pdb
+C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT 2.csprojAssemblyReference.cache
+C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT_2.Dialogs.Info.resources

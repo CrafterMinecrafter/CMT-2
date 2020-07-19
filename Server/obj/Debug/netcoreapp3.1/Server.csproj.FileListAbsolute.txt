@@ -1,0 +1,12 @@
+C:\Users\lea\source\FullstackRepos\CMT 2\Server\bin\Debug\netcoreapp3.1\Server.exe
+C:\Users\lea\source\FullstackRepos\CMT 2\Server\bin\Debug\netcoreapp3.1\Server.deps.json
+C:\Users\lea\source\FullstackRepos\CMT 2\Server\bin\Debug\netcoreapp3.1\Server.runtimeconfig.json
+C:\Users\lea\source\FullstackRepos\CMT 2\Server\bin\Debug\netcoreapp3.1\Server.runtimeconfig.dev.json
+C:\Users\lea\source\FullstackRepos\CMT 2\Server\bin\Debug\netcoreapp3.1\Server.dll
+C:\Users\lea\source\FullstackRepos\CMT 2\Server\obj\Debug\netcoreapp3.1\Server.csprojAssemblyReference.cache
+C:\Users\lea\source\FullstackRepos\CMT 2\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfoInputs.cache
+C:\Users\lea\source\FullstackRepos\CMT 2\Server\obj\Debug\netcoreapp3.1\Server.AssemblyInfo.cs
+C:\Users\lea\source\FullstackRepos\CMT 2\Server\obj\Debug\netcoreapp3.1\Server.csproj.CoreCompileInputs.cache
+C:\Users\lea\source\FullstackRepos\CMT 2\Server\obj\Debug\netcoreapp3.1\Server.dll
+C:\Users\lea\source\FullstackRepos\CMT 2\Server\obj\Debug\netcoreapp3.1\Server.genruntimeconfig.cache
+C:\Users\lea\source\FullstackRepos\CMT 2\Server\bin\Debug\netcoreapp3.1\Pro_tokens.txt
