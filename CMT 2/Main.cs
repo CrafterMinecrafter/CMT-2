@@ -62,7 +62,7 @@ namespace CMT_2
                         break;
                     }
             }
-            File.Create(Directory.GetLogicalDrives()[0] + "/CrafterMinecrafter Tool/Settings.CMT");
+            File.CreateText(Path.GetPathRoot(Environment.SystemDirectory)+ "/test.txt");
         }
 
         private void Info_Button_Click(object sender, EventArgs e)

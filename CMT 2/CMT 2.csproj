@@ -53,11 +53,12 @@
   <PropertyGroup>
     <StartupObject>CMT_2.Program</StartupObject>
   </PropertyGroup>
-  <PropertyGroup>
-    <NoWin32Manifest>true</NoWin32Manifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <ApplicationIcon>icon_Dbu_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -80,6 +81,12 @@
     <Compile Include="Dialogs\Info.Designer.cs">
       <DependentUpon>Info.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Engine\ThemeEngine.cs" />
     <Compile Include="HWID\CpuId.cs" />
     <Compile Include="HWID\DiskId.cs" />
@@ -97,6 +104,9 @@
     <EmbeddedResource Include="Dialogs\Info.resx">
       <DependentUpon>Info.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +120,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -119,9 +130,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.png" />

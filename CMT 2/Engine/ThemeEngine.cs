@@ -21,15 +21,24 @@ namespace CMT_2.Engine
         /// <summary>
         /// 0 is white theme ||| 1 is dark theme
         /// </summary>
+        private static Color[] Form_Styles = new Color[]
+        {
+            SystemColors.Control, 
+            Color.Black
+        };
+        /// <summary>
+        /// 0 is white theme ||| 1 is dark theme
+        /// </summary>
         /// <param name="black"></param>
          public static void SetTheme(bool ISdark)
         {
             Control.ControlCollection control;
             for (int i = Application.OpenForms.Count; i > 0; i--)
             {
+                Application.OpenForms[i].BackColor = Form_Styles[Convert.ToInt32(ISdark)];
                 control = Application.OpenForms[i].Controls;
-                for(int CI = control.Count;i>0;i--)
-                {
+                for(int CI = control.Count;i>0;CI--)
+                    {
                     if(control[CI].GetType() == new Button().GetType())
                     {
 
