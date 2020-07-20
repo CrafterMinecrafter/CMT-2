@@ -39,6 +39,16 @@ namespace CMT_2.Dialogs
             ThemeLabel.Text = ":  " + ThemeIsDark;
         }
 
-
+        private void ThemeSettings_button_Click(object sender, EventArgs e)
+        {
+            if (!Main.IsPro)
+            {
+                MessageBox.Show("You not have pro version :(\nhttps://vk.com/o_privet_t");
+            }
+            else
+            {
+                MessageBox.Show("you have pro version :)");
+            }
+        }
     }
 }

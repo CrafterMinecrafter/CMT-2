@@ -106,6 +106,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="test\test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="test\test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test\test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools.cs" />
     <EmbeddedResource Include="Dialogs\Info.resx">
       <DependentUpon>Info.cs</DependentUpon>

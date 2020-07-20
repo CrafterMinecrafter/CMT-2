@@ -28,6 +28,10 @@ namespace CMT_2.Engine
                 Dark_Form_BackColor = Color.FromArgb(35, 39, 42);
                 Light_Form_BackColor = SystemColors.Control;
                 #endregion
+                #region textbox
+                Dark_textbox_BackColor = Color.FromArgb(79, 84, 92);
+                Light_textbox_BackColor = SystemColors.ControlLight;
+                #endregion
             }
             #region form
             public static Color Dark_Form_BackColor;
@@ -43,14 +47,14 @@ namespace CMT_2.Engine
             public static Color Light_Label_ForeColor;
             #endregion
             #region textbox
-            
+            public static Color Dark_textbox_BackColor;
+            public static Color Light_textbox_BackColor;
             #endregion
         }
 
         /// <summary>
         /// 0 is white theme ||| 1 is dark theme
         /// </summary>
-        /// <param name="black"></param>
         public static void SetTheme(bool ISdark)
         {
             Control.ControlCollection control;
@@ -62,8 +66,9 @@ namespace CMT_2.Engine
                     Application.OpenForms[i].BackColor = settingsClass.Light_Form_BackColor;
 
                 control = Application.OpenForms[i].Controls;
-                for (int CI = 0; CI<control.Count; CI++)
+                for (int CI = 0; CI < control.Count; CI++)
                 {
+                    #region button
                     if (control[CI].GetType() == new Button().GetType())
                     {
                         if (ISdark)
@@ -80,6 +85,8 @@ namespace CMT_2.Engine
                             (control[CI] as Button).ForeColor = settingsClass.Dark_Label_ForeColor;
                         }
                     }
+                    #endregion
+                    #region label
                     if (control[CI].GetType() == new Label().GetType())
                     {
                         if (ISdark)
@@ -87,21 +94,39 @@ namespace CMT_2.Engine
                         else
                             (control[CI] as Label).ForeColor = settingsClass.Dark_Label_ForeColor;
                     }
-
+                    #endregion
+                    #region textbox
+                    if (control[CI].GetType() == new TextBox().GetType())
+                    {
+                        if (Settings.ThemeIsDark)
+                        {
+                            (control[CI] as TextBox).BackColor = settingsClass.Dark_textbox_BackColor;
+                            (control[CI] as TextBox).ForeColor = settingsClass.Light_Label_ForeColor;
+                        }
+                        else
+                        {
+                            (control[CI] as TextBox).BackColor = settingsClass.Light_textbox_BackColor;
+                            (control[CI] as TextBox).ForeColor = settingsClass.Dark_Label_ForeColor;
+                        }
+                    }
+                    #endregion
                 }
             }
         }
+
         public static void InitTheme(Form form)
         {
+            #region form
             if (Settings.ThemeIsDark)
-                form.BackColor = Color.FromArgb(35, 39, 42);
+                form.BackColor = settingsClass.Dark_Form_BackColor;
             else
-                form.BackColor = SystemColors.Control;
-
+                form.BackColor = settingsClass.Light_Form_BackColor;
+            #endregion
             var control = form.Controls;
             for (int CI = 0; CI < control.Count; CI++)
             {
 
+                #region button
                 if (control[CI].GetType() == new Button().GetType())
                 {
                     if (Settings.ThemeIsDark)
@@ -117,6 +142,8 @@ namespace CMT_2.Engine
                         (control[CI] as Button).ForeColor = settingsClass.Dark_Label_ForeColor;
                     }
                 }
+                #endregion
+                #region label
                 if (control[CI].GetType() == new Label().GetType())
                 {
                     if (Settings.ThemeIsDark)
@@ -124,11 +151,22 @@ namespace CMT_2.Engine
                     else
                         (control[CI] as Label).ForeColor = settingsClass.Dark_Label_ForeColor;
                 }
+                #endregion
+                #region textbox
                 if (control[CI].GetType() == new TextBox().GetType())
                 {
-
+                    if (Settings.ThemeIsDark)
+                    {
+                        (control[CI] as TextBox).BackColor = settingsClass.Dark_textbox_BackColor;
+                        (control[CI] as TextBox).ForeColor = settingsClass.Light_Label_ForeColor;
+                    }
+                    else
+                    {
+                        (control[CI] as TextBox).BackColor = settingsClass.Light_textbox_BackColor;
+                        (control[CI] as TextBox).ForeColor = settingsClass.Dark_Label_ForeColor;
+                    }
                 }
-
+                #endregion
 
             }
         }

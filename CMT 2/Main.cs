@@ -22,7 +22,7 @@ namespace CMT_2
 {
     public partial class Main : Form
     {
-        private bool IsPro;
+        public static bool IsPro;
         private string[] dlls = new string[2];
         public Main()
         {

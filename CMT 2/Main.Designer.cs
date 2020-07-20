@@ -38,9 +38,9 @@
             this.Info_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Info_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Info_Button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Info_Button.Location = new System.Drawing.Point(559, 12);
+            this.Info_Button.Location = new System.Drawing.Point(507, 12);
             this.Info_Button.Name = "Info_Button";
-            this.Info_Button.Size = new System.Drawing.Size(39, 23);
+            this.Info_Button.Size = new System.Drawing.Size(73, 23);
             this.Info_Button.TabIndex = 2;
             this.Info_Button.Text = "Info";
             this.Info_Button.UseVisualStyleBackColor = false;
@@ -52,9 +52,9 @@
             this.OpenSettings_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.OpenSettings_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenSettings_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OpenSettings_button.Location = new System.Drawing.Point(604, 12);
+            this.OpenSettings_button.Location = new System.Drawing.Point(586, 12);
             this.OpenSettings_button.Name = "OpenSettings_button";
-            this.OpenSettings_button.Size = new System.Drawing.Size(70, 23);
+            this.OpenSettings_button.Size = new System.Drawing.Size(94, 23);
             this.OpenSettings_button.TabIndex = 3;
             this.OpenSettings_button.Text = "Settings";
             this.OpenSettings_button.UseVisualStyleBackColor = false;
