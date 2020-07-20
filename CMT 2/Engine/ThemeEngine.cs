@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMT_2.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -10,56 +11,127 @@ namespace CMT_2.Engine
 {
     class ThemeEngine
     {
-        /// <summary>
-        /// 0 is white theme ||| 1 is dark theme
-        /// </summary>
-        private static Button_style[] Button_Styles = new Button_style[]
+
+        public static class settingsClass
         {
-            new Button_style(Color.FromName("black"), Color.FromName("white")),
-            new Button_style(Color.FromName("white"),  Color.FromName("black"))
-        };
-        /// <summary>
-        /// 0 is white theme ||| 1 is dark theme
-        /// </summary>
-        private static Color[] Form_Styles = new Color[]
-        {
-            SystemColors.Control, 
-            Color.Black
-        };
+            static settingsClass()
+            {
+                #region button
+                Dark_Button_BackColor = Color.Black;
+                Dark_Button_BorderColor = Color.DarkKhaki;
+                #endregion
+                #region label
+                Light_Label_ForeColor = Color.White;
+                Dark_Label_ForeColor = Color.Black;
+                #endregion
+                #region form
+                Dark_Form_BackColor = Color.FromArgb(35, 39, 42);
+                Light_Form_BackColor = SystemColors.Control;
+                #endregion
+            }
+            #region form
+            public static Color Dark_Form_BackColor;
+            public static Color Light_Form_BackColor;
+            #endregion
+
+            #region button
+            public static Color Dark_Button_BackColor;
+            public static Color Dark_Button_BorderColor;
+            #endregion
+            #region label
+            public static Color Dark_Label_ForeColor;
+            public static Color Light_Label_ForeColor;
+            #endregion
+            #region textbox
+            
+            #endregion
+        }
+
         /// <summary>
         /// 0 is white theme ||| 1 is dark theme
         /// </summary>
         /// <param name="black"></param>
-         public static void SetTheme(bool ISdark)
+        public static void SetTheme(bool ISdark)
         {
             Control.ControlCollection control;
-            for (int i = Application.OpenForms.Count; i > 0; i--)
+            for (int i = 0; i < Application.OpenForms.Count; i++)
             {
-                Application.OpenForms[i].BackColor = Form_Styles[Convert.ToInt32(ISdark)];
+                if (ISdark)
+                    Application.OpenForms[i].BackColor = settingsClass.Dark_Form_BackColor;
+                else
+                    Application.OpenForms[i].BackColor = settingsClass.Light_Form_BackColor;
+
                 control = Application.OpenForms[i].Controls;
-                for(int CI = control.Count;i>0;CI--)
+                for (int CI = 0; CI<control.Count; CI++)
+                {
+                    if (control[CI].GetType() == new Button().GetType())
                     {
-                    if(control[CI].GetType() == new Button().GetType())
-                    {
+                        if (ISdark)
+                        {
+                            (control[CI] as Button).BackColor = Color.Black;
+                            (control[CI] as Button).FlatAppearance.BorderColor = Color.DarkKhaki;
+                            (control[CI] as Button).ForeColor = settingsClass.Light_Label_ForeColor;
+                        }
+                        else
+                        {
 
-                        (control[CI] as Button).ForeColor = Button_Styles[Convert.ToInt32(ISdark)].ForeColor;
-                        (control[CI] as Button).FlatAppearance.BorderColor = Button_Styles[Convert.ToInt32(ISdark)].Line;
-
+                            (control[CI] as Button).BackColor = Color.White;
+                            (control[CI] as Button).FlatAppearance.BorderColor = Color.Black;
+                            (control[CI] as Button).ForeColor = settingsClass.Dark_Label_ForeColor;
+                        }
                     }
+                    if (control[CI].GetType() == new Label().GetType())
+                    {
+                        if (ISdark)
+                            (control[CI] as Label).ForeColor = settingsClass.Light_Label_ForeColor;
+                        else
+                            (control[CI] as Label).ForeColor = settingsClass.Dark_Label_ForeColor;
+                    }
+
                 }
             }
         }
-        private class Button_style
+        public static void InitTheme(Form form)
         {
-            public Button_style(Color ForeCol, Color line)
+            if (Settings.ThemeIsDark)
+                form.BackColor = Color.FromArgb(35, 39, 42);
+            else
+                form.BackColor = SystemColors.Control;
+
+            var control = form.Controls;
+            for (int CI = 0; CI < control.Count; CI++)
             {
-                ForeColor = ForeCol;
-                Line = line;
-            } 
-            
-            public Color ForeColor;
-            public Color Line;
+
+                if (control[CI].GetType() == new Button().GetType())
+                {
+                    if (Settings.ThemeIsDark)
+                    {
+                        (control[CI] as Button).BackColor = settingsClass.Dark_Button_BackColor;
+                        (control[CI] as Button).FlatAppearance.BorderColor = settingsClass.Dark_Button_BorderColor;
+                        (control[CI] as Button).ForeColor = settingsClass.Light_Label_ForeColor;
+                    }
+                    else
+                    {
+                        (control[CI] as Button).BackColor = Color.White;
+                        (control[CI] as Button).FlatAppearance.BorderColor = Color.Black;
+                        (control[CI] as Button).ForeColor = settingsClass.Dark_Label_ForeColor;
+                    }
+                }
+                if (control[CI].GetType() == new Label().GetType())
+                {
+                    if (Settings.ThemeIsDark)
+                        (control[CI] as Label).ForeColor = settingsClass.Light_Label_ForeColor;
+                    else
+                        (control[CI] as Label).ForeColor = settingsClass.Dark_Label_ForeColor;
+                }
+                if (control[CI].GetType() == new TextBox().GetType())
+                {
+
+                }
+
+
+            }
         }
     }
-    
+
 }

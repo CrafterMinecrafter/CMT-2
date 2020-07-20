@@ -1,4 +1,5 @@
 ﻿using CMT_2.Dialogs;
+using CMT_2.Engine;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.XPath;
 using UHWID;
 
 namespace CMT_2
@@ -20,7 +23,6 @@ namespace CMT_2
     public partial class Main : Form
     {
         private bool IsPro;
-        bool DarkTheme = false;
         private string[] dlls = new string[2];
         public Main()
         {
@@ -31,11 +33,15 @@ namespace CMT_2
             int index = 0;
             try
             {
-                using (WebClient wb = new WebClient()) 
+
+                using (WebClient wb = new WebClient())
                 {
-                    index = Convert.ToInt32(wb.DownloadString("http://localhost:8885?token="  + IDsManager.id[1]));
-                   
+                    index = Convert.ToInt32(wb.DownloadString("http://localhost:8885?token=" + IDsManager.id[1]));
+
                 }
+                if (!File.Exists(Path.GetPathRoot(Environment.SystemDirectory) + "/CrafterMinecrafter Tool/Settings.cmt"))
+                    File.CreateText(Directory.CreateDirectory(Path.GetPathRoot(Environment.SystemDirectory) + "/CrafterMinecrafter Tool").FullName + "/Settings.cmt");
+                CMT_2.Properties.Settings.Default.Reload();
             }
             catch
             {
@@ -62,12 +68,17 @@ namespace CMT_2
                         break;
                     }
             }
-            File.CreateText(Path.GetPathRoot(Environment.SystemDirectory)+ "/test.txt");
+            ThemeEngine.InitTheme(this);
         }
 
         private void Info_Button_Click(object sender, EventArgs e)
         {
             new Info().ShowDialog();
+        }
+
+        private void OpenSettings_button_Click(object sender, EventArgs e)
+        {
+            new Settings().ShowDialog();
         }
     }
 }

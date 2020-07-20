@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMT_2.Engine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,7 @@ namespace CMT_2.Dialogs
 
         private void Info_Load(object sender, EventArgs e)
         {
+            ThemeEngine.InitTheme(this);
             IDbox.Text = IDsManager.id[1];
             label2.Text = Application.OpenForms[0].Text + ' ' + Application.ProductVersion;
         }

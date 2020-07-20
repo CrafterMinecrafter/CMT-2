@@ -9,3 +9,4 @@ C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT 2.pdb
 C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT 2.csprojAssemblyReference.cache
 C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT_2.Dialogs.Info.resources
 C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT_2.Dialogs.Settings.resources
+C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\bin\Debug\CMT 2.exe.config
