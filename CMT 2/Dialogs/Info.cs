@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,11 @@ namespace CMT_2.Dialogs
             ThemeEngine.InitTheme(this);
             IDbox.Text = IDsManager.id[1];
             label2.Text = Application.OpenForms[0].Text + ' ' + Application.ProductVersion;
+        }
+
+        private void ThemeSettings_button_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://vk.com/o_privet_t");
         }
     }
 }

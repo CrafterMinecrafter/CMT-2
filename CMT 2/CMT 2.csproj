@@ -87,6 +87,12 @@
     <Compile Include="Dialogs\Info.Designer.cs">
       <DependentUpon>Info.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\ThemeSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ThemeSettings.Designer.cs">
+      <DependentUpon>ThemeSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\ThemeSettings.resx">
+      <DependentUpon>ThemeSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="test\test.resx">
       <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>

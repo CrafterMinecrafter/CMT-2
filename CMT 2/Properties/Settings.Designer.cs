@@ -34,5 +34,16 @@ namespace CMT_2.Properties {
                 this["DarkTheme"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Drawing.Color Form_color {
+            get {
+                return ((global::System.Drawing.Color)(this["Form_color"]));
+            }
+            set {
+                this["Form_color"] = value;
+            }
+        }
     }
 }

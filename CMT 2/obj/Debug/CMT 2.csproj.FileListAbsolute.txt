@@ -11,3 +11,4 @@ C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT_2.Dialogs.Info.reso
 C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT_2.Dialogs.Settings.resources
 C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\bin\Debug\CMT 2.exe.config
 C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT_2.test.test.resources
+C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT_2.Dialogs.ThemeSettings.resources

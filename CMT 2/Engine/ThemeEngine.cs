@@ -60,11 +60,12 @@ namespace CMT_2.Engine
             Control.ControlCollection control;
             for (int i = 0; i < Application.OpenForms.Count; i++)
             {
+                #region form
                 if (ISdark)
                     Application.OpenForms[i].BackColor = settingsClass.Dark_Form_BackColor;
                 else
                     Application.OpenForms[i].BackColor = settingsClass.Light_Form_BackColor;
-
+                #endregion
                 control = Application.OpenForms[i].Controls;
                 for (int CI = 0; CI < control.Count; CI++)
                 {

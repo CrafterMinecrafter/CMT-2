@@ -31,6 +31,7 @@
             this.IDbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ThemeSettings_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // IDbox
@@ -62,11 +63,25 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "...";
             // 
+            // ThemeSettings_button
+            // 
+            this.ThemeSettings_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ThemeSettings_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThemeSettings_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ThemeSettings_button.Location = new System.Drawing.Point(163, 242);
+            this.ThemeSettings_button.Name = "ThemeSettings_button";
+            this.ThemeSettings_button.Size = new System.Drawing.Size(145, 23);
+            this.ThemeSettings_button.TabIndex = 6;
+            this.ThemeSettings_button.Text = "Get pro version!";
+            this.ThemeSettings_button.UseVisualStyleBackColor = true;
+            this.ThemeSettings_button.Click += new System.EventHandler(this.ThemeSettings_button_Click);
+            // 
             // Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 277);
+            this.Controls.Add(this.ThemeSettings_button);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.IDbox);
@@ -84,5 +99,6 @@
         private System.Windows.Forms.TextBox IDbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button ThemeSettings_button;
     }
 }

@@ -47,7 +47,7 @@ namespace CMT_2.Dialogs
             }
             else
             {
-                MessageBox.Show("you have pro version :)");
+                new ThemeSettings().ShowDialog();
             }
         }
     }
