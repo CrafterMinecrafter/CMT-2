@@ -38,6 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FormColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,11 +58,11 @@
             // FormColor_label
             // 
             this.FormColor_label.AutoSize = true;
-            this.FormColor_label.Location = new System.Drawing.Point(12, 18);
+            this.FormColor_label.Location = new System.Drawing.Point(9, 18);
             this.FormColor_label.Name = "FormColor_label";
-            this.FormColor_label.Size = new System.Drawing.Size(30, 13);
+            this.FormColor_label.Size = new System.Drawing.Size(65, 13);
             this.FormColor_label.TabIndex = 1;
-            this.FormColor_label.Text = "Form";
+            this.FormColor_label.Text = "Background";
             // 
             // button1
             // 
@@ -69,7 +70,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
+            this.button1.Text = "test theme!";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // ButtonColor_label
@@ -116,9 +117,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(220, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Button line";
+            this.label1.Text = "Text";
             // 
             // pictureBox2
             // 
@@ -129,11 +130,21 @@
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(133, 216);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(93, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "set theme!";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // ThemeSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 293);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.ButtonLine_label);
@@ -168,5 +179,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -12,3 +12,14 @@ C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT_2.Dialogs.Settings.
 C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\bin\Debug\CMT 2.exe.config
 C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT_2.test.test.resources
 C:\Users\lea\source\FullstackRepos\CMT 2\CMT 2\obj\Debug\CMT_2.Dialogs.ThemeSettings.resources
+C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT 2.csprojAssemblyReference.cache
+C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT_2.Dialogs.ThemeSettings.resources
+C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT_2.test.test.resources
+C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT_2.Dialogs.Info.resources
+C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT_2.Dialogs.Settings.resources
+C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT_2.Main.resources
+C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT_2.Properties.Resources.resources
+C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT 2.csproj.GenerateResource.cache
+C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT 2.csproj.CoreCompileInputs.cache
+C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT 2.exe
+C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT 2.pdb

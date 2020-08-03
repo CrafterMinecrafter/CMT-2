@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lea\\source\\FullstackRepos\\CMT 2\\Server\\Server.csproj": {}
+    "C:\\Users\\crafter\\source\\repos\\CMT-2\\Server\\Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lea\\source\\FullstackRepos\\CMT 2\\Server\\Server.csproj": {
+    "C:\\Users\\crafter\\source\\repos\\CMT-2\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lea\\source\\FullstackRepos\\CMT 2\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\crafter\\source\\repos\\CMT-2\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\lea\\source\\FullstackRepos\\CMT 2\\Server\\Server.csproj",
-        "packagesPath": "C:\\Users\\lea\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lea\\source\\FullstackRepos\\CMT 2\\Server\\obj\\",
+        "projectPath": "C:\\Users\\crafter\\source\\repos\\CMT-2\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\crafter\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\crafter\\source\\repos\\CMT-2\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\crafter\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

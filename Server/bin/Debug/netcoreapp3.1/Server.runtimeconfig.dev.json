@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\lea\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\lea\\.nuget\\packages"
+      "C:\\Users\\crafter\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\crafter\\.nuget\\packages"
     ]
   }
 }

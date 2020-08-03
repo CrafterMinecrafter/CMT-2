@@ -37,12 +37,13 @@ namespace CMT_2.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Drawing.Color Form_color {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string customSettings {
             get {
-                return ((global::System.Drawing.Color)(this["Form_color"]));
+                return ((string)(this["customSettings"]));
             }
             set {
-                this["Form_color"] = value;
+                this["customSettings"] = value;
             }
         }
     }
