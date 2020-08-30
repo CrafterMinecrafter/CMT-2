@@ -35,14 +35,14 @@
             this.ButtonColor_label = new System.Windows.Forms.Label();
             this.ButtonColor = new System.Windows.Forms.PictureBox();
             this.ButtonLine_label = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ButtonLineColor = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.LabelColor = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FormColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonColor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonLineColor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabelColor)).BeginInit();
             this.SuspendLayout();
             // 
             // FormColor
@@ -102,15 +102,15 @@
             this.ButtonLine_label.Text = "Button line";
             this.ButtonLine_label.Click += new System.EventHandler(this.c);
             // 
-            // pictureBox1
+            // ButtonLineColor
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(150, 34);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 50);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.c);
+            this.ButtonLineColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ButtonLineColor.Location = new System.Drawing.Point(150, 34);
+            this.ButtonLineColor.Name = "ButtonLineColor";
+            this.ButtonLineColor.Size = new System.Drawing.Size(46, 50);
+            this.ButtonLineColor.TabIndex = 5;
+            this.ButtonLineColor.TabStop = false;
+            this.ButtonLineColor.Click += new System.EventHandler(this.c);
             // 
             // label1
             // 
@@ -121,14 +121,14 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Text";
             // 
-            // pictureBox2
+            // LabelColor
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(223, 34);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 50);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.LabelColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabelColor.Location = new System.Drawing.Point(223, 34);
+            this.LabelColor.Name = "LabelColor";
+            this.LabelColor.Size = new System.Drawing.Size(46, 50);
+            this.LabelColor.TabIndex = 7;
+            this.LabelColor.TabStop = false;
             // 
             // button2
             // 
@@ -138,6 +138,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "set theme!";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ThemeSettings
             // 
@@ -146,9 +147,9 @@
             this.ClientSize = new System.Drawing.Size(368, 293);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.LabelColor);
             this.Controls.Add(this.ButtonLine_label);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ButtonLineColor);
             this.Controls.Add(this.ButtonColor_label);
             this.Controls.Add(this.ButtonColor);
             this.Controls.Add(this.button1);
@@ -160,8 +161,8 @@
             this.Load += new System.EventHandler(this.ThemeSettings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FormColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonColor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ButtonLineColor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LabelColor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,9 +177,9 @@
         private System.Windows.Forms.Label ButtonColor_label;
         private System.Windows.Forms.PictureBox ButtonColor;
         private System.Windows.Forms.Label ButtonLine_label;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ButtonLineColor;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox LabelColor;
         private System.Windows.Forms.Button button2;
     }
 }

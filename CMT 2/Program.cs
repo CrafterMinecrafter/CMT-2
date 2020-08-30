@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UHWID;
 
 namespace CMT_2
 {
@@ -14,6 +15,7 @@ namespace CMT_2
         [STAThread]
         static void Main()
         {
+            IDsManager.init();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());

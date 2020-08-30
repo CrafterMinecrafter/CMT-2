@@ -30,44 +30,36 @@ namespace CMT_2
         }
         private void Main_Load(object sender, EventArgs e)
         {
-            int index = 0;
-            try
-            {
+          //  try
+          //  {
 
                 using (WebClient wb = new WebClient())
                 {
-                    index = Convert.ToInt32(wb.DownloadString("http://localhost:8885?token=" + IDsManager.id[1]));
-
+                    if (wb.DownloadString("http://pastebin.com/raw/AfvyV3JG").Contains(IDsManager.id[1]))
+                    {
+                        IsPro = true;
+                        Text = "CrafterMinecrafter Tool Pro";
+                    }
+                    else
+                    {
+                        IsPro = false;
+                        Text = "CrafterMinecrafter Tool Community";
+                    } 
                 }
                 if (!File.Exists(Path.GetPathRoot(Environment.SystemDirectory) + "/CrafterMinecrafter Tool/Settings.cmt"))
                     File.CreateText(Directory.CreateDirectory(Path.GetPathRoot(Environment.SystemDirectory) + "/CrafterMinecrafter Tool").FullName + "/Settings.cmt");
                 CMT_2.Properties.Settings.Default.Reload();
-            }
+          /*  }
             catch
             {
                 Application.Exit();
-            }
-            switch (index)
-            {
-                case 1:
-                    {
-                        IsPro = false;
-                        Text = "CrafterMinecrafter Tool Community";
-                        break;
-                    }
-                case 2:
-                    {
-                        IsPro = true;
-                        Text = "CrafterMinecrafter Tool Pro";
+            }*/
+            
+                   
+              
+                        
 
-                        break;
-                    }
-                default:
-                    {
-                        Application.Exit();
-                        break;
-                    }
-            }
+            
             ThemeEngine.InitTheme(this);
         }
 

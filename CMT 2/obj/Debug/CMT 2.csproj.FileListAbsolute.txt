@@ -23,3 +23,6 @@ C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT 2.csproj.GenerateResourc
 C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT 2.csproj.CoreCompileInputs.cache
 C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT 2.exe
 C:\Users\crafter\source\repos\CMT-2\CMT 2\obj\Debug\CMT 2.pdb
+C:\Users\Crafter\source\repos\CMT-2\CMT 2\bin\Debug\CMT 2.exe.config
+C:\Users\Crafter\source\repos\CMT-2\CMT 2\bin\Debug\CMT 2.exe
+C:\Users\Crafter\source\repos\CMT-2\CMT 2\bin\Debug\CMT 2.pdb

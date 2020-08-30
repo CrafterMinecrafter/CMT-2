@@ -12,11 +12,11 @@ namespace UHWID
         /// </summary>
         public static string[] id { get; private set; }
 
-        static IDsManager()
+        public static void init()
         {
             id = new string[] { DiskId.GetDiskId(), CpuId.GetCpuId(), WindowsId.GetWindowsId(), null};
             using (var md5 = System.Security.Cryptography.MD5.Create())
-                    id[4] = System.BitConverter.ToString(md5.ComputeHash(Encoding.UTF8.GetBytes(id[1]+id[2]))).Replace("-", string.Empty);
+                    id[3] = System.BitConverter.ToString(md5.ComputeHash(Encoding.UTF8.GetBytes(id[1]+id[2]))).Replace("-", string.Empty);
         } 
     }
 }           

@@ -36,5 +36,32 @@ namespace CMT_2.Dialogs
         {
 
         }
+        private string ToText()
+        {
+            return $"{FormColor.BackColor.ToArgb()}\n{ButtonColor.BackColor.ToArgb()}\n{ButtonLineColor.BackColor.ToArgb()}\n{LabelColor.BackColor.ToArgb()}";
+        }
+        private void FromText(string text)
+        {
+            var colors = text.Split('\n');
+            FormColor.BackColor = Color.FromArgb(int.Parse(colors[0]));
+            ButtonColor.BackColor = Color.FromArgb(int.Parse(colors[1]));
+            ButtonLineColor.BackColor = Color.FromArgb(int.Parse(colors[2]));
+            LabelColor.BackColor = Color.FromArgb(int.Parse(colors[3]));
+
+        }
+        public static void ToSettings()
+        {
+            var colors = text.Split('\n');
+            FormColor.BackColor = Color.FromArgb(int.Parse(colors[0]));
+            ButtonColor.BackColor = Color.FromArgb(int.Parse(colors[1]));
+            ButtonLineColor.BackColor = Color.FromArgb(int.Parse(colors[2]));
+            LabelColor.BackColor = Color.FromArgb(int.Parse(colors[3]));
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CMT_2.Properties.Settings.Default.customSettings = ToText();
+            CMT_2.Properties.Settings.Default.Save();
+
+        }
     }
 }
