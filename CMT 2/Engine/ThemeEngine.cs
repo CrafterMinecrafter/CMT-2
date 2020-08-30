@@ -18,7 +18,29 @@ namespace CMT_2.Engine
             static settingsClass()
             {
                 #region font
-                DefaultFont = SystemFonts.GetFontByName("Arial");
+                DefaultFont = new Font("Arial",  8f, GraphicsUnit.Point);
+                #endregion
+                #region button
+                Dark_Button_BackColor = Color.Black;
+                Dark_Button_BorderColor = Color.DarkKhaki;
+                #endregion
+                #region label
+                Light_Label_ForeColor = Color.White;
+                Dark_Label_ForeColor = Color.Black;
+                #endregion
+                #region form
+                Dark_Form_BackColor = Color.FromArgb(35, 39, 42);
+                Light_Form_BackColor = SystemColors.Control;
+                #endregion
+                #region textbox
+                Dark_textbox_BackColor = Color.FromArgb(79, 84, 92);
+                Light_textbox_BackColor = SystemColors.ControlLight;
+                #endregion
+            }
+            public static void Reset()
+            {
+                #region font
+                DefaultFont = new Font("Arial", 8f, GraphicsUnit.Point);
                 #endregion
                 #region button
                 Dark_Button_BackColor = Color.Black;
