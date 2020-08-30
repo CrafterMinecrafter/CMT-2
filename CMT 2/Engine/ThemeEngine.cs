@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,9 @@ namespace CMT_2.Engine
         {
             static settingsClass()
             {
+                #region font
+                DefaultFont = SystemFonts.GetFontByName("Arial");
+                #endregion
                 #region button
                 Dark_Button_BackColor = Color.Black;
                 Dark_Button_BorderColor = Color.DarkKhaki;
@@ -37,7 +41,9 @@ namespace CMT_2.Engine
             public static Color Dark_Form_BackColor;
             public static Color Light_Form_BackColor;
             #endregion
-
+            #region font
+            public static Font DefaultFont;
+            #endregion
             #region button
             public static Color Dark_Button_BackColor;
             public static Color Dark_Button_BorderColor;
@@ -61,6 +67,7 @@ namespace CMT_2.Engine
             for (int i = 0; i < Application.OpenForms.Count; i++)
             {
                 #region form
+                Application.OpenForms[i].Font = settingsClass.DefaultFont;
                 if (ISdark)
                     Application.OpenForms[i].BackColor = settingsClass.Dark_Form_BackColor;
                 else
@@ -72,10 +79,11 @@ namespace CMT_2.Engine
                     #region button
                     if (control[CI].GetType() == new Button().GetType())
                     {
+                        (control[CI] as Button).Font = settingsClass.DefaultFont;
                         if (ISdark)
                         {
-                            (control[CI] as Button).BackColor = Color.Black;
-                            (control[CI] as Button).FlatAppearance.BorderColor = Color.DarkKhaki;
+                            (control[CI] as Button).BackColor = settingsClass.Dark_Button_BackColor;
+                            (control[CI] as Button).FlatAppearance.BorderColor = settingsClass.Dark_Button_BorderColor;
                             (control[CI] as Button).ForeColor = settingsClass.Light_Label_ForeColor;
                         }
                         else
@@ -90,6 +98,7 @@ namespace CMT_2.Engine
                     #region label
                     if (control[CI].GetType() == new Label().GetType())
                     {
+                        (control[CI] as Label).Font = settingsClass.DefaultFont;
                         if (ISdark)
                             (control[CI] as Label).ForeColor = settingsClass.Light_Label_ForeColor;
                         else
@@ -99,6 +108,7 @@ namespace CMT_2.Engine
                     #region textbox
                     if (control[CI].GetType() == new TextBox().GetType())
                     {
+                        (control[CI] as TextBox).Font = settingsClass.DefaultFont;
                         if (Settings.ThemeIsDark)
                         {
                             (control[CI] as TextBox).BackColor = settingsClass.Dark_textbox_BackColor;
@@ -117,8 +127,10 @@ namespace CMT_2.Engine
 
         public static void InitTheme(Form form)
         {
-            
+
             #region form
+
+            form.Font = settingsClass.DefaultFont;
             if (Settings.ThemeIsDark)
                 form.BackColor = settingsClass.Dark_Form_BackColor;
             else
@@ -131,6 +143,7 @@ namespace CMT_2.Engine
                 #region button
                 if (control[CI].GetType() == new Button().GetType())
                 {
+                    (control[CI] as Button).Font = settingsClass.DefaultFont;
                     if (Settings.ThemeIsDark)
                     {
                         (control[CI] as Button).BackColor = settingsClass.Dark_Button_BackColor;
@@ -148,6 +161,7 @@ namespace CMT_2.Engine
                 #region label
                 if (control[CI].GetType() == new Label().GetType())
                 {
+                    (control[CI] as Label).Font = settingsClass.DefaultFont;
                     if (Settings.ThemeIsDark)
                         (control[CI] as Label).ForeColor = settingsClass.Light_Label_ForeColor;
                     else
@@ -157,6 +171,7 @@ namespace CMT_2.Engine
                 #region textbox
                 if (control[CI].GetType() == new TextBox().GetType())
                 {
+                    (control[CI] as TextBox).Font = settingsClass.DefaultFont;
                     if (Settings.ThemeIsDark)
                     {
                         (control[CI] as TextBox).BackColor = settingsClass.Dark_textbox_BackColor;

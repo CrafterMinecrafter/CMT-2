@@ -67,6 +67,7 @@
             // 
             this.GetPro_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.GetPro_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GetPro_button.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GetPro_button.ForeColor = System.Drawing.SystemColors.ControlText;
             this.GetPro_button.Location = new System.Drawing.Point(163, 242);
             this.GetPro_button.Name = "GetPro_button";

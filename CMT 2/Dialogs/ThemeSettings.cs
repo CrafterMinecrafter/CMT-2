@@ -55,13 +55,14 @@ namespace CMT_2.Dialogs
             ThemeEngine.settingsClass.Dark_Form_BackColor= Color.FromArgb(int.Parse(colors[0]));
             ThemeEngine.settingsClass.Dark_Button_BackColor  = Color.FromArgb(int.Parse(colors[1]));
             ThemeEngine.settingsClass.Dark_Button_BorderColor = Color.FromArgb(int.Parse(colors[2]));
-            ThemeEngine.settingsClass.Dark_Label_ForeColor = Color.FromArgb(int.Parse(colors[3]));
+            ThemeEngine.settingsClass.Light_Label_ForeColor = Color.FromArgb(int.Parse(colors[3]));
         }
         private void button2_Click(object sender, EventArgs e)
         {
             CMT_2.Properties.Settings.Default.customSettings = ToText();
             CMT_2.Properties.Settings.Default.Save();
             ToSettings();
+            ThemeEngine.SetTheme(true);
         }
     }
 }

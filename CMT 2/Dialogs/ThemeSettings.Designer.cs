@@ -66,6 +66,7 @@
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(133, 245);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 23);
@@ -110,7 +111,7 @@
             this.ButtonLineColor.Size = new System.Drawing.Size(46, 50);
             this.ButtonLineColor.TabIndex = 5;
             this.ButtonLineColor.TabStop = false;
-            this.ButtonLineColor.Click += new System.EventHandler(this.c);
+            this.ButtonLineColor.Click += new System.EventHandler(this.SetIS);
             // 
             // label1
             // 
@@ -129,9 +130,11 @@
             this.LabelColor.Size = new System.Drawing.Size(46, 50);
             this.LabelColor.TabIndex = 7;
             this.LabelColor.TabStop = false;
+            this.LabelColor.Click += new System.EventHandler(this.SetIS);
             // 
             // button2
             // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Location = new System.Drawing.Point(133, 216);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 23);
