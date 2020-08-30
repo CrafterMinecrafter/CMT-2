@@ -25,9 +25,10 @@ namespace CMT_2.Dialogs
             ThemeEngine.InitTheme(this);
             IDbox.Text = IDsManager.id[1];
             label2.Text = Application.OpenForms[0].Text + ' ' + Application.ProductVersion;
+            GetPro_button.Visible = !Main.IsPro;
         }
 
-        private void ThemeSettings_button_Click(object sender, EventArgs e)
+        private void GetPro_button_Click(object sender, EventArgs e)
         {
             Process.Start("https://vk.com/o_privet_t");
         }

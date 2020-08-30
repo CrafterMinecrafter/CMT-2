@@ -51,17 +51,17 @@ namespace CMT_2.Dialogs
         }
         public static void ToSettings()
         {
-            var colors = text.Split('\n');
-            FormColor.BackColor = Color.FromArgb(int.Parse(colors[0]));
-            ButtonColor.BackColor = Color.FromArgb(int.Parse(colors[1]));
-            ButtonLineColor.BackColor = Color.FromArgb(int.Parse(colors[2]));
-            LabelColor.BackColor = Color.FromArgb(int.Parse(colors[3]));
+            var colors = CMT_2.Properties.Settings.Default.customSettings.Split('\n');
+            ThemeEngine.settingsClass.Dark_Form_BackColor= Color.FromArgb(int.Parse(colors[0]));
+            ThemeEngine.settingsClass.Dark_Button_BackColor  = Color.FromArgb(int.Parse(colors[1]));
+            ThemeEngine.settingsClass.Dark_Button_BorderColor = Color.FromArgb(int.Parse(colors[2]));
+            ThemeEngine.settingsClass.Dark_Label_ForeColor = Color.FromArgb(int.Parse(colors[3]));
         }
         private void button2_Click(object sender, EventArgs e)
         {
             CMT_2.Properties.Settings.Default.customSettings = ToText();
             CMT_2.Properties.Settings.Default.Save();
-
+            ToSettings();
         }
     }
 }

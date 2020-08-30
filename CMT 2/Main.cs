@@ -30,12 +30,12 @@ namespace CMT_2
         }
         private void Main_Load(object sender, EventArgs e)
         {
-          //  try
-          //  {
+            try
+            {
 
                 using (WebClient wb = new WebClient())
                 {
-                    if (wb.DownloadString("http://pastebin.com/raw/AfvyV3JG").Contains(IDsManager.id[1]))
+                    if (wb.DownloadString("https://ideone.com/plain/bAROiC").Contains(IDsManager.id[1]))
                     {
                         IsPro = true;
                         Text = "CrafterMinecrafter Tool Pro";
@@ -44,22 +44,31 @@ namespace CMT_2
                     {
                         IsPro = false;
                         Text = "CrafterMinecrafter Tool Community";
-                    } 
+                    }
                 }
                 if (!File.Exists(Path.GetPathRoot(Environment.SystemDirectory) + "/CrafterMinecrafter Tool/Settings.cmt"))
                     File.CreateText(Directory.CreateDirectory(Path.GetPathRoot(Environment.SystemDirectory) + "/CrafterMinecrafter Tool").FullName + "/Settings.cmt");
                 CMT_2.Properties.Settings.Default.Reload();
-          /*  }
+            }
             catch
             {
                 Application.Exit();
-            }*/
-            
-                   
-              
-                        
+            }
 
-            
+
+
+
+
+            if (IsPro)
+            {
+                try
+                {
+                    ThemeSettings.ToSettings();
+                } catch
+                {
+
+                }
+            }
             ThemeEngine.InitTheme(this);
         }
 

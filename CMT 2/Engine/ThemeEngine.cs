@@ -117,6 +117,7 @@ namespace CMT_2.Engine
 
         public static void InitTheme(Form form)
         {
+            
             #region form
             if (Settings.ThemeIsDark)
                 form.BackColor = settingsClass.Dark_Form_BackColor;
