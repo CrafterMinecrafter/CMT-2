@@ -23,7 +23,7 @@ namespace CMT_2.BS
                 text2 += Convert.ToString(array[i], 16).PadLeft(2, '0');
             }
             return text2.PadLeft(32, '0');
-            #endregion
+          
         }
         public string MD5File(string FilePath)
         {
@@ -37,7 +37,7 @@ namespace CMT_2.BS
             }
             return text2.PadLeft(32, '0');
         }
-
+  #endregion
         #region XOR
         public string XOR(string text, string key, bool encrypt)
         {
