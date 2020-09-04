@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Crafter\\source\\repos\\CMT-2\\Server\\Server.csproj": {}
+    "C:\\Users\\Crafter\\Documents\\GitHub\\CMT-2\\Server\\Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Crafter\\source\\repos\\CMT-2\\Server\\Server.csproj": {
+    "C:\\Users\\Crafter\\Documents\\GitHub\\CMT-2\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Crafter\\source\\repos\\CMT-2\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\Crafter\\Documents\\GitHub\\CMT-2\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\Crafter\\source\\repos\\CMT-2\\Server\\Server.csproj",
+        "projectPath": "C:\\Users\\Crafter\\Documents\\GitHub\\CMT-2\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\Crafter\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Crafter\\source\\repos\\CMT-2\\Server\\obj\\",
+        "outputPath": "C:\\Users\\Crafter\\Documents\\GitHub\\CMT-2\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Crafter\\AppData\\Roaming\\NuGet\\NuGet.Config",
