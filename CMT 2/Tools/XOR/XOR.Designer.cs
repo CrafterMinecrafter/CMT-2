@@ -35,12 +35,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.EncBox = new System.Windows.Forms.TextBox();
+            this.DecBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // RememberedSelector
             // 
-            this.RememberedSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RememberedSelector.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RememberedSelector.FormattingEnabled = true;
             this.RememberedSelector.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -116,10 +118,36 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.DecBox);
+            this.panel2.Controls.Add(this.EncBox);
             this.panel2.Location = new System.Drawing.Point(4, 119);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(576, 187);
+            this.panel2.Size = new System.Drawing.Size(584, 187);
             this.panel2.TabIndex = 6;
+            // 
+            // EncBox
+            // 
+            this.EncBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EncBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EncBox.Location = new System.Drawing.Point(3, 3);
+            this.EncBox.Multiline = true;
+            this.EncBox.Name = "EncBox";
+            this.EncBox.Size = new System.Drawing.Size(237, 179);
+            this.EncBox.TabIndex = 7;
+            // 
+            // DecBox
+            // 
+            this.DecBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DecBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DecBox.Location = new System.Drawing.Point(346, -1);
+            this.DecBox.Multiline = true;
+            this.DecBox.Name = "DecBox";
+            this.DecBox.Size = new System.Drawing.Size(237, 179);
+            this.DecBox.TabIndex = 8;
             // 
             // XOR
             // 
@@ -134,6 +162,8 @@
             this.Load += new System.EventHandler(this.XOR_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +178,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox DecBox;
+        private System.Windows.Forms.TextBox EncBox;
     }
 }
