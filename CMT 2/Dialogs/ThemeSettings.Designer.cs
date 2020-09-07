@@ -97,7 +97,6 @@
             this.ButtonLine_label.Size = new System.Drawing.Size(57, 13);
             this.ButtonLine_label.TabIndex = 6;
             this.ButtonLine_label.Text = "Button line";
-            this.ButtonLine_label.Click += new System.EventHandler(this.c);
             // 
             // ButtonLineColor
             // 

@@ -114,6 +114,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\XOR\XOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\XOR\XOR.Designer.cs">
+      <DependentUpon>XOR.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dialogs\ThemeSettings.resx">
       <DependentUpon>ThemeSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +152,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Tools\XOR\XOR.resx">
+      <DependentUpon>XOR.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Dialogs\app.config" />
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">

@@ -18,7 +18,7 @@ namespace CMT_2.Engine
             static settingsClass()
             {
                 #region font
-                DefaultFont = new Font("Arial",  8f, GraphicsUnit.Point);
+                DefaultFont = new Font("Arial", 8f, GraphicsUnit.Point);
                 #endregion
                 #region button
                 Dark_Button_BackColor = Color.Black;
@@ -81,84 +81,26 @@ namespace CMT_2.Engine
         }
 
         /// <summary>
-        /// 0 is white theme ||| 1 is dark theme
+        /// set theme in all forms
         /// </summary>
-        public static void SetTheme(bool ISdark)
+        public static void SetTheme()
         {
-            Control.ControlCollection control;
             for (int i = 0; i < Application.OpenForms.Count; i++)
             {
                 #region form
                 Application.OpenForms[i].Font = settingsClass.DefaultFont;
-                if (ISdark)
+                if (Properties.Settings.Default.DarkTheme)
                     Application.OpenForms[i].BackColor = settingsClass.Dark_Form_BackColor;
                 else
                     Application.OpenForms[i].BackColor = settingsClass.Light_Form_BackColor;
-                #endregion
-                control = Application.OpenForms[i].Controls;
-                for (int CI = 0; CI < control.Count; CI++)
-                {
-                    #region button
-                    if (control[CI].GetType() == new Button().GetType())
-                    {
-                        (control[CI] as Button).Font = settingsClass.DefaultFont;
-                        if (ISdark)
-                        {
-                            (control[CI] as Button).BackColor = settingsClass.Dark_Button_BackColor;
-                            (control[CI] as Button).FlatAppearance.BorderColor = settingsClass.Dark_Button_BorderColor;
-                            (control[CI] as Button).ForeColor = settingsClass.Light_Label_ForeColor;
-                        }
-                        else
-                        {
 
-                            (control[CI] as Button).BackColor = Color.White;
-                            (control[CI] as Button).FlatAppearance.BorderColor = Color.Black;
-                            (control[CI] as Button).ForeColor = settingsClass.Dark_Label_ForeColor;
-                        }
-                    }
-                    #endregion
-                    #region label
-                    if (control[CI].GetType() == new Label().GetType())
-                    {
-                        (control[CI] as Label).Font = settingsClass.DefaultFont;
-                        if (ISdark)
-                            (control[CI] as Label).ForeColor = settingsClass.Light_Label_ForeColor;
-                        else
-                            (control[CI] as Label).ForeColor = settingsClass.Dark_Label_ForeColor;
-                    }
-                    #endregion
-                    #region textbox
-                    if (control[CI].GetType() == new TextBox().GetType())
-                    {
-                        (control[CI] as TextBox).Font = settingsClass.DefaultFont;
-                        if (Settings.ThemeIsDark)
-                        {
-                            (control[CI] as TextBox).BackColor = settingsClass.Dark_textbox_BackColor;
-                            (control[CI] as TextBox).ForeColor = settingsClass.Light_Label_ForeColor;
-                        }
-                        else
-                        {
-                            (control[CI] as TextBox).BackColor = settingsClass.Light_textbox_BackColor;
-                            (control[CI] as TextBox).ForeColor = settingsClass.Dark_Label_ForeColor;
-                        }
-                    }
-                    #endregion
-                }
+                #endregion
+                InitTheme(Application.OpenForms[i].Controls);
             }
         }
 
-        public static void InitTheme(Form form)
+        private static void InitTheme(Control.ControlCollection control)
         {
-
-            #region form
-
-            form.Font = settingsClass.DefaultFont;
-            if (Settings.ThemeIsDark)
-                form.BackColor = settingsClass.Dark_Form_BackColor;
-            else
-                form.BackColor = settingsClass.Light_Form_BackColor;
-            #endregion
-            var control = form.Controls;
             for (int CI = 0; CI < control.Count; CI++)
             {
 
@@ -206,9 +148,61 @@ namespace CMT_2.Engine
                     }
                 }
                 #endregion
+                #region Panel
+                if (control[CI].GetType() == new Panel().GetType())
+                {
+                    (control[CI] as Panel).Font = settingsClass.DefaultFont;
+                    if (Settings.ThemeIsDark)
+                    {
+                        (control[CI] as Panel).BackColor = settingsClass.Dark_Form_BackColor;
+                        (control[CI] as Panel).ForeColor = settingsClass.Light_Label_ForeColor;
+                    }
+                    else
+                    {
+                        (control[CI] as Panel).BackColor = settingsClass.Light_Form_BackColor;
+                        (control[CI] as Panel).ForeColor = settingsClass.Dark_Label_ForeColor;
+                    }
+                    InitTheme((control[CI] as Panel).Controls);
+                }
+                #endregion
+                #region ComboBox
+                if (control[CI].GetType() == new ComboBox().GetType())
+                {
+                    (control[CI] as ComboBox).Font = settingsClass.DefaultFont;
+                    if (Settings.ThemeIsDark)
+                    {
+                        (control[CI] as ComboBox).BackColor = settingsClass.Dark_textbox_BackColor;
+                        (control[CI] as ComboBox).ForeColor = settingsClass.Light_Label_ForeColor;
+                    }
+                    else
+                    {
+                        (control[CI] as ComboBox).BackColor = settingsClass.Light_textbox_BackColor;
+                        (control[CI] as ComboBox).ForeColor = settingsClass.Dark_Label_ForeColor;
+                    }
+                    InitTheme((control[CI] as ComboBox).Controls);
+                }
+                #endregion
 
             }
         }
-    }
 
+
+        /// <summary>
+        /// set theme in form
+        /// </summary>
+        public static void InitTheme(Form form)
+        {
+
+            #region form
+
+            form.Font = settingsClass.DefaultFont;
+            if (Settings.ThemeIsDark)
+                form.BackColor = settingsClass.Dark_Form_BackColor;
+            else
+                form.BackColor = settingsClass.Light_Form_BackColor;
+            #endregion
+            InitTheme(form.Controls);
+
+        }
+    }
 }

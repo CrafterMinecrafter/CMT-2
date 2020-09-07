@@ -1,5 +1,6 @@
 ﻿using CMT_2.Dialogs;
 using CMT_2.Engine;
+using CMT_2.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -80,6 +81,11 @@ namespace CMT_2
         private void OpenSettings_button_Click(object sender, EventArgs e)
         {
             new Settings().ShowDialog();
+        }
+
+        private void XOR_Click(object sender, EventArgs e)
+        {
+            new XOR().Show();
         }
     }
 }

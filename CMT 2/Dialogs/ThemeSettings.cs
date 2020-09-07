@@ -38,33 +38,29 @@ namespace CMT_2.Dialogs
             }
         }
 
-        private void c(object sender, EventArgs e)
-        {
-
-        }
         private string ToText()
         {
             return $"{FormColor.BackColor.ToArgb()}\n{ButtonColor.BackColor.ToArgb()}\n{LabelColor.BackColor.ToArgb()}\n{ButtonLineColor.BackColor.ToArgb()}\n{textbox_color.BackColor.ToArgb()}\n{Font_Button.Font.Name}";
         }
         private void FromText(string text)
         {
-            var colors = text.Split('\n');
-            FormColor.BackColor = Color.FromArgb(int.Parse(colors[0]));
-            ButtonColor.BackColor = Color.FromArgb(int.Parse(colors[1]));
-            LabelColor.BackColor = Color.FromArgb(int.Parse(colors[2]));
-            ButtonLineColor.BackColor = Color.FromArgb(int.Parse(colors[3]));
-            ButtonLineColor.BackColor = Color.FromArgb(int.Parse(colors[4]));
-            Font_Button.Font = new Font(colors[5], 8f, GraphicsUnit.Point); 
+            var colors = text.Split('\n');//setting load
+            FormColor.BackColor = Color.FromArgb(int.Parse(colors[0]));//form
+            ButtonColor.BackColor = Color.FromArgb(int.Parse(colors[1]));//button
+            LabelColor.BackColor = Color.FromArgb(int.Parse(colors[2]));//label
+            textbox_color.BackColor = Color.FromArgb(int.Parse(colors[3]));//textbox
+            ButtonLineColor.BackColor = Color.FromArgb(int.Parse(colors[4]));//button line
+            Font_Button.Font = new Font(colors[5], 8f, GraphicsUnit.Point);//font
         }
         public static void ToSettings()
         {
-            var colors = CMT_2.Properties.Settings.Default.customSettings.Split('\n');
-            ThemeEngine.settingsClass.Dark_Form_BackColor= Color.FromArgb(int.Parse(colors[0]));
-            ThemeEngine.settingsClass.Dark_Button_BackColor  = Color.FromArgb(int.Parse(colors[1]));
-            ThemeEngine.settingsClass.Light_Label_ForeColor = Color.FromArgb(int.Parse(colors[2]));
-            ThemeEngine.settingsClass.Dark_Button_BorderColor = Color.FromArgb(int.Parse(colors[3]));
-            ThemeEngine.settingsClass.Dark_textbox_BackColor = Color.FromArgb(int.Parse(colors[4]));
-            ThemeEngine.settingsClass.DefaultFont = new Font(colors[5], 8f, GraphicsUnit.Point);
+            var colors = CMT_2.Properties.Settings.Default.customSettings.Split('\n');//setting load
+            ThemeEngine.settingsClass.Dark_Form_BackColor= Color.FromArgb(int.Parse(colors[0]));//form
+            ThemeEngine.settingsClass.Dark_Button_BackColor  = Color.FromArgb(int.Parse(colors[1]));//button
+            ThemeEngine.settingsClass.Light_Label_ForeColor = Color.FromArgb(int.Parse(colors[2]));//label
+            ThemeEngine.settingsClass.Dark_Button_BorderColor = Color.FromArgb(int.Parse(colors[3]));//button line
+            ThemeEngine.settingsClass.Dark_textbox_BackColor = Color.FromArgb(int.Parse(colors[4]));//textbox
+            ThemeEngine.settingsClass.DefaultFont = new Font(colors[5], 8f, GraphicsUnit.Point);//font
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -72,7 +68,7 @@ namespace CMT_2.Dialogs
             CMT_2.Properties.Settings.Default.Save();
             ToSettings();
             label2.Text = "Selected Font:" + ThemeEngine.settingsClass.DefaultFont.Name;
-            ThemeEngine.SetTheme(Settings.ThemeIsDark);
+            ThemeEngine.SetTheme();
         }
 
         private void Font_Button_Click(object sender, EventArgs e)
@@ -87,9 +83,9 @@ namespace CMT_2.Dialogs
         private void button1_Click(object sender, EventArgs e)
         {
             ThemeEngine.settingsClass.Reset();
-            ThemeEngine.SetTheme(Settings.ThemeIsDark);
             Properties.Settings.Default.customSettings = "";
             Properties.Settings.Default.Save();
+            ThemeEngine.SetTheme();
         }
     }
 }

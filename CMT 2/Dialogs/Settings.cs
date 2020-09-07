@@ -27,9 +27,9 @@ namespace CMT_2.Dialogs
         private void Theme_Button_Click(object sender, EventArgs e)
         {
             ThemeIsDark = !ThemeIsDark;
-            ThemeEngine.SetTheme(ThemeIsDark);
-            ThemeLabel.Text = ":  " + ThemeIsDark;
             CMT_2.Properties.Settings.Default.DarkTheme = ThemeIsDark;
+            ThemeEngine.SetTheme();
+            ThemeLabel.Text = ":  " + ThemeIsDark;
             CMT_2.Properties.Settings.Default.Save();
         }
 
