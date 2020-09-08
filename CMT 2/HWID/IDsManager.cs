@@ -9,6 +9,7 @@ namespace UHWID
         ///  0 - DiskID
         /// | 1 - CpuID
         /// | 2 - WindowsID
+        /// | 3 - CPU+WindowsID
         /// </summary>
         public static string[] id { get; private set; }
 

@@ -48,8 +48,8 @@ namespace CMT_2.Dialogs
             FormColor.BackColor = Color.FromArgb(int.Parse(colors[0]));//form
             ButtonColor.BackColor = Color.FromArgb(int.Parse(colors[1]));//button
             LabelColor.BackColor = Color.FromArgb(int.Parse(colors[2]));//label
-            textbox_color.BackColor = Color.FromArgb(int.Parse(colors[3]));//textbox
-            ButtonLineColor.BackColor = Color.FromArgb(int.Parse(colors[4]));//button line
+            ButtonLineColor.BackColor = Color.FromArgb(int.Parse(colors[3]));//button line
+            textbox_color.BackColor = Color.FromArgb(int.Parse(colors[4]));//textbox
             Font_Button.Font = new Font(colors[5], 8f, GraphicsUnit.Point);//font
         }
         public static void ToSettings()
@@ -75,7 +75,7 @@ namespace CMT_2.Dialogs
         {
             if(fontDialog1.ShowDialog() == DialogResult.OK)
             {
-                Font_Button.Font = new Font(fontDialog1.Font.Name, 8f, GraphicsUnit.Point);
+                (sender as Button).Font = new Font(fontDialog1.Font.Name, 8f, GraphicsUnit.Point);
                 label2.Text = "Selected Font:" + ThemeEngine.settingsClass.DefaultFont.Name;
             }
         }
