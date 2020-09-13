@@ -31,6 +31,7 @@
             this.Info_Button = new System.Windows.Forms.Button();
             this.OpenSettings_button = new System.Windows.Forms.Button();
             this.XOR = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // Info_Button
@@ -75,12 +76,21 @@
             this.XOR.UseVisualStyleBackColor = false;
             this.XOR.Click += new System.EventHandler(this.XOR_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(12, 44);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(402, 305);
+            this.panel1.TabIndex = 5;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.XOR);
             this.Controls.Add(this.OpenSettings_button);
             this.Controls.Add(this.Info_Button);
@@ -97,6 +107,7 @@
         private System.Windows.Forms.Button Info_Button;
         private System.Windows.Forms.Button OpenSettings_button;
         private System.Windows.Forms.Button XOR;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

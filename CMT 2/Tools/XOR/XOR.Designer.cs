@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.KeyBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DropDown_remove = new System.Windows.Forms.Button();
             this.Submit_Button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -41,7 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.DecBox = new System.Windows.Forms.TextBox();
             this.EncBox = new System.Windows.Forms.TextBox();
-            this.DropDown_remove = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +96,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(584, 116);
             this.panel1.TabIndex = 4;
+            // 
+            // DropDown_remove
+            // 
+            this.DropDown_remove.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.DropDown_remove.BackColor = System.Drawing.Color.White;
+            this.DropDown_remove.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DropDown_remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DropDown_remove.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DropDown_remove.Location = new System.Drawing.Point(82, 44);
+            this.DropDown_remove.Name = "DropDown_remove";
+            this.DropDown_remove.Size = new System.Drawing.Size(185, 23);
+            this.DropDown_remove.TabIndex = 7;
+            this.DropDown_remove.Text = "Remove Selected Key";
+            this.DropDown_remove.UseVisualStyleBackColor = false;
+            this.DropDown_remove.Click += new System.EventHandler(this.DropDown_remove_Click);
             // 
             // Submit_Button
             // 
@@ -207,21 +222,6 @@
             this.EncBox.Name = "EncBox";
             this.EncBox.Size = new System.Drawing.Size(237, 179);
             this.EncBox.TabIndex = 7;
-            // 
-            // DropDown_remove
-            // 
-            this.DropDown_remove.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.DropDown_remove.BackColor = System.Drawing.Color.White;
-            this.DropDown_remove.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DropDown_remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DropDown_remove.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DropDown_remove.Location = new System.Drawing.Point(82, 44);
-            this.DropDown_remove.Name = "DropDown_remove";
-            this.DropDown_remove.Size = new System.Drawing.Size(185, 23);
-            this.DropDown_remove.TabIndex = 7;
-            this.DropDown_remove.Text = "Remove Selected Key";
-            this.DropDown_remove.UseVisualStyleBackColor = false;
-            this.DropDown_remove.Click += new System.EventHandler(this.DropDown_remove_Click);
             // 
             // XOR
             // 

@@ -34,7 +34,7 @@ namespace CMT_2
         {
             try
             {
-
+                #region Проверка ID на про версию
                 using (WebClient wb = new WebClient())
                 {
                     if (wb.DownloadString("https://ideone.com/plain/bAROiC").Contains(IDsManager.id[3]))
@@ -48,33 +48,42 @@ namespace CMT_2
                         Text = "CrafterMinecrafter Tool Community";
                     }
                 }
+                #endregion
+                #region проверка на нужные файлы настроек
                 if (!File.Exists(CMTFolder + "RememberedXORKeys.cmt") || File.Exists(CMTFolder + "RememberedAESKeys.cmt"))
                 {
                     File.CreateText(Directory.CreateDirectory(CMTFolder + "/CrafterMinecrafter Tool").FullName + "/RememberedXORKeys.cmt");
                     File.CreateText(Directory.CreateDirectory(CMTFolder + "/CrafterMinecrafter Tool").FullName + "/RememberedAESKeys.cmt");
                 }
                 CMT_2.Properties.Settings.Default.Reload();
+                #endregion
             }
             catch
             {
                 Application.Exit();
             }
-
-
-
-
-
+            #region загружаем настройки темы.
             if (IsPro)
             {
                 try
                 {
                     ThemeSettings.ToSettings();
-                } catch
+                }
+                catch
                 {
 
                 }
             }
+            #endregion
+            #region Загрузка ключей XOR
+            string[] XORKeys = File.ReadAllText(CMTFolder + "RememberedXORKeys.cmt").Split('\n');
+            for (int i = XORKeys.Length - 1; i >= 0; i--)
+            {
+                Tools.XOR.Keys.Add(XORKeys[i]);
+            }
+            #endregion
             ThemeEngine.InitTheme(this);
+
         }
 
         private void Info_Button_Click(object sender, EventArgs e)
@@ -95,9 +104,10 @@ namespace CMT_2
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             string buffer = "";
-            for(int i = 0; i < CMT_2.Tools.XOR.Keys.Count; i++)
+            for (int i = 0; i < Tools.XOR.Keys.Count; i++)
             {
-                buffer += CMT_2.Tools.XOR.Keys[i] + "\n";
+                if (!string.IsNullOrWhiteSpace(Tools.XOR.Keys[i]))
+                    buffer += Tools.XOR.Keys[i] + "\n";
             }
             File.WriteAllText(CMTFolder + "RememberedXORKeys.cmt", buffer);
         }
