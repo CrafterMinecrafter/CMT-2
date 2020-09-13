@@ -85,8 +85,10 @@ namespace CMT_2.Engine
         /// </summary>
         public static void SetTheme()
         {
-            for (int i = 0; i < Application.OpenForms.Count; i++)
+            for (int i = Application.OpenForms.Count - 1;  i >= 0;  i--)
             {
+
+            
                 #region form
                 Application.OpenForms[i].Font = settingsClass.DefaultFont;
                 if (Properties.Settings.Default.DarkTheme)
@@ -101,7 +103,7 @@ namespace CMT_2.Engine
 
         private static void InitTheme(Control.ControlCollection control)
         {
-            for (int CI = 0; CI < control.Count; CI++)
+            for (int CI = control.Count - 1; CI >= 0; CI--)
             {
 
                 #region button

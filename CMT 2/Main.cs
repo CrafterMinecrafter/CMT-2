@@ -108,7 +108,7 @@ namespace CMT_2
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             string buffer = "";
-            for (int i = 0; i < Tools.XOR.Keys.Count; i++)
+            for (int i = Tools.XOR.Keys.Count - 1; i >= 0; i--)
             {
                 if (!string.IsNullOrWhiteSpace(Tools.XOR.Keys[i]))
                     buffer += Tools.XOR.Keys[i] + "\n";
