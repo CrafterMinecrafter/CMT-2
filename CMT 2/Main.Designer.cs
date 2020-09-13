@@ -36,6 +36,7 @@
             // 
             // Info_Button
             // 
+            this.Info_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Info_Button.BackColor = System.Drawing.Color.White;
             this.Info_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Info_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -50,6 +51,7 @@
             // 
             // OpenSettings_button
             // 
+            this.OpenSettings_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.OpenSettings_button.BackColor = System.Drawing.Color.White;
             this.OpenSettings_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.OpenSettings_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -64,11 +66,12 @@
             // 
             // XOR
             // 
+            this.XOR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.XOR.BackColor = System.Drawing.Color.White;
             this.XOR.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.XOR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.XOR.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.XOR.Location = new System.Drawing.Point(601, 355);
+            this.XOR.Location = new System.Drawing.Point(607, 355);
             this.XOR.Name = "XOR";
             this.XOR.Size = new System.Drawing.Size(73, 23);
             this.XOR.TabIndex = 4;
@@ -78,10 +81,13 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(12, 44);
+            this.panel1.Location = new System.Drawing.Point(12, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(402, 305);
+            this.panel1.Size = new System.Drawing.Size(417, 320);
             this.panel1.TabIndex = 5;
             // 
             // Main

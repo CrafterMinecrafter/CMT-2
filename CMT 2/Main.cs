@@ -52,8 +52,8 @@ namespace CMT_2
                 #region проверка на нужные файлы настроек
                 if (!File.Exists(CMTFolder + "RememberedXORKeys.cmt") || File.Exists(CMTFolder + "RememberedAESKeys.cmt"))
                 {
-                    File.CreateText(Directory.CreateDirectory(CMTFolder + "/CrafterMinecrafter Tool").FullName + "/RememberedXORKeys.cmt");
-                    File.CreateText(Directory.CreateDirectory(CMTFolder + "/CrafterMinecrafter Tool").FullName + "/RememberedAESKeys.cmt");
+                    File.CreateText(Directory.CreateDirectory(CMTFolder).FullName + "/RememberedXORKeys.cmt").Close();
+                    File.CreateText(Directory.CreateDirectory(CMTFolder).FullName + "/RememberedAESKeys.cmt").Close();
                 }
                 CMT_2.Properties.Settings.Default.Reload();
                 #endregion
@@ -76,10 +76,14 @@ namespace CMT_2
             }
             #endregion
             #region Загрузка ключей XOR
-            string[] XORKeys = File.ReadAllText(CMTFolder + "RememberedXORKeys.cmt").Split('\n');
-            for (int i = XORKeys.Length - 1; i >= 0; i--)
+            string KeysConfig = File.ReadAllText(CMTFolder + "RememberedXORKeys.cmt");
+            if (!string.IsNullOrEmpty(KeysConfig))
             {
-                Tools.XOR.Keys.Add(XORKeys[i]);
+                string[] XORKeys = KeysConfig.Split('\n');
+                for (int i = XORKeys.Length - 1; i >= 0; i--)
+                {
+                    Tools.XOR.Keys.Add(XORKeys[i]);
+                }
             }
             #endregion
             ThemeEngine.InitTheme(this);
