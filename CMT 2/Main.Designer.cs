@@ -31,7 +31,10 @@
             this.Info_Button = new System.Windows.Forms.Button();
             this.OpenSettings_button = new System.Windows.Forms.Button();
             this.XOR = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ByteTool = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label_ByteTool = new System.Windows.Forms.Label();
+            this.ByteTool.SuspendLayout();
             this.SuspendLayout();
             // 
             // Info_Button
@@ -79,16 +82,36 @@
             this.XOR.UseVisualStyleBackColor = false;
             this.XOR.Click += new System.EventHandler(this.XOR_Click);
             // 
-            // panel1
+            // ByteTool
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ByteTool.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(12, 31);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(417, 320);
-            this.panel1.TabIndex = 5;
+            this.ByteTool.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ByteTool.Controls.Add(this.checkBox1);
+            this.ByteTool.Location = new System.Drawing.Point(12, 41);
+            this.ByteTool.Name = "ByteTool";
+            this.ByteTool.Size = new System.Drawing.Size(491, 308);
+            this.ByteTool.TabIndex = 5;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(85, 261);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(72, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "File Mode";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label_ByteTool
+            // 
+            this.label_ByteTool.AutoSize = true;
+            this.label_ByteTool.Location = new System.Drawing.Point(225, 17);
+            this.label_ByteTool.Name = "label_ByteTool";
+            this.label_ByteTool.Size = new System.Drawing.Size(52, 13);
+            this.label_ByteTool.TabIndex = 6;
+            this.label_ByteTool.Text = "ByteTool:";
             // 
             // Main
             // 
@@ -96,7 +119,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(686, 390);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label_ByteTool);
+            this.Controls.Add(this.ByteTool);
             this.Controls.Add(this.XOR);
             this.Controls.Add(this.OpenSettings_button);
             this.Controls.Add(this.Info_Button);
@@ -104,7 +128,10 @@
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
+            this.ByteTool.ResumeLayout(false);
+            this.ByteTool.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,7 +140,9 @@
         private System.Windows.Forms.Button Info_Button;
         private System.Windows.Forms.Button OpenSettings_button;
         private System.Windows.Forms.Button XOR;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel ByteTool;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label_ByteTool;
     }
 }
 

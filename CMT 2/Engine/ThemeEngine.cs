@@ -182,6 +182,16 @@ namespace CMT_2.Engine
                     InitTheme((control[CI] as ComboBox).Controls);
                 }
                 #endregion
+                #region CheckBox
+                if (control[CI].GetType() == new CheckBox().GetType())
+                {
+                    (control[CI] as CheckBox).Font = settingsClass.DefaultFont;
+                    if (Settings.ThemeIsDark)
+                        (control[CI] as CheckBox).ForeColor = settingsClass.Light_Label_ForeColor;
+                    else
+                        (control[CI] as CheckBox).ForeColor = settingsClass.Dark_Label_ForeColor;
+                }
+                #endregion
 
             }
         }

@@ -46,11 +46,25 @@ namespace CMT_2.Tools
 
         private void Enc_Button_Click(object sender, EventArgs e)
         {
-            EncBox.Text = utils.XOR(DecBox.Text, selectedKey, true);
+            try
+            {
+                EncBox.Text = utils.XOR(DecBox.Text, selectedKey, true);
+            }
+            catch
+            {
+                MessageBox.Show("Text Error");
+            }
         }
         private void Dec_button_Click(object sender, EventArgs e)
         {
-            DecBox.Text = utils.XOR(EncBox.Text, selectedKey, false);
+            try
+            {
+                DecBox.Text = utils.XOR(EncBox.Text, selectedKey, false);
+            }
+            catch
+            {
+                MessageBox.Show("Text Error");
+            }
 
         }
         private string selectedKey = "z0c8pwApJ";
