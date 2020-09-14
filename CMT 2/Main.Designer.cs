@@ -32,16 +32,18 @@
             this.OpenSettings_button = new System.Windows.Forms.Button();
             this.XOR = new System.Windows.Forms.Button();
             this.ByteTool = new System.Windows.Forms.Panel();
+            this.File2_label = new System.Windows.Forms.Label();
             this.File1_label = new System.Windows.Forms.Label();
             this.File2 = new System.Windows.Forms.PictureBox();
             this.File1 = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label_ByteTool = new System.Windows.Forms.Label();
             this.Chat_button = new System.Windows.Forms.Button();
-            this.File2_label = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.ByteTool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.File2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.File1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Info_Button
@@ -95,20 +97,26 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ByteTool.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ByteTool.Controls.Add(this.File2_label);
-            this.ByteTool.Controls.Add(this.File1_label);
-            this.ByteTool.Controls.Add(this.File2);
-            this.ByteTool.Controls.Add(this.File1);
-            this.ByteTool.Controls.Add(this.checkBox1);
+            this.ByteTool.Controls.Add(this.panel1);
             this.ByteTool.Location = new System.Drawing.Point(12, 41);
             this.ByteTool.Name = "ByteTool";
             this.ByteTool.Size = new System.Drawing.Size(491, 308);
             this.ByteTool.TabIndex = 5;
             // 
+            // File2_label
+            // 
+            this.File2_label.AutoSize = true;
+            this.File2_label.Location = new System.Drawing.Point(218, 14);
+            this.File2_label.Name = "File2_label";
+            this.File2_label.Size = new System.Drawing.Size(84, 13);
+            this.File2_label.TabIndex = 4;
+            this.File2_label.Text = "File not selected";
+            this.File2_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // File1_label
             // 
             this.File1_label.AutoSize = true;
-            this.File1_label.Location = new System.Drawing.Point(65, 61);
+            this.File1_label.Location = new System.Drawing.Point(14, 14);
             this.File1_label.Name = "File1_label";
             this.File1_label.Size = new System.Drawing.Size(84, 13);
             this.File1_label.TabIndex = 3;
@@ -118,10 +126,10 @@
             // File2
             // 
             this.File2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.File2.Location = new System.Drawing.Point(281, 77);
+            this.File2.Location = new System.Drawing.Point(235, 30);
             this.File2.Name = "File2";
             this.File2.Size = new System.Drawing.Size(49, 50);
-            this.File2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.File2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.File2.TabIndex = 2;
             this.File2.TabStop = false;
             this.File2.Click += new System.EventHandler(this.File2_Click);
@@ -129,22 +137,26 @@
             // File1
             // 
             this.File1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.File1.Location = new System.Drawing.Point(77, 77);
+            this.File1.Location = new System.Drawing.Point(28, 30);
             this.File1.Name = "File1";
             this.File1.Size = new System.Drawing.Size(49, 50);
-            this.File1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.File1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.File1.TabIndex = 1;
             this.File1.TabStop = false;
+            this.File1.Click += new System.EventHandler(this.File1_Click);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(77, 253);
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(119, 118);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(72, 17);
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "File Mode";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label_ByteTool
             // 
@@ -171,15 +183,17 @@
             this.Chat_button.Visible = false;
             this.Chat_button.Click += new System.EventHandler(this.Chat_button_Click);
             // 
-            // File2_label
+            // panel1
             // 
-            this.File2_label.AutoSize = true;
-            this.File2_label.Location = new System.Drawing.Point(266, 61);
-            this.File2_label.Name = "File2_label";
-            this.File2_label.Size = new System.Drawing.Size(84, 13);
-            this.File2_label.TabIndex = 4;
-            this.File2_label.Text = "File not selected";
-            this.File2_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel1.Controls.Add(this.File2_label);
+            this.panel1.Controls.Add(this.File1_label);
+            this.panel1.Controls.Add(this.File2);
+            this.panel1.Controls.Add(this.File1);
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Location = new System.Drawing.Point(74, 65);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(302, 156);
+            this.panel1.TabIndex = 5;
             // 
             // Main
             // 
@@ -198,9 +212,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.ByteTool.ResumeLayout(false);
-            this.ByteTool.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.File2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.File1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,6 +234,7 @@
         private System.Windows.Forms.PictureBox File2;
         private System.Windows.Forms.PictureBox File1;
         private System.Windows.Forms.Label File2_label;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

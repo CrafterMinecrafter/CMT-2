@@ -124,9 +124,25 @@ namespace CMT_2
 
         private void File2_Click(object sender, EventArgs e)
         {
-            FileDialog diag = new OpenFileDialog();
-            if (diag.ShowDialog() == DialogResult.OK)
-                dlls[1] = diag.FileName;
+            string f = FileTools.OpenFile();
+            if (f == null) return;
+            dlls[1] = f;
+            File1.Image = FileTools.FileToImage(f);
+            File1_label.Text = Path.GetFileName(f);
+        }
+
+        private void File1_Click(object sender, EventArgs e)
+        {
+            string f = FileTools.OpenFile();
+            if (f == null) return;
+            dlls[0] = f;
+            File1.Image = FileTools.FileToImage(f);
+            File1_label.Text = Path.GetFileName(f);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

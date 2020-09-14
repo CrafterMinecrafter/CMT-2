@@ -27,9 +27,7 @@ namespace CMT_2.BS
         }
         public string MD5File(string FilePath)
         {
-            byte[] bytes = File.ReadAllBytes(FilePath);
-            MD5CryptoServiceProvider md5CryptoServiceProvider = new MD5CryptoServiceProvider();
-            byte[] array = md5CryptoServiceProvider.ComputeHash(bytes);
+            byte[] array = MD5FileV(FilePath);
             string text2 = string.Empty;
             for (int i = 0; i < array.Length; i++)
             {
@@ -37,7 +35,13 @@ namespace CMT_2.BS
             }
             return text2.PadLeft(32, '0');
         }
-  #endregion
+        public byte[] MD5FileV(string FilePath)
+        {
+            byte[] bytes = File.ReadAllBytes(FilePath);
+            MD5CryptoServiceProvider md5CryptoServiceProvider = new MD5CryptoServiceProvider();
+            return md5CryptoServiceProvider.ComputeHash(bytes);
+        }
+        #endregion
         #region XOR
         public string XOR(string text, string key, bool encrypt)
         {
