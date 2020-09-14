@@ -1,6 +1,7 @@
 ﻿using CMT_2.Dialogs;
 using CMT_2.Engine;
 using CMT_2.Tools;
+using CMT_2.Tools.Chat;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -114,6 +115,18 @@ namespace CMT_2
                     buffer += Tools.XOR.Keys[i] + "\n";
             }
             File.WriteAllText(CMTFolder + "RememberedXORKeys.cmt", buffer);
+        }
+
+        private void Chat_button_Click(object sender, EventArgs e)
+        {
+            new Chat().Show();
+        }
+
+        private void File2_Click(object sender, EventArgs e)
+        {
+            FileDialog diag = new OpenFileDialog();
+            if (diag.ShowDialog() == DialogResult.OK)
+                dlls[1] = diag.FileName;
         }
     }
 }

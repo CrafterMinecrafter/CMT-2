@@ -1,28 +1,35 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Server
 {
     class Program
     {
-        const int port = 8888; // порт для прослушивания подключений
         static async Task Main(string[] args)
         {
 
-            await Listen();
+            await ListenToken();
+            await Chat.ListenChat();
         }
-        private static async Task Listen()
+        public static class Chat
         {
+            private static string ChatBuffer = "";
+            public static async Task ListenChat()
+            {
                 TcpListener server = null;
+                List<TcpClient> users = new List<TcpClient>();
+                List<NetworkStream> stream = new List<NetworkStreams>();
                 try
                 {
                     IPAddress localAddr = IPAddress.Parse("127.0.0.1");
-                    server = new TcpListener(localAddr, port);
+                    server = new TcpListener(localAddr, 9090);
 
                     // запуск слушателя
                     server.Start();
@@ -32,31 +39,58 @@ namespace Server
                         Console.WriteLine("Waiting for connections ");
 
                         // получаем входящее подключение
-                        TcpClient client = server.AcceptTcpClient();
+                        var client = server.AcceptTcpClient();
+                        users.Add(client);
                         Console.WriteLine("Client connected. Sending request");
 
                         // получаем сетевой поток для чтения и записи
-                        NetworkStream stream = client.GetStream();
+                        stream.Add(client.GetStream());
 
-                        string response = "Привет мир";
-                        byte[] data = Encoding.UTF8.GetBytes(response);
-
+                        var tokens = Encoding.UTF8.GetBytes(ChatBuffer);
                         // отправка сообщения
-                        await stream.WriteAsync(data, 0, data.Length);
-
-                        stream.Close();
-                        client.Close();
+                        await s.WriteAsync(tokens, 0, tokens.Length);
                     }
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
                 }
-                finally
+            }
+        }
+        private static async Task ListenToken()
+        {
+            TcpListener server = null;
+            try
+            {
+                IPAddress localAddr = IPAddress.Parse("127.0.0.1");
+                server = new TcpListener(localAddr, 9090);
+
+                // запуск слушателя
+                server.Start();
+
+                while (true)
                 {
-                    if (server != null)
-                        server.Stop();
+                    Console.WriteLine("Waiting for connections ");
+
+                    // получаем входящее подключение
+                    TcpClient client = server.AcceptTcpClient();
+                    Console.WriteLine("Client connected. Sending request");
+
+                    // получаем сетевой поток для чтения и записи
+                    NetworkStream stream = client.GetStream();
+
+                    var tokens = await File.ReadAllTextAsync("./Pro_tokens");
+                    // отправка сообщения
+                    await stream.WriteAsync(tokens, 0, tokens.Length);
+
+                    stream.Close();
+                    client.Close();
                 }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

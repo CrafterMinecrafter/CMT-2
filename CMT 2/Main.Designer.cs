@@ -32,9 +32,16 @@
             this.OpenSettings_button = new System.Windows.Forms.Button();
             this.XOR = new System.Windows.Forms.Button();
             this.ByteTool = new System.Windows.Forms.Panel();
+            this.File1_label = new System.Windows.Forms.Label();
+            this.File2 = new System.Windows.Forms.PictureBox();
+            this.File1 = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label_ByteTool = new System.Windows.Forms.Label();
+            this.Chat_button = new System.Windows.Forms.Button();
+            this.File2_label = new System.Windows.Forms.Label();
             this.ByteTool.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.File2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.File1)).BeginInit();
             this.SuspendLayout();
             // 
             // Info_Button
@@ -88,16 +95,51 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ByteTool.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ByteTool.Controls.Add(this.File2_label);
+            this.ByteTool.Controls.Add(this.File1_label);
+            this.ByteTool.Controls.Add(this.File2);
+            this.ByteTool.Controls.Add(this.File1);
             this.ByteTool.Controls.Add(this.checkBox1);
             this.ByteTool.Location = new System.Drawing.Point(12, 41);
             this.ByteTool.Name = "ByteTool";
             this.ByteTool.Size = new System.Drawing.Size(491, 308);
             this.ByteTool.TabIndex = 5;
             // 
+            // File1_label
+            // 
+            this.File1_label.AutoSize = true;
+            this.File1_label.Location = new System.Drawing.Point(65, 61);
+            this.File1_label.Name = "File1_label";
+            this.File1_label.Size = new System.Drawing.Size(84, 13);
+            this.File1_label.TabIndex = 3;
+            this.File1_label.Text = "File not selected";
+            this.File1_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // File2
+            // 
+            this.File2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.File2.Location = new System.Drawing.Point(281, 77);
+            this.File2.Name = "File2";
+            this.File2.Size = new System.Drawing.Size(49, 50);
+            this.File2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.File2.TabIndex = 2;
+            this.File2.TabStop = false;
+            this.File2.Click += new System.EventHandler(this.File2_Click);
+            // 
+            // File1
+            // 
+            this.File1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.File1.Location = new System.Drawing.Point(77, 77);
+            this.File1.Name = "File1";
+            this.File1.Size = new System.Drawing.Size(49, 50);
+            this.File1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.File1.TabIndex = 1;
+            this.File1.TabStop = false;
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(85, 261);
+            this.checkBox1.Location = new System.Drawing.Point(77, 253);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(72, 17);
             this.checkBox1.TabIndex = 0;
@@ -113,12 +155,39 @@
             this.label_ByteTool.TabIndex = 6;
             this.label_ByteTool.Text = "ByteTool:";
             // 
+            // Chat_button
+            // 
+            this.Chat_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Chat_button.BackColor = System.Drawing.Color.White;
+            this.Chat_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Chat_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Chat_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Chat_button.Location = new System.Drawing.Point(550, 41);
+            this.Chat_button.Name = "Chat_button";
+            this.Chat_button.Size = new System.Drawing.Size(67, 23);
+            this.Chat_button.TabIndex = 7;
+            this.Chat_button.Text = "Chat";
+            this.Chat_button.UseVisualStyleBackColor = false;
+            this.Chat_button.Visible = false;
+            this.Chat_button.Click += new System.EventHandler(this.Chat_button_Click);
+            // 
+            // File2_label
+            // 
+            this.File2_label.AutoSize = true;
+            this.File2_label.Location = new System.Drawing.Point(266, 61);
+            this.File2_label.Name = "File2_label";
+            this.File2_label.Size = new System.Drawing.Size(84, 13);
+            this.File2_label.TabIndex = 4;
+            this.File2_label.Text = "File not selected";
+            this.File2_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.Chat_button);
             this.Controls.Add(this.label_ByteTool);
             this.Controls.Add(this.ByteTool);
             this.Controls.Add(this.XOR);
@@ -130,6 +199,8 @@
             this.Load += new System.EventHandler(this.Main_Load);
             this.ByteTool.ResumeLayout(false);
             this.ByteTool.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.File2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.File1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,6 +214,11 @@
         private System.Windows.Forms.Panel ByteTool;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label_ByteTool;
+        private System.Windows.Forms.Button Chat_button;
+        private System.Windows.Forms.Label File1_label;
+        private System.Windows.Forms.PictureBox File2;
+        private System.Windows.Forms.PictureBox File1;
+        private System.Windows.Forms.Label File2_label;
     }
 }
 
