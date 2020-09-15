@@ -142,7 +142,17 @@ namespace CMT_2
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            FileMode.Visible = checkBox1.Checked;
+            StringMode.Visible = !checkBox1.Checked;
+        }
 
+        private void Value_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                OutputValue.Text = "" + (int.Parse(OneValue.Text.Replace(" " , "")) - int.Parse(TwoValue.Text.Replace(" ", "")));
+            }
+            catch { }
         }
     }
 }

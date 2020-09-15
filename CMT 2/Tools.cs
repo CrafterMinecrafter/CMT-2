@@ -34,11 +34,7 @@ namespace CMT_2
             }
             return Image.FromHbitmap(bitmap.GetHbitmap());
         }
-        public static void AddBytes(string Path, int length)
-        {
-            using (var fs = new FileStream(Path, FileMode.Open, FileAccess.Write))
-                fs.SetLength(fs.Length + length);
-        }
+        
         public static void SetDate(string Path, DateTime data)
         {
             File.SetCreationTime(Path, data);
