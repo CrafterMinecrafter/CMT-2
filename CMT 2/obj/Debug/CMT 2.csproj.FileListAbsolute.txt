@@ -42,3 +42,4 @@ C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT 2.csproj.CoreCompile
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT 2.exe
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT 2.pdb
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Tools.Chat.Chat.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Dialogs.FileInfo.resources

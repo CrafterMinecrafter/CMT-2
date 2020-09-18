@@ -24,13 +24,17 @@ namespace CMT_2
 {
     public partial class Main : Form
     {
+        #region *******Vars*******
         public static bool IsPro;
-        public static string CMTFolder = Path.GetPathRoot(Environment.SystemDirectory) + "/CrafterMinecrafter Tool/";
-        private string[] dlls = new string[2];
+        public static string CMTFolder = Path.GetPathRoot(Environment.SystemDirectory) + "/CrafterMinecrafter Tool/" + Environment.UserName + '/';
+        private string[] dlls = new string[3]; //3-1 is selected file in no file mode
+        #endregion
+
         public Main()
         {
             InitializeComponent();
         }
+        #region Main
         private void Main_Load(object sender, EventArgs e)
         {
             try
@@ -88,9 +92,22 @@ namespace CMT_2
             }
             #endregion
             ThemeEngine.InitTheme(this);
+            new CMT_2.Dialogs.FileInfo(Main.CMTFolder + "/RememberedXORKeys.cmt").ShowDialog();
+
 
         }
-
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string buffer = "";
+            for (int i = Tools.XOR.Keys.Count - 1; i >= 0; i--)
+            {
+                if (!string.IsNullOrWhiteSpace(Tools.XOR.Keys[i]))
+                    buffer += Tools.XOR.Keys[i] + "\n";
+            }
+            File.WriteAllText(CMTFolder + "RememberedXORKeys.cmt", buffer);
+        }
+        #endregion
+        #region Open Buttons
         private void Info_Button_Click(object sender, EventArgs e)
         {
             new Info().ShowDialog();
@@ -105,32 +122,15 @@ namespace CMT_2
         {
             new XOR().Show();
         }
-
-        private void Main_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            string buffer = "";
-            for (int i = Tools.XOR.Keys.Count - 1; i >= 0; i--)
-            {
-                if (!string.IsNullOrWhiteSpace(Tools.XOR.Keys[i]))
-                    buffer += Tools.XOR.Keys[i] + "\n";
-            }
-            File.WriteAllText(CMTFolder + "RememberedXORKeys.cmt", buffer);
-        }
-
         private void Chat_button_Click(object sender, EventArgs e)
         {
             new Chat().Show();
         }
 
-        private void File2_Click(object sender, EventArgs e)
-        {
-            string f = FileTools.OpenFile();
-            if (f == null) return;
-            dlls[1] = f;
-            File1.Image = FileTools.FileToImage(f);
-            File1_label.Text = Path.GetFileName(f);
-        }
+        #endregion
 
+
+        #region File Panel       
         private void File1_Click(object sender, EventArgs e)
         {
             string f = FileTools.OpenFile();
@@ -138,21 +138,78 @@ namespace CMT_2
             dlls[0] = f;
             File1.Image = FileTools.FileToImage(f);
             File1_label.Text = Path.GetFileName(f);
+            if (dlls[0] != null & dlls[1] != null)
+                BytesCount_Label.Text = "Sum:" + (FileTools.GetLength(dlls[0]) - FileTools.GetLength(dlls[1]));
+
+        }
+        private void File2_Click(object sender, EventArgs e)
+        {
+            string f = FileTools.OpenFile();
+            if (f == null) return;
+            dlls[1] = f;
+            File2.Image = FileTools.FileToImage(f);
+            File2_label.Text = Path.GetFileName(f);
+            if (dlls[0] != null & dlls[1] != null)
+                BytesCount_Label.Text = "Sum:" + (FileTools.GetLength(dlls[0]) - FileTools.GetLength(dlls[1]));
+
+        }
+        private void AddBytesFile_button_Click(object sender, EventArgs e)
+        {
+
+            if (dlls[0] == null && dlls[1] == null)
+            {
+                MessageBox.Show("Pls select files");
+                return;
+            }
+                FileTools.AddBytes(dlls[0], FileTools.GetLength(dlls[0]) - FileTools.GetLength(dlls[1]));
         }
 
+        #endregion
+        #region No File Panel
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             FileMode.Visible = checkBox1.Checked;
             StringMode.Visible = !checkBox1.Checked;
         }
-
+        private void File3_Click(object sender, EventArgs e)
+        {
+            string f = FileTools.OpenFile();
+            if (f == null) return;
+            dlls[2] = f;
+            File3.Image = FileTools.FileToImage(f);
+            File3_label.Text = Path.GetFileName(f);
+        }
         private void Value_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                OutputValue.Text = "" + (int.Parse(OneValue.Text.Replace(" " , "")) - int.Parse(TwoValue.Text.Replace(" ", "")));
+                OutputValue.Text = "" + (int.Parse(OneValue.Text.Replace(" ", "")) - int.Parse(TwoValue.Text.Replace(" ", "")));
             }
             catch { }
         }
+        private void AddBytes_NoFIleMode_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(dlls[2])){
+                MessageBox.Show("Error!\nFile not selected");
+                return;
+            }
+            if (string.IsNullOrEmpty(OutputValue.Text))
+            {
+                MessageBox.Show("Error!\nNothing to write");
+                return;
+            }
+            FileTools.AddBytes(dlls[2], long.Parse(OutputValue.Text.Trim(' ')));
+        }
+
+        #endregion
+
+        #region trash cleaner
+        private void TrashCleaner_Tick(object sender, EventArgs e)
+        {
+            GC.Collect();
+        }
+        #endregion
+
+
     }
 }

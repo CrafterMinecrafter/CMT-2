@@ -28,10 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Info_Button = new System.Windows.Forms.Button();
             this.OpenSettings_button = new System.Windows.Forms.Button();
             this.XOR = new System.Windows.Forms.Button();
             this.ByteTool = new System.Windows.Forms.Panel();
+            this.StringMode = new System.Windows.Forms.Panel();
+            this.Sum_label = new System.Windows.Forms.Label();
+            this.AddBytes_NoFIleMode = new System.Windows.Forms.Button();
+            this.File3_label = new System.Windows.Forms.Label();
+            this.File3 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.OutputValue = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TwoValue = new System.Windows.Forms.TextBox();
+            this.OneValue = new System.Windows.Forms.TextBox();
             this.FileMode = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,17 +55,15 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label_ByteTool = new System.Windows.Forms.Label();
             this.Chat_button = new System.Windows.Forms.Button();
-            this.StringMode = new System.Windows.Forms.Panel();
-            this.OneValue = new System.Windows.Forms.TextBox();
-            this.TwoValue = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.OutputValue = new System.Windows.Forms.TextBox();
+            this.TrashCleaner = new System.Windows.Forms.Timer(this.components);
+            this.BytesCount_Label = new System.Windows.Forms.Label();
+            this.AddBytesFile_button = new System.Windows.Forms.Button();
             this.ByteTool.SuspendLayout();
+            this.StringMode.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.File3)).BeginInit();
             this.FileMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.File2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.File1)).BeginInit();
-            this.StringMode.SuspendLayout();
             this.SuspendLayout();
             // 
             // Info_Button
@@ -114,8 +125,142 @@
             this.ByteTool.Size = new System.Drawing.Size(491, 308);
             this.ByteTool.TabIndex = 5;
             // 
+            // StringMode
+            // 
+            this.StringMode.Controls.Add(this.Sum_label);
+            this.StringMode.Controls.Add(this.AddBytes_NoFIleMode);
+            this.StringMode.Controls.Add(this.File3_label);
+            this.StringMode.Controls.Add(this.File3);
+            this.StringMode.Controls.Add(this.label6);
+            this.StringMode.Controls.Add(this.label5);
+            this.StringMode.Controls.Add(this.OutputValue);
+            this.StringMode.Controls.Add(this.label4);
+            this.StringMode.Controls.Add(this.label3);
+            this.StringMode.Controls.Add(this.TwoValue);
+            this.StringMode.Controls.Add(this.OneValue);
+            this.StringMode.Location = new System.Drawing.Point(427, 19);
+            this.StringMode.Name = "StringMode";
+            this.StringMode.Size = new System.Drawing.Size(302, 184);
+            this.StringMode.TabIndex = 6;
+            // 
+            // Sum_label
+            // 
+            this.Sum_label.AutoSize = true;
+            this.Sum_label.Location = new System.Drawing.Point(145, 111);
+            this.Sum_label.Name = "Sum_label";
+            this.Sum_label.Size = new System.Drawing.Size(101, 13);
+            this.Sum_label.TabIndex = 17;
+            this.Sum_label.Text = "Sum or bytes count:";
+            // 
+            // AddBytes_NoFIleMode
+            // 
+            this.AddBytes_NoFIleMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddBytes_NoFIleMode.BackColor = System.Drawing.Color.White;
+            this.AddBytes_NoFIleMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.AddBytes_NoFIleMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddBytes_NoFIleMode.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AddBytes_NoFIleMode.Location = new System.Drawing.Point(148, 13);
+            this.AddBytes_NoFIleMode.Name = "AddBytes_NoFIleMode";
+            this.AddBytes_NoFIleMode.Size = new System.Drawing.Size(120, 23);
+            this.AddBytes_NoFIleMode.TabIndex = 8;
+            this.AddBytes_NoFIleMode.Text = "Add To File";
+            this.AddBytes_NoFIleMode.UseVisualStyleBackColor = false;
+            this.AddBytes_NoFIleMode.Click += new System.EventHandler(this.AddBytes_NoFIleMode_Click);
+            // 
+            // File3_label
+            // 
+            this.File3_label.AutoSize = true;
+            this.File3_label.Location = new System.Drawing.Point(164, 39);
+            this.File3_label.Name = "File3_label";
+            this.File3_label.Size = new System.Drawing.Size(84, 13);
+            this.File3_label.TabIndex = 16;
+            this.File3_label.Text = "File not selected";
+            this.File3_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // File3
+            // 
+            this.File3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.File3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.File3.Location = new System.Drawing.Point(178, 55);
+            this.File3.Name = "File3";
+            this.File3.Size = new System.Drawing.Size(49, 50);
+            this.File3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.File3.TabIndex = 15;
+            this.File3.TabStop = false;
+            this.File3.Click += new System.EventHandler(this.File3_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 127);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Your:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 92);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Original:";
+            // 
+            // OutputValue
+            // 
+            this.OutputValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OutputValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OutputValue.Location = new System.Drawing.Point(148, 127);
+            this.OutputValue.Name = "OutputValue";
+            this.OutputValue.Size = new System.Drawing.Size(122, 13);
+            this.OutputValue.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(135, 127);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(13, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "=";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(67, 127);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(10, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "-";
+            // 
+            // TwoValue
+            // 
+            this.TwoValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TwoValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TwoValue.Location = new System.Drawing.Point(10, 143);
+            this.TwoValue.Name = "TwoValue";
+            this.TwoValue.Size = new System.Drawing.Size(122, 13);
+            this.TwoValue.TabIndex = 9;
+            this.TwoValue.TextChanged += new System.EventHandler(this.Value_TextChanged);
+            // 
+            // OneValue
+            // 
+            this.OneValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OneValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OneValue.Location = new System.Drawing.Point(10, 111);
+            this.OneValue.Name = "OneValue";
+            this.OneValue.Size = new System.Drawing.Size(122, 13);
+            this.OneValue.TabIndex = 8;
+            this.OneValue.TextChanged += new System.EventHandler(this.Value_TextChanged);
+            // 
             // FileMode
             // 
+            this.FileMode.Controls.Add(this.AddBytesFile_button);
+            this.FileMode.Controls.Add(this.BytesCount_Label);
             this.FileMode.Controls.Add(this.label2);
             this.FileMode.Controls.Add(this.label1);
             this.FileMode.Controls.Add(this.File2_label);
@@ -130,7 +275,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(218, 83);
+            this.label2.Location = new System.Drawing.Point(228, 83);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 6;
@@ -139,7 +284,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 83);
+            this.label1.Location = new System.Drawing.Point(39, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 5;
@@ -190,8 +335,6 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(192, 227);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(72, 17);
@@ -225,68 +368,37 @@
             this.Chat_button.Visible = false;
             this.Chat_button.Click += new System.EventHandler(this.Chat_button_Click);
             // 
-            // StringMode
+            // TrashCleaner
             // 
-            this.StringMode.Controls.Add(this.OutputValue);
-            this.StringMode.Controls.Add(this.label4);
-            this.StringMode.Controls.Add(this.label3);
-            this.StringMode.Controls.Add(this.TwoValue);
-            this.StringMode.Controls.Add(this.OneValue);
-            this.StringMode.Location = new System.Drawing.Point(74, 65);
-            this.StringMode.Name = "StringMode";
-            this.StringMode.Size = new System.Drawing.Size(302, 156);
-            this.StringMode.TabIndex = 6;
+            this.TrashCleaner.Enabled = true;
+            this.TrashCleaner.Interval = 20000;
+            this.TrashCleaner.Tick += new System.EventHandler(this.TrashCleaner_Tick);
             // 
-            // OneValue
+            // BytesCount_Label
             // 
-            this.OneValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.OneValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OneValue.Location = new System.Drawing.Point(28, 67);
-            this.OneValue.Name = "OneValue";
-            this.OneValue.Size = new System.Drawing.Size(122, 13);
-            this.OneValue.TabIndex = 8;
-
-            this.OneValue.TextChanged += new System.EventHandler(this.Value_TextChanged);
+            this.BytesCount_Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BytesCount_Label.AutoSize = true;
+            this.BytesCount_Label.Location = new System.Drawing.Point(115, 81);
+            this.BytesCount_Label.Name = "BytesCount_Label";
+            this.BytesCount_Label.Size = new System.Drawing.Size(58, 13);
+            this.BytesCount_Label.TabIndex = 7;
+            this.BytesCount_Label.Text = "Select files";
             // 
-            // TwoValue
+            // AddBytesFile_button
             // 
-            this.TwoValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TwoValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TwoValue.Location = new System.Drawing.Point(28, 99);
-            this.TwoValue.Name = "TwoValue";
-            this.TwoValue.Size = new System.Drawing.Size(122, 13);
-            this.TwoValue.TabIndex = 9;
-            this.TwoValue.TextChanged += new System.EventHandler(this.Value_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(88, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(10, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "-";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(153, 83);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(13, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "=";
-            // 
-            // OutputValue
-            // 
-            this.OutputValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.OutputValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OutputValue.Location = new System.Drawing.Point(166, 83);
-            this.OutputValue.Name = "OutputValue";
-            this.OutputValue.Size = new System.Drawing.Size(122, 13);
-            this.OutputValue.TabIndex = 12;
+            this.AddBytesFile_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.AddBytesFile_button.BackColor = System.Drawing.Color.White;
+            this.AddBytesFile_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.AddBytesFile_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddBytesFile_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AddBytesFile_button.Location = new System.Drawing.Point(91, 115);
+            this.AddBytesFile_button.Name = "AddBytesFile_button";
+            this.AddBytesFile_button.Size = new System.Drawing.Size(132, 23);
+            this.AddBytesFile_button.TabIndex = 8;
+            this.AddBytesFile_button.Text = "Add Bytes";
+            this.AddBytesFile_button.UseVisualStyleBackColor = false;
+            this.AddBytesFile_button.Click += new System.EventHandler(this.AddBytesFile_button_Click);
             // 
             // Main
             // 
@@ -306,12 +418,13 @@
             this.Load += new System.EventHandler(this.Main_Load);
             this.ByteTool.ResumeLayout(false);
             this.ByteTool.PerformLayout();
+            this.StringMode.ResumeLayout(false);
+            this.StringMode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.File3)).EndInit();
             this.FileMode.ResumeLayout(false);
             this.FileMode.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.File2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.File1)).EndInit();
-            this.StringMode.ResumeLayout(false);
-            this.StringMode.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,6 +452,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TwoValue;
         private System.Windows.Forms.TextBox OneValue;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label File3_label;
+        private System.Windows.Forms.PictureBox File3;
+        private System.Windows.Forms.Label Sum_label;
+        private System.Windows.Forms.Button AddBytes_NoFIleMode;
+        private System.Windows.Forms.Timer TrashCleaner;
+        private System.Windows.Forms.Label BytesCount_Label;
+        private System.Windows.Forms.Button AddBytesFile_button;
     }
 }
 

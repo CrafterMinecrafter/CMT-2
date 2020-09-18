@@ -4,6 +4,8 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace CMT_2.BS
 {
@@ -37,9 +39,19 @@ namespace CMT_2.BS
         }
         public byte[] MD5FileV(string FilePath)
         {
-            byte[] bytes = File.ReadAllBytes(FilePath);
+            byte[] bytes;
+            try
+            {
+                bytes = File.ReadAllBytes(FilePath);
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+                bytes = new byte[16];
+            }
             MD5CryptoServiceProvider md5CryptoServiceProvider = new MD5CryptoServiceProvider();
             return md5CryptoServiceProvider.ComputeHash(bytes);
+
         }
         #endregion
         #region XOR

@@ -25,26 +25,33 @@ namespace CMT_2
         {
             var bitmap = new Bitmap(30, 30);
             var Rand = new Random(BitConverter.ToInt32(new Utils().MD5FileV(Path), 0)) ;
-            for (int x = 30 - 1; x >= 0; x--)
+            for (int x = 29; x >= 0; x--)
             {
-                for (int y = 30 - 1; y >= 0; y--)
+                for (int y = 29; y >= 0; y--)
                 {
                     bitmap.SetPixel(x, y, Color.FromArgb(Convert.ToInt32("80"+Convert.ToString(Rand.Next(0, 16777215),16), 16)));
                 }
             }
             return Image.FromHbitmap(bitmap.GetHbitmap());
         }
-        
+
+        public static void AddBytes(string path,long length)
+        {
+            using (var fs = new FileStream(path, FileMode.Open, FileAccess.Write))
+                fs.SetLength(fs.Length + length);
+        }
+        public static long GetLength(string Path)
+        {
+            return new FileInfo(Path).Length;
+        }
+
         public static void SetDate(string Path, DateTime data)
         {
             File.SetCreationTime(Path, data);
             File.SetLastWriteTime(Path, data);
             File.SetLastAccessTime(Path, data);
         }
-        public static long GetLength(string Path)
-        {
-            return new FileInfo(Path).Length;
-        }
+
 
     }
 }

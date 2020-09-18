@@ -83,6 +83,12 @@
   <ItemGroup>
     <Compile Include="BS\AES.cs" />
     <Compile Include="BS\Utils.cs" />
+    <Compile Include="Dialogs\FileInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\FileInfo.Designer.cs">
+      <DependentUpon>FileInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\Info.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     <Compile Include="Tools\XOR\XOR.Designer.cs">
       <DependentUpon>XOR.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dialogs\FileInfo.resx">
+      <DependentUpon>FileInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ThemeSettings.resx">
       <DependentUpon>ThemeSettings.cs</DependentUpon>
     </EmbeddedResource>
