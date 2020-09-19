@@ -34,7 +34,7 @@ namespace CMT_2.Dialogs
             FName.Text = FInfo.Name;
             FSize.Text = "" + FInfo.Length;
             FCreateData.Text = FInfo.CreationTime.ToString();
-            FMD5.Text = new Utils().MD5File(F);
+            FMD5.Text = Utils.MD5File(F);
             FPath.Text = FInfo.FullName;
             FPicture.Image = FileTools.FileToImage(F);
         }

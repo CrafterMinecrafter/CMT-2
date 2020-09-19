@@ -1,4 +1,5 @@
-﻿using CMT_2.Dialogs;
+﻿using CMT_2.BS;
+using CMT_2.Dialogs;
 using CMT_2.Engine;
 using CMT_2.Tools;
 using CMT_2.Tools.Chat;
@@ -25,9 +26,10 @@ namespace CMT_2
     public partial class Main : Form
     {
         #region *******Vars*******
+        private string[] OnlineData;
         public static bool IsPro;
         public static string CMTFolder = Path.GetPathRoot(Environment.SystemDirectory) + "/CrafterMinecrafter Tool/" + Environment.UserName + '/';
-        private string[] dlls = new string[3]; //3-1 is selected file in no file mode
+        private string[] dlls = new string[3]; //3-1 is selected file in StringModz
         #endregion
 
         public Main()
@@ -42,7 +44,8 @@ namespace CMT_2
                 #region Проверка ID на про версию
                 using (WebClient wb = new WebClient())
                 {
-                    if (wb.DownloadString("https://ideone.com/plain/bAROiC").Contains(IDsManager.id[3]))
+                    OnlineData = wb.DownloadString("https://ideone.com/plain/bAROiC").Split('|');
+                    if (OnlineData[0].Contains(IDsManager.id[3]))
                     {
                         IsPro = true;
                         Text = "CrafterMinecrafter Tool Pro";
@@ -51,6 +54,13 @@ namespace CMT_2
                     {
                         IsPro = false;
                         Text = "CrafterMinecrafter Tool Community";
+                    }
+                    if(OnlineData[1] != ProductVersion)
+                    {
+                        Process.Start(Utils.FromBase64(OnlineData[2]));
+                        MessageBox.Show("PLS Update Version\nUpdate link opened in browser");
+                        Application.Exit();
+                        return;
                     }
                 }
                 #endregion
@@ -92,9 +102,6 @@ namespace CMT_2
             }
             #endregion
             ThemeEngine.InitTheme(this);
-            new CMT_2.Dialogs.FileInfo(Main.CMTFolder + "/RememberedXORKeys.cmt").ShowDialog();
-
-
         }
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -108,7 +115,7 @@ namespace CMT_2
         }
         #endregion
         #region Open Buttons
-        private void Info_Button_Click(object sender, EventArgs e)
+        private void OpenInfo_Button_Click(object sender, EventArgs e)
         {
             new Info().ShowDialog();
         }
@@ -118,40 +125,48 @@ namespace CMT_2
             new Settings().ShowDialog();
         }
 
-        private void XOR_Click(object sender, EventArgs e)
+        private void OpenXOR_Click(object sender, EventArgs e)
         {
             new XOR().Show();
         }
-        private void Chat_button_Click(object sender, EventArgs e)
+        private void OpenChat_button_Click(object sender, EventArgs e)
         {
             new Chat().Show();
         }
-
         #endregion
-
-
-        #region File Panel       
-        private void File1_Click(object sender, EventArgs e)
+        #region File Regions
+        #region File
+        private void File_Click(object sender, MouseEventArgs e, Label File_label, int dll)
         {
-            string f = FileTools.OpenFile();
-            if (f == null) return;
-            dlls[0] = f;
-            File1.Image = FileTools.FileToImage(f);
-            File1_label.Text = Path.GetFileName(f);
-            if (dlls[0] != null & dlls[1] != null)
-                BytesCount_Label.Text = "Sum:" + (FileTools.GetLength(dlls[0]) - FileTools.GetLength(dlls[1]));
+            #region правая Кнопка мышки
+            if (e.Button == MouseButtons.Right && dlls[dll] != null)
+            {
+                new CMT_2.Dialogs.FileInfo(dlls[dll]).Show();
+            }
+            #endregion
+            #region Левая Кнопка Мышки
+            if (e.Button == MouseButtons.Left)
+            {
+                string f = FileTools.OpenFile();
+                if (f == null) return;
+                dlls[dll] = f;
+                (sender as PictureBox).Image = FileTools.FileToImage(f);
+                File_label.Text = Path.GetFileName(f);
+                if (checkBox1.Checked && dlls[0] != null & dlls[1] != null)
+                    BytesCount_Label.Text = "Sum:" + (FileTools.GetLength(dlls[0]) - FileTools.GetLength(dlls[1]));
+            }
+            #endregion
 
         }
-        private void File2_Click(object sender, EventArgs e)
+        #endregion
+        #region File Panel       
+        private void File1_Click(object sender, MouseEventArgs e)
         {
-            string f = FileTools.OpenFile();
-            if (f == null) return;
-            dlls[1] = f;
-            File2.Image = FileTools.FileToImage(f);
-            File2_label.Text = Path.GetFileName(f);
-            if (dlls[0] != null & dlls[1] != null)
-                BytesCount_Label.Text = "Sum:" + (FileTools.GetLength(dlls[0]) - FileTools.GetLength(dlls[1]));
-
+            File_Click(sender, e, File1_label, 0);
+        }
+        private void File2_Click(object sender, MouseEventArgs e)
+        {
+            File_Click(sender, e, File2_label, 1);
         }
         private void AddBytesFile_button_Click(object sender, EventArgs e)
         {
@@ -161,7 +176,7 @@ namespace CMT_2
                 MessageBox.Show("Pls select files");
                 return;
             }
-                FileTools.AddBytes(dlls[0], FileTools.GetLength(dlls[0]) - FileTools.GetLength(dlls[1]));
+            FileTools.AddBytes(dlls[0], FileTools.GetLength(dlls[0]) - FileTools.GetLength(dlls[1]));
         }
 
         #endregion
@@ -171,13 +186,9 @@ namespace CMT_2
             FileMode.Visible = checkBox1.Checked;
             StringMode.Visible = !checkBox1.Checked;
         }
-        private void File3_Click(object sender, EventArgs e)
+        private void File3_Click(object sender, MouseEventArgs e)
         {
-            string f = FileTools.OpenFile();
-            if (f == null) return;
-            dlls[2] = f;
-            File3.Image = FileTools.FileToImage(f);
-            File3_label.Text = Path.GetFileName(f);
+            File_Click(sender, e, File3_label, 2);
         }
         private void Value_TextChanged(object sender, EventArgs e)
         {
@@ -187,9 +198,9 @@ namespace CMT_2
             }
             catch { }
         }
-        private void AddBytes_NoFIleMode_Click(object sender, EventArgs e)
+        private void AddBytes_StringMode_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(dlls[2])){
+            if (string.IsNullOrEmpty(dlls[2])) {
                 MessageBox.Show("Error!\nFile not selected");
                 return;
             }
@@ -202,14 +213,18 @@ namespace CMT_2
         }
 
         #endregion
-
+        #endregion
         #region trash cleaner
         private void TrashCleaner_Tick(object sender, EventArgs e)
         {
             GC.Collect();
         }
+
         #endregion
 
-
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            TopMost = checkBox2.Checked;
+        }
     }
-}
+} 

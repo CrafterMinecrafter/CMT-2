@@ -140,9 +140,9 @@
             // 
             // FPicture
             // 
-            this.FPicture.Location = new System.Drawing.Point(113, 191);
+            this.FPicture.Location = new System.Drawing.Point(111, 191);
             this.FPicture.Name = "FPicture";
-            this.FPicture.Size = new System.Drawing.Size(72, 74);
+            this.FPicture.Size = new System.Drawing.Size(74, 74);
             this.FPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.FPicture.TabIndex = 10;
             this.FPicture.TabStop = false;

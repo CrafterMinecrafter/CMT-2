@@ -1,6 +1,7 @@
 ﻿using CMT_2.Dialogs;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -206,7 +207,7 @@ namespace CMT_2.Engine
         {
 
             #region form
-
+            form.Icon = Application.OpenForms[0].Icon;
             form.Font = settingsClass.DefaultFont;
             if (Settings.ThemeIsDark)
                 form.BackColor = settingsClass.Dark_Form_BackColor;

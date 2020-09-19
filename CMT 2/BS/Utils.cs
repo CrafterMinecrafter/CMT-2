@@ -10,10 +10,20 @@ using System.Xml.Linq;
 namespace CMT_2.BS
 {
 
-    public class Utils
+    public static class Utils
     {
+        #region BASE64
+        public static string ToBase64(string Text)
+        {
+            return Convert.ToBase64String(UTF8Encoding.UTF8.GetBytes(Text));
+        }
+        public static string FromBase64(string Text)
+        {
+            return UTF8Encoding.UTF8.GetString(Convert.FromBase64String(Text));
+        }
+        #endregion
         #region MD5
-        public string MD5(string text)
+        public static string MD5(string text)
         {
             UTF8Encoding utf8Encoding = new UTF8Encoding();
             byte[] bytes = utf8Encoding.GetBytes(text);
@@ -27,7 +37,7 @@ namespace CMT_2.BS
             return text2.PadLeft(32, '0');
           
         }
-        public string MD5File(string FilePath)
+        public static string MD5File(string FilePath)
         {
             byte[] array = MD5FileV(FilePath);
             string text2 = string.Empty;
@@ -37,7 +47,7 @@ namespace CMT_2.BS
             }
             return text2.PadLeft(32, '0');
         }
-        public byte[] MD5FileV(string FilePath)
+        public static byte[] MD5FileV(string FilePath)
         {
             byte[] bytes;
             try
@@ -55,7 +65,7 @@ namespace CMT_2.BS
         }
         #endregion
         #region XOR
-        public string XOR(string text, string key, bool encrypt)
+        public static string XOR(string text, string key, bool encrypt)
         {
             if (encrypt)
             {
@@ -63,7 +73,7 @@ namespace CMT_2.BS
             }
             return Encoding.UTF8.GetString(EncryptDecrypt(Convert.FromBase64String(text), Encoding.UTF8.GetBytes(key)));
         }
-        public string XORFile(string FilePath, string key, bool encrypt)
+        public static string XORFile(string FilePath, string key, bool encrypt)
         {
             if (encrypt)
             {
@@ -73,7 +83,7 @@ namespace CMT_2.BS
         }
 
 
-        private byte[] EncryptDecrypt(byte[] data, byte[] key)
+        private static byte[] EncryptDecrypt(byte[] data, byte[] key)
         {
             int num = 0;
             int num2 = 0;

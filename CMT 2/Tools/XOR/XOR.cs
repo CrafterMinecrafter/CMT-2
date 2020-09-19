@@ -9,7 +9,6 @@ namespace CMT_2.Tools
     public partial class XOR : Form
     {
         public static List<string> Keys = new List<string>();
-        public Utils utils = new Utils();
         public XOR()
         {
             InitializeComponent();
@@ -48,7 +47,7 @@ namespace CMT_2.Tools
         {
             try
             {
-                EncBox.Text = utils.XOR(DecBox.Text, selectedKey, true);
+                EncBox.Text = Utils.XOR(DecBox.Text, selectedKey, true);
             }
             catch
             {
@@ -59,7 +58,7 @@ namespace CMT_2.Tools
         {
             try
             {
-                DecBox.Text = utils.XOR(EncBox.Text, selectedKey, false);
+                DecBox.Text = Utils.XOR(EncBox.Text, selectedKey, false);
             }
             catch
             {
@@ -73,6 +72,11 @@ namespace CMT_2.Tools
         {
             Keys.Remove((string)RememberedSelector.SelectedItem);
             RememberedSelector.Text = "";
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            TopMost = checkBox2.Checked;
         }
     }
 }

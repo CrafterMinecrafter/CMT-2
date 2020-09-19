@@ -1,0 +1,17 @@
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Release\CMT 2.exe.config
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Release\CMT 2.exe
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Release\CMT 2.pdb
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT 2.csprojAssemblyReference.cache
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Dialogs.FileInfo.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Dialogs.ThemeSettings.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.test.test.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Dialogs.Info.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Dialogs.Settings.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Main.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Properties.Resources.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Tools.Chat.Chat.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Tools.XOR.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT 2.csproj.GenerateResource.cache
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT 2.csproj.CoreCompileInputs.cache
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT 2.exe
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT 2.pdb

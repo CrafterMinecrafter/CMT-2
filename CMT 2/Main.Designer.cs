@@ -1,4 +1,7 @@
-﻿namespace CMT_2
+﻿using System.Drawing;
+using System.Runtime.CompilerServices;
+
+namespace CMT_2
 {
     partial class Main
     {
@@ -29,10 +32,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.Info_Button = new System.Windows.Forms.Button();
             this.OpenSettings_button = new System.Windows.Forms.Button();
             this.XOR = new System.Windows.Forms.Button();
             this.ByteTool = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.StringMode = new System.Windows.Forms.Panel();
             this.Sum_label = new System.Windows.Forms.Label();
             this.AddBytes_NoFIleMode = new System.Windows.Forms.Button();
@@ -46,18 +51,18 @@
             this.TwoValue = new System.Windows.Forms.TextBox();
             this.OneValue = new System.Windows.Forms.TextBox();
             this.FileMode = new System.Windows.Forms.Panel();
+            this.AddBytesFile_button = new System.Windows.Forms.Button();
+            this.BytesCount_Label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.File2_label = new System.Windows.Forms.Label();
             this.File1_label = new System.Windows.Forms.Label();
             this.File2 = new System.Windows.Forms.PictureBox();
             this.File1 = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label_ByteTool = new System.Windows.Forms.Label();
             this.Chat_button = new System.Windows.Forms.Button();
             this.TrashCleaner = new System.Windows.Forms.Timer(this.components);
-            this.BytesCount_Label = new System.Windows.Forms.Label();
-            this.AddBytesFile_button = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.ByteTool.SuspendLayout();
             this.StringMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.File3)).BeginInit();
@@ -79,7 +84,7 @@
             this.Info_Button.TabIndex = 2;
             this.Info_Button.Text = "Info";
             this.Info_Button.UseVisualStyleBackColor = false;
-            this.Info_Button.Click += new System.EventHandler(this.Info_Button_Click);
+            this.Info_Button.Click += new System.EventHandler(this.OpenInfo_Button_Click);
             // 
             // OpenSettings_button
             // 
@@ -109,7 +114,7 @@
             this.XOR.TabIndex = 4;
             this.XOR.Text = "XOR";
             this.XOR.UseVisualStyleBackColor = false;
-            this.XOR.Click += new System.EventHandler(this.XOR_Click);
+            this.XOR.Click += new System.EventHandler(this.OpenXOR_Click);
             // 
             // ByteTool
             // 
@@ -117,13 +122,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ByteTool.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ByteTool.Controls.Add(this.checkBox1);
             this.ByteTool.Controls.Add(this.StringMode);
             this.ByteTool.Controls.Add(this.FileMode);
-            this.ByteTool.Controls.Add(this.checkBox1);
             this.ByteTool.Location = new System.Drawing.Point(12, 41);
             this.ByteTool.Name = "ByteTool";
             this.ByteTool.Size = new System.Drawing.Size(491, 308);
             this.ByteTool.TabIndex = 5;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(192, 227);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(72, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "File Mode";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // StringMode
             // 
@@ -138,7 +154,7 @@
             this.StringMode.Controls.Add(this.label3);
             this.StringMode.Controls.Add(this.TwoValue);
             this.StringMode.Controls.Add(this.OneValue);
-            this.StringMode.Location = new System.Drawing.Point(427, 19);
+            this.StringMode.Location = new System.Drawing.Point(74, 37);
             this.StringMode.Name = "StringMode";
             this.StringMode.Size = new System.Drawing.Size(302, 184);
             this.StringMode.TabIndex = 6;
@@ -165,7 +181,7 @@
             this.AddBytes_NoFIleMode.TabIndex = 8;
             this.AddBytes_NoFIleMode.Text = "Add To File";
             this.AddBytes_NoFIleMode.UseVisualStyleBackColor = false;
-            this.AddBytes_NoFIleMode.Click += new System.EventHandler(this.AddBytes_NoFIleMode_Click);
+            this.AddBytes_NoFIleMode.Click += new System.EventHandler(this.AddBytes_StringMode_Click);
             // 
             // File3_label
             // 
@@ -187,7 +203,7 @@
             this.File3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.File3.TabIndex = 15;
             this.File3.TabStop = false;
-            this.File3.Click += new System.EventHandler(this.File3_Click);
+            this.File3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.File3_Click);
             // 
             // label6
             // 
@@ -271,6 +287,33 @@
             this.FileMode.Name = "FileMode";
             this.FileMode.Size = new System.Drawing.Size(302, 156);
             this.FileMode.TabIndex = 5;
+            this.FileMode.Visible = false;
+            // 
+            // AddBytesFile_button
+            // 
+            this.AddBytesFile_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.AddBytesFile_button.BackColor = System.Drawing.Color.White;
+            this.AddBytesFile_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.AddBytesFile_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddBytesFile_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AddBytesFile_button.Location = new System.Drawing.Point(91, 115);
+            this.AddBytesFile_button.Name = "AddBytesFile_button";
+            this.AddBytesFile_button.Size = new System.Drawing.Size(132, 23);
+            this.AddBytesFile_button.TabIndex = 8;
+            this.AddBytesFile_button.Text = "Add Bytes";
+            this.AddBytesFile_button.UseVisualStyleBackColor = false;
+            this.AddBytesFile_button.Click += new System.EventHandler(this.AddBytesFile_button_Click);
+            // 
+            // BytesCount_Label
+            // 
+            this.BytesCount_Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.BytesCount_Label.AutoSize = true;
+            this.BytesCount_Label.Location = new System.Drawing.Point(115, 81);
+            this.BytesCount_Label.Name = "BytesCount_Label";
+            this.BytesCount_Label.Size = new System.Drawing.Size(58, 13);
+            this.BytesCount_Label.TabIndex = 7;
+            this.BytesCount_Label.Text = "Select files";
             // 
             // label2
             // 
@@ -319,7 +362,7 @@
             this.File2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.File2.TabIndex = 2;
             this.File2.TabStop = false;
-            this.File2.Click += new System.EventHandler(this.File2_Click);
+            this.File2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.File2_Click);
             // 
             // File1
             // 
@@ -330,27 +373,18 @@
             this.File1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.File1.TabIndex = 1;
             this.File1.TabStop = false;
-            this.File1.Click += new System.EventHandler(this.File1_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(192, 227);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(72, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "File Mode";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.File1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.File1_Click);
             // 
             // label_ByteTool
             // 
             this.label_ByteTool.AutoSize = true;
-            this.label_ByteTool.Location = new System.Drawing.Point(225, 17);
+            this.label_ByteTool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label_ByteTool.Location = new System.Drawing.Point(202, 22);
             this.label_ByteTool.Name = "label_ByteTool";
             this.label_ByteTool.Size = new System.Drawing.Size(52, 13);
             this.label_ByteTool.TabIndex = 6;
             this.label_ByteTool.Text = "ByteTool:";
+            this.label_ByteTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Chat_button
             // 
@@ -366,7 +400,7 @@
             this.Chat_button.Text = "Chat";
             this.Chat_button.UseVisualStyleBackColor = false;
             this.Chat_button.Visible = false;
-            this.Chat_button.Click += new System.EventHandler(this.Chat_button_Click);
+            this.Chat_button.Click += new System.EventHandler(this.OpenChat_button_Click);
             // 
             // TrashCleaner
             // 
@@ -374,31 +408,16 @@
             this.TrashCleaner.Interval = 20000;
             this.TrashCleaner.Tick += new System.EventHandler(this.TrashCleaner_Tick);
             // 
-            // BytesCount_Label
+            // checkBox2
             // 
-            this.BytesCount_Label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.BytesCount_Label.AutoSize = true;
-            this.BytesCount_Label.Location = new System.Drawing.Point(115, 81);
-            this.BytesCount_Label.Name = "BytesCount_Label";
-            this.BytesCount_Label.Size = new System.Drawing.Size(58, 13);
-            this.BytesCount_Label.TabIndex = 7;
-            this.BytesCount_Label.Text = "Select files";
-            // 
-            // AddBytesFile_button
-            // 
-            this.AddBytesFile_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.AddBytesFile_button.BackColor = System.Drawing.Color.White;
-            this.AddBytesFile_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.AddBytesFile_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddBytesFile_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.AddBytesFile_button.Location = new System.Drawing.Point(91, 115);
-            this.AddBytesFile_button.Name = "AddBytesFile_button";
-            this.AddBytesFile_button.Size = new System.Drawing.Size(132, 23);
-            this.AddBytesFile_button.TabIndex = 8;
-            this.AddBytesFile_button.Text = "Add Bytes";
-            this.AddBytesFile_button.UseVisualStyleBackColor = false;
-            this.AddBytesFile_button.Click += new System.EventHandler(this.AddBytesFile_button_Click);
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(13, 12);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(71, 17);
+            this.checkBox2.TabIndex = 8;
+            this.checkBox2.Text = "Top Most";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // Main
             // 
@@ -406,12 +425,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.Chat_button);
             this.Controls.Add(this.label_ByteTool);
             this.Controls.Add(this.ByteTool);
             this.Controls.Add(this.XOR);
             this.Controls.Add(this.OpenSettings_button);
             this.Controls.Add(this.Info_Button);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
@@ -461,6 +482,8 @@
         private System.Windows.Forms.Timer TrashCleaner;
         private System.Windows.Forms.Label BytesCount_Label;
         private System.Windows.Forms.Button AddBytesFile_button;
+        private System.Windows.Forms.CheckBox checkBox2;
+        public static Icon MyIcon;
     }
 }
 

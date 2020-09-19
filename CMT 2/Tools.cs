@@ -24,12 +24,12 @@ namespace CMT_2
         public static Image FileToImage(string Path)
         {
             var bitmap = new Bitmap(30, 30);
-            var Rand = new Random(BitConverter.ToInt32(new Utils().MD5FileV(Path), 0)) ;
+            var Rand = new Random(BitConverter.ToInt32(Utils.MD5FileV(Path), 0)) ;
             for (int x = 29; x >= 0; x--)
             {
                 for (int y = 29; y >= 0; y--)
                 {
-                    bitmap.SetPixel(x, y, Color.FromArgb(Convert.ToInt32("80"+Convert.ToString(Rand.Next(0, 16777215),16), 16)));
+                    bitmap.SetPixel(x, y, Color.FromArgb(Convert.ToInt32("FF"+Convert.ToString(Rand.Next(0, 16777215),16), 16)));
                 }
             }
             return Image.FromHbitmap(bitmap.GetHbitmap());
