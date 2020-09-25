@@ -95,6 +95,12 @@
     <Compile Include="Dialogs\Info.Designer.cs">
       <DependentUpon>Info.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\InputBoxDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\InputBoxDialog.Designer.cs">
+      <DependentUpon>InputBoxDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\ThemeSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     <Compile Include="Tools\Chat\Chat.Designer.cs">
       <DependentUpon>Chat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\Hashs\Hashs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Hashs\Hashs.Designer.cs">
+      <DependentUpon>Hashs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\XOR\XOR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,9 @@
     </Compile>
     <EmbeddedResource Include="Dialogs\FileInfo.resx">
       <DependentUpon>FileInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\InputBoxDialog.resx">
+      <DependentUpon>InputBoxDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ThemeSettings.resx">
       <DependentUpon>ThemeSettings.cs</DependentUpon>
@@ -169,6 +184,9 @@
     </Compile>
     <EmbeddedResource Include="Tools\Chat\Chat.resx">
       <DependentUpon>Chat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Hashs\Hashs.resx">
+      <DependentUpon>Hashs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\XOR\XOR.resx">
       <DependentUpon>XOR.cs</DependentUpon>

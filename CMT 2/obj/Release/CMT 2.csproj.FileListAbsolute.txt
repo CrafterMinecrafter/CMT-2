@@ -15,3 +15,5 @@ C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT 2.csproj.GenerateR
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT 2.csproj.CoreCompileInputs.cache
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT 2.exe
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT 2.pdb
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Dialogs.TextBoxDialog.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Tools.MD5.Hashs.resources

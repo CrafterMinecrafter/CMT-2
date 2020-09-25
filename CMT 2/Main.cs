@@ -3,6 +3,7 @@ using CMT_2.Dialogs;
 using CMT_2.Engine;
 using CMT_2.Tools;
 using CMT_2.Tools.Chat;
+using CMT_2.Tools.MD5;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,7 +120,10 @@ namespace CMT_2
         {
             new Info().ShowDialog();
         }
-
+        private void OpenMD5_button_Click(object sender, EventArgs e)
+        {
+            new Hashs().Show();
+        }
         private void OpenSettings_button_Click(object sender, EventArgs e)
         {
             new Settings().ShowDialog();
@@ -226,5 +230,7 @@ namespace CMT_2
         {
             TopMost = checkBox2.Checked;
         }
+
+
     }
 } 

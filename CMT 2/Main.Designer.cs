@@ -63,6 +63,7 @@ namespace CMT_2
             this.Chat_button = new System.Windows.Forms.Button();
             this.TrashCleaner = new System.Windows.Forms.Timer(this.components);
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.MD5 = new System.Windows.Forms.Button();
             this.ByteTool.SuspendLayout();
             this.StringMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.File3)).BeginInit();
@@ -356,6 +357,7 @@ namespace CMT_2
             // File2
             // 
             this.File2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.File2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.File2.Location = new System.Drawing.Point(221, 30);
             this.File2.Name = "File2";
             this.File2.Size = new System.Drawing.Size(49, 50);
@@ -367,6 +369,7 @@ namespace CMT_2
             // File1
             // 
             this.File1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.File1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.File1.Location = new System.Drawing.Point(28, 30);
             this.File1.Name = "File1";
             this.File1.Size = new System.Drawing.Size(49, 50);
@@ -419,12 +422,28 @@ namespace CMT_2
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
+            // MD5
+            // 
+            this.MD5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.MD5.BackColor = System.Drawing.Color.White;
+            this.MD5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.MD5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MD5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.MD5.Location = new System.Drawing.Point(528, 355);
+            this.MD5.Name = "MD5";
+            this.MD5.Size = new System.Drawing.Size(73, 23);
+            this.MD5.TabIndex = 9;
+            this.MD5.Text = "Hashs";
+            this.MD5.UseVisualStyleBackColor = false;
+            this.MD5.Click += new System.EventHandler(this.OpenMD5_button_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.MD5);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.Chat_button);
             this.Controls.Add(this.label_ByteTool);
@@ -484,6 +503,7 @@ namespace CMT_2
         private System.Windows.Forms.Button AddBytesFile_button;
         private System.Windows.Forms.CheckBox checkBox2;
         public static Icon MyIcon;
+        private System.Windows.Forms.Button MD5;
     }
 }
 
