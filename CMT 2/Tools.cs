@@ -21,6 +21,16 @@ namespace CMT_2
             }
             return null;
         }
+        public static string OpenFolder()
+        {
+            using (var diag = new FolderBrowserDialog())
+            {
+                diag.ShowNewFolderButton = true;
+                if (diag.ShowDialog() == DialogResult.OK)
+                    return diag.SelectedPath;
+            }
+            return null;
+        }
         public static Image FileToImage(string Path)
         {
             var bitmap = new Bitmap(30, 30);

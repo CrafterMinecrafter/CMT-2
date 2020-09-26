@@ -95,11 +95,11 @@
     <Compile Include="Dialogs\Info.Designer.cs">
       <DependentUpon>Info.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\InputBoxDialog.cs">
+    <Compile Include="Dialogs\TextBoxDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\InputBoxDialog.Designer.cs">
-      <DependentUpon>InputBoxDialog.cs</DependentUpon>
+    <Compile Include="Dialogs\TextBoxDialog.Designer.cs">
+      <DependentUpon>TextBoxDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\ThemeSettings.cs">
       <SubType>Form</SubType>
@@ -147,8 +147,8 @@
     <EmbeddedResource Include="Dialogs\FileInfo.resx">
       <DependentUpon>FileInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\InputBoxDialog.resx">
-      <DependentUpon>InputBoxDialog.cs</DependentUpon>
+    <EmbeddedResource Include="Dialogs\TextBoxDialog.resx">
+      <DependentUpon>TextBoxDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ThemeSettings.resx">
       <DependentUpon>ThemeSettings.cs</DependentUpon>

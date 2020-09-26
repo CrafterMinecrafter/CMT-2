@@ -22,7 +22,35 @@ namespace CMT_2.BS
             return UTF8Encoding.UTF8.GetString(Convert.FromBase64String(Text));
         }
         #endregion
-        #region MD5
+        #region Hashes
+        public static string AllHashes(string text, string HashName)
+        {
+            UTF8Encoding utf8Encoding = new UTF8Encoding();
+            byte[] bytes = utf8Encoding.GetBytes(text);
+            var alg = HashAlgorithm.Create(HashName);
+            byte[] HashBytes = alg.ComputeHash(bytes);
+            string StringOutput = string.Empty;
+            for (int a = 0, b = HashBytes.Length; a < b ;)
+            {
+                StringOutput += Convert.ToString(HashBytes[a], 16).PadLeft(2, '0');
+                a++;
+            }
+            return StringOutput.PadLeft(32, '0');
+        }
+        public static string AllHashesFile(string FilePath, string HashName)
+        {
+            byte[] bytes = File.ReadAllBytes(FilePath);
+            var alg = HashAlgorithm.Create(HashName);
+            byte[] HashBytes = alg.ComputeHash(bytes);
+            string StringOutput = string.Empty;
+            for (int a = 0, b = HashBytes.Length; a < b;)
+            {
+                StringOutput += Convert.ToString(HashBytes[a], 16).PadLeft(2, '0');
+                a++;
+            }
+            return StringOutput.PadLeft(32, '0');
+        }
+       
         public static string MD5(string text)
         {
             UTF8Encoding utf8Encoding = new UTF8Encoding();

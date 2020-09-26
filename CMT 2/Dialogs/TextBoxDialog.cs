@@ -14,5 +14,10 @@ namespace CMT_2.Dialogs
             this.Name = Name;
             Box.Text = Text;
         }
+
+        private void TextBoxDialog_Load(object sender, System.EventArgs e)
+        {
+            Engine.ThemeEngine.InitTheme(this);
+        }
     }
 } 

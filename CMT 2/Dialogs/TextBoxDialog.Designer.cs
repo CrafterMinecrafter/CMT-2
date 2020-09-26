@@ -52,6 +52,7 @@
             this.Controls.Add(this.Box);
             this.Name = "TextBoxDialog";
             this.Text = "ReadBox Dialog";
+            this.Load += new System.EventHandler(this.TextBoxDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

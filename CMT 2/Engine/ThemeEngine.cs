@@ -205,9 +205,12 @@ namespace CMT_2.Engine
         /// </summary>
         public static void InitTheme(Form form)
         {
-
             #region form
-            form.Icon = Application.OpenForms[0].Icon;
+            if (form.Name != "Main")
+            {
+                form.Text = Application.OpenForms[0].Text + " | " + form.Text;
+                form.Icon = Application.OpenForms[0].Icon;
+            } 
             form.Font = settingsClass.DefaultFont;
             if (Settings.ThemeIsDark)
                 form.BackColor = settingsClass.Dark_Form_BackColor;

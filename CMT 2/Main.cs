@@ -3,7 +3,7 @@ using CMT_2.Dialogs;
 using CMT_2.Engine;
 using CMT_2.Tools;
 using CMT_2.Tools.Chat;
-using CMT_2.Tools.MD5;
+using CMT_2.Tools.Hashs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,7 +56,7 @@ namespace CMT_2
                         IsPro = false;
                         Text = "CrafterMinecrafter Tool Community";
                     }
-                    if(OnlineData[1] != ProductVersion)
+                    if (OnlineData[1] != ProductVersion)
                     {
                         Process.Start(Utils.FromBase64(OnlineData[2]));
                         MessageBox.Show("PLS Update Version\nUpdate link opened in browser");
@@ -180,11 +180,19 @@ namespace CMT_2
                 MessageBox.Show("Pls select files");
                 return;
             }
-            FileTools.AddBytes(dlls[0], FileTools.GetLength(dlls[0]) - FileTools.GetLength(dlls[1]));
+            try
+            {
+                FileTools.AddBytes(dlls[0], FileTools.GetLength(dlls[0]) - FileTools.GetLength(dlls[1]));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:\n" + ex.Message);
+            }
+            MessageBox.Show(FileTools.GetLength(dlls[0]) - FileTools.GetLength(dlls[1]) + " Bytes added to file \"" + Path.GetFileName(dlls[2]) + '"');
         }
 
         #endregion
-        #region No File Panel
+        #region String Panel
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             FileMode.Visible = checkBox1.Checked;
@@ -204,7 +212,8 @@ namespace CMT_2
         }
         private void AddBytes_StringMode_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(dlls[2])) {
+            if (string.IsNullOrEmpty(dlls[2]))
+            {
                 MessageBox.Show("Error!\nFile not selected");
                 return;
             }
@@ -213,7 +222,22 @@ namespace CMT_2
                 MessageBox.Show("Error!\nNothing to write");
                 return;
             }
-            FileTools.AddBytes(dlls[2], long.Parse(OutputValue.Text.Trim(' ')));
+            long result;
+            if (!long.TryParse(OutputValue.Text.Trim(' '), out result))
+            {
+                MessageBox.Show("Parsing error");
+                return;
+            }
+            try
+            {
+                FileTools.AddBytes(dlls[2], result);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:\n" + ex.Message);
+                return;
+            }
+            MessageBox.Show(result + " Bytes added to file \"" + Path.GetFileName(dlls[2]) + '"');
         }
 
         #endregion
@@ -231,6 +255,18 @@ namespace CMT_2
             TopMost = checkBox2.Checked;
         }
 
-
+        #region DataTool
+        private void SetDateInFolder_button_Click(object sender, EventArgs e)
+        {
+            var dirFiles = Directory.GetFiles(FileTools.OpenFolder());
+            for (int i = dirFiles.Length - 1; i >= 0; i--)
+            {
+                FileTools.SetDate(dirFiles[i], dateTimePicker1.Value);
+            }
+        }
     }
-} 
+
+    #endregion
+
+
+}
