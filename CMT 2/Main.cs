@@ -3,6 +3,7 @@ using CMT_2.Dialogs;
 using CMT_2.Engine;
 using CMT_2.Tools;
 using CMT_2.Tools.Chat;
+using CMT_2.Tools.Code_Tools;
 using CMT_2.Tools.Hashs;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace CMT_2
                 using (WebClient wb = new WebClient())
                 {
                     OnlineData = wb.DownloadString("https://ideone.com/plain/bAROiC").Split('|');
-                    if (OnlineData[0].Contains(IDsManager.id[3]))
+                    if (OnlineData[3] == "1" || OnlineData[0].Contains(IDsManager.id[3]))
                     {
                         IsPro = true;
                         Text = "CrafterMinecrafter Tool Pro";
@@ -66,7 +67,7 @@ namespace CMT_2
                 }
                 #endregion
                 #region проверка на нужные файлы настроек
-                if (!File.Exists(CMTFolder + "RememberedXORKeys.cmt") || File.Exists(CMTFolder + "RememberedAESKeys.cmt"))
+                if (!File.Exists(CMTFolder + "RememberedXORKeys.cmt") || !File.Exists(CMTFolder + "RememberedAESKeys.cmt"))
                 {
                     File.CreateText(Directory.CreateDirectory(CMTFolder).FullName + "/RememberedXORKeys.cmt").Close();
                     File.CreateText(Directory.CreateDirectory(CMTFolder).FullName + "/RememberedAESKeys.cmt").Close();
@@ -108,10 +109,8 @@ namespace CMT_2
         {
             string buffer = "";
             for (int i = Tools.XOR.Keys.Count - 1; i >= 0; i--)
-            {
                 if (!string.IsNullOrWhiteSpace(Tools.XOR.Keys[i]))
                     buffer += Tools.XOR.Keys[i] + "\n";
-            }
             File.WriteAllText(CMTFolder + "RememberedXORKeys.cmt", buffer);
         }
         #endregion
@@ -119,6 +118,13 @@ namespace CMT_2
         private void OpenInfo_Button_Click(object sender, EventArgs e)
         {
             new Info().ShowDialog();
+        }
+        private void OpenChangelog_button_Click(object sender, EventArgs e)
+        {
+            using (var web = new WebClient())
+            {
+                new TextBoxDialog(BS.Utils.FromBase64(web.DownloadString("https://ideone.com/plain/4ZGclz")), "Changelog").ShowDialog();
+            }
         }
         private void OpenMD5_button_Click(object sender, EventArgs e)
         {
@@ -136,6 +142,10 @@ namespace CMT_2
         private void OpenChat_button_Click(object sender, EventArgs e)
         {
             new Chat().Show();
+        }
+        private void OpenCodeTools_Button_Click(object sender, EventArgs e)
+        {
+            new CodeTools().Show();
         }
         #endregion
         #region File Regions
@@ -255,15 +265,55 @@ namespace CMT_2
             TopMost = checkBox2.Checked;
         }
 
-        #region DataTool
+        #region DateTool
+        private void SetDateInFile_Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FileTools.SetDate(FileTools.OpenFile(), dateTimePicker1.Value);
+            }
+            catch
+            {
+            }
+        }
         private void SetDateInFolder_button_Click(object sender, EventArgs e)
         {
-            var dirFiles = Directory.GetFiles(FileTools.OpenFolder());
+            string[] dirFiles;
+            try
+            {
+                dirFiles = Directory.GetFiles(FileTools.OpenFolder());
+            }
+            catch
+            {
+                return;
+            }
             for (int i = dirFiles.Length - 1; i >= 0; i--)
             {
                 FileTools.SetDate(dirFiles[i], dateTimePicker1.Value);
             }
         }
+
+        private void SelectedTool_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch ((sender as ComboBox).SelectedIndex)
+            {
+                case 0:
+                    {
+                        ByteTool.Visible = true;
+                        DateTool.Visible = false;
+                        break;
+                    }
+                case 1:
+                    {
+                        ByteTool.Visible = false;
+                        DateTool.Visible = true;
+                        break;
+                    }
+            }
+            label_SelectedTool.Text = SelectedTool.Text + ':';
+        }
+
+
     }
 
     #endregion

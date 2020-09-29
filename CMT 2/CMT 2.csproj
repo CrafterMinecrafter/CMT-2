@@ -132,6 +132,12 @@
     <Compile Include="Tools\Chat\Chat.Designer.cs">
       <DependentUpon>Chat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\Code Tools\CodeTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\Code Tools\CodeTools.Designer.cs">
+      <DependentUpon>CodeTools.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Hashs\Hashs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,13 +191,16 @@
     <EmbeddedResource Include="Tools\Chat\Chat.resx">
       <DependentUpon>Chat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\Code Tools\CodeTools.resx">
+      <DependentUpon>CodeTools.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\Hashs\Hashs.resx">
       <DependentUpon>Hashs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\XOR\XOR.resx">
       <DependentUpon>XOR.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Dialogs\app.config" />
+    <None Include="app.config" />
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

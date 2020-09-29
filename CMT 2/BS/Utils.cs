@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
@@ -19,7 +21,15 @@ namespace CMT_2.BS
         }
         public static string FromBase64(string Text)
         {
-            return UTF8Encoding.UTF8.GetString(Convert.FromBase64String(Text));
+            return Encoding.UTF8.GetString(Convert.FromBase64String(Text));
+        }
+        public static byte[] FromBase64File(string Path)
+        {
+            return Convert.FromBase64String(File.ReadAllText(Path));
+        }
+        public static string ToBase64File(string Path)
+        {
+            return Convert.ToBase64String(File.ReadAllBytes(Path));
         }
         #endregion
         #region Hashes
@@ -30,12 +40,26 @@ namespace CMT_2.BS
             var alg = HashAlgorithm.Create(HashName);
             byte[] HashBytes = alg.ComputeHash(bytes);
             string StringOutput = string.Empty;
-            for (int a = 0, b = HashBytes.Length; a < b ;)
+            for (int a = 0, b = HashBytes.Length; a < b;)
             {
                 StringOutput += Convert.ToString(HashBytes[a], 16).PadLeft(2, '0');
                 a++;
             }
             return StringOutput.PadLeft(32, '0');
+        }
+        public static string FileToCodeArray(string Path)
+        {
+            return ByteArrayToCodeArray(File.ReadAllBytes(Path));
+        }
+        public static string ByteArrayToCodeArray(byte[] array)
+        {
+            string buffer = "{";
+            for (int a = 0, b = array.Length; a < b;)
+            {
+                buffer += "0x"+Convert.ToString(array[a], 16).PadLeft(2, '0') + ',';
+                a++;
+            }
+            return buffer.Substring(0, buffer.Length - 1).ToUpper().Replace('X', 'x') + '}';
         }
         public static string AllHashesFile(string FilePath, string HashName)
         {
@@ -50,7 +74,7 @@ namespace CMT_2.BS
             }
             return StringOutput.PadLeft(32, '0');
         }
-       
+
         public static string MD5(string text)
         {
             UTF8Encoding utf8Encoding = new UTF8Encoding();
@@ -63,7 +87,7 @@ namespace CMT_2.BS
                 text2 += Convert.ToString(array[i], 16).PadLeft(2, '0');
             }
             return text2.PadLeft(32, '0');
-          
+
         }
         public static string MD5File(string FilePath)
         {
@@ -82,7 +106,7 @@ namespace CMT_2.BS
             {
                 bytes = File.ReadAllBytes(FilePath);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
                 bytes = new byte[16];

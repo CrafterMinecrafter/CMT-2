@@ -92,7 +92,7 @@ namespace CMT_2.Engine
             
                 #region form
                 Application.OpenForms[i].Font = settingsClass.DefaultFont;
-                if (Properties.Settings.Default.DarkTheme)
+                if (Settings.ThemeIsDark)
                     Application.OpenForms[i].BackColor = settingsClass.Dark_Form_BackColor;
                 else
                     Application.OpenForms[i].BackColor = settingsClass.Light_Form_BackColor;

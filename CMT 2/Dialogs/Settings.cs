@@ -14,12 +14,20 @@ namespace CMT_2.Dialogs
     public partial class Settings : Form
     {
         #region Settings
-        public static bool ThemeIsDark = false;
-        #endregion
-        static Settings()
+        public static bool ThemeIsDark
         {
-            ThemeIsDark = CMT_2.Properties.Settings.Default.DarkTheme;
+            get
+            {
+                return Properties.Settings.Default.DarkTheme;
+            }
+            set
+            {
+                Properties.Settings.Default.DarkTheme = value;
+                CMT_2.Properties.Settings.Default.Save();
+            }
         }
+        #endregion
+
         public Settings()
         {
             InitializeComponent();
@@ -27,10 +35,9 @@ namespace CMT_2.Dialogs
         private void Theme_Button_Click(object sender, EventArgs e)
         {
             ThemeIsDark = !ThemeIsDark;
-            CMT_2.Properties.Settings.Default.DarkTheme = ThemeIsDark;
             ThemeEngine.SetTheme();
             ThemeLabel.Text = ":  " + ThemeIsDark;
-            CMT_2.Properties.Settings.Default.Save();
+            
         }
 
         private void Settings_Load(object sender, EventArgs e)
@@ -47,7 +54,10 @@ namespace CMT_2.Dialogs
             }
             else
             {
-                new ThemeSettings().ShowDialog();
+                this.Controls.Clear();
+                this.Controls.AddRange(new ThemeSettings().Controls.Cast<Control>().ToArray());
+                this.Text = "Theme Settings";
+                ThemeEngine.InitTheme(this);
             }
         }
     }

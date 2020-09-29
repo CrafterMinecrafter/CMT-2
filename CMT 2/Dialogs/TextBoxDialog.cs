@@ -11,7 +11,7 @@ namespace CMT_2.Dialogs
         public TextBoxDialog(string Text, string Name)
         {
             InitializeComponent();
-            this.Name = Name;
+            this.Text = Name;
             Box.Text = Text;
         }
 

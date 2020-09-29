@@ -41,6 +41,7 @@
             this.Box.Multiline = true;
             this.Box.Name = "Box";
             this.Box.ReadOnly = true;
+            this.Box.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.Box.Size = new System.Drawing.Size(491, 269);
             this.Box.TabIndex = 9;
             // 

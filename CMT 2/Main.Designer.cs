@@ -59,25 +59,27 @@ namespace CMT_2
             this.File1_label = new System.Windows.Forms.Label();
             this.File2 = new System.Windows.Forms.PictureBox();
             this.File1 = new System.Windows.Forms.PictureBox();
-            this.label_ByteTool = new System.Windows.Forms.Label();
+            this.label_SelectedTool = new System.Windows.Forms.Label();
             this.Chat_button = new System.Windows.Forms.Button();
             this.TrashCleaner = new System.Windows.Forms.Timer(this.components);
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.MD5 = new System.Windows.Forms.Button();
-            this.SelectedHash = new System.Windows.Forms.ComboBox();
+            this.SelectedTool = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.DataTool = new System.Windows.Forms.Panel();
+            this.DateTool = new System.Windows.Forms.Panel();
             this.SetDateInFile_Button = new System.Windows.Forms.Button();
             this.SetDateInFolder_button = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.OpenChangelog_button = new System.Windows.Forms.Button();
+            this.OpenCodeTools_Button = new System.Windows.Forms.Button();
             this.ByteTool.SuspendLayout();
             this.StringMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.File3)).BeginInit();
             this.FileMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.File2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.File1)).BeginInit();
-            this.DataTool.SuspendLayout();
+            this.DateTool.SuspendLayout();
             this.SuspendLayout();
             // 
             // Info_Button
@@ -117,7 +119,7 @@ namespace CMT_2
             this.XOR.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.XOR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.XOR.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.XOR.Location = new System.Drawing.Point(638, 355);
+            this.XOR.Location = new System.Drawing.Point(638, 385);
             this.XOR.Name = "XOR";
             this.XOR.Size = new System.Drawing.Size(73, 23);
             this.XOR.TabIndex = 4;
@@ -134,9 +136,9 @@ namespace CMT_2
             this.ByteTool.Controls.Add(this.checkBox1);
             this.ByteTool.Controls.Add(this.StringMode);
             this.ByteTool.Controls.Add(this.FileMode);
-            this.ByteTool.Location = new System.Drawing.Point(12, 41);
+            this.ByteTool.Location = new System.Drawing.Point(12, 56);
             this.ByteTool.Name = "ByteTool";
-            this.ByteTool.Size = new System.Drawing.Size(522, 308);
+            this.ByteTool.Size = new System.Drawing.Size(522, 323);
             this.ByteTool.TabIndex = 5;
             // 
             // checkBox1
@@ -386,16 +388,16 @@ namespace CMT_2
             this.File1.TabStop = false;
             this.File1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.File1_Click);
             // 
-            // label_ByteTool
+            // label_SelectedTool
             // 
-            this.label_ByteTool.AutoSize = true;
-            this.label_ByteTool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label_ByteTool.Location = new System.Drawing.Point(183, 22);
-            this.label_ByteTool.Name = "label_ByteTool";
-            this.label_ByteTool.Size = new System.Drawing.Size(52, 13);
-            this.label_ByteTool.TabIndex = 6;
-            this.label_ByteTool.Text = "ByteTool:";
-            this.label_ByteTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_SelectedTool.AutoSize = true;
+            this.label_SelectedTool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label_SelectedTool.Location = new System.Drawing.Point(222, 40);
+            this.label_SelectedTool.Name = "label_SelectedTool";
+            this.label_SelectedTool.Size = new System.Drawing.Size(74, 13);
+            this.label_SelectedTool.TabIndex = 6;
+            this.label_SelectedTool.Text = "File Byte Tool:";
+            this.label_SelectedTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Chat_button
             // 
@@ -404,7 +406,7 @@ namespace CMT_2
             this.Chat_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Chat_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Chat_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Chat_button.Location = new System.Drawing.Point(581, 41);
+            this.Chat_button.Location = new System.Drawing.Point(587, 91);
             this.Chat_button.Name = "Chat_button";
             this.Chat_button.Size = new System.Drawing.Size(67, 23);
             this.Chat_button.TabIndex = 7;
@@ -437,7 +439,7 @@ namespace CMT_2
             this.MD5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.MD5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MD5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.MD5.Location = new System.Drawing.Point(559, 355);
+            this.MD5.Location = new System.Drawing.Point(559, 385);
             this.MD5.Name = "MD5";
             this.MD5.Size = new System.Drawing.Size(73, 23);
             this.MD5.TabIndex = 9;
@@ -445,72 +447,74 @@ namespace CMT_2
             this.MD5.UseVisualStyleBackColor = false;
             this.MD5.Click += new System.EventHandler(this.OpenMD5_button_Click);
             // 
-            // SelectedHash
+            // SelectedTool
             // 
-            this.SelectedHash.DisplayMember = "1";
-            this.SelectedHash.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SelectedHash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SelectedHash.FormattingEnabled = true;
-            this.SelectedHash.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.SelectedHash.Items.AddRange(new object[] {
-            "MD5",
-            "SHA1",
-            "SHA256",
-            "SHA384",
-            "SHA512"});
-            this.SelectedHash.Location = new System.Drawing.Point(308, 6);
-            this.SelectedHash.Name = "SelectedHash";
-            this.SelectedHash.Size = new System.Drawing.Size(183, 21);
-            this.SelectedHash.TabIndex = 10;
+            this.SelectedTool.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SelectedTool.DisplayMember = "1";
+            this.SelectedTool.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SelectedTool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SelectedTool.FormattingEnabled = true;
+            this.SelectedTool.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.SelectedTool.Items.AddRange(new object[] {
+            "File Byte Tool",
+            "File Date Tool"});
+            this.SelectedTool.Location = new System.Drawing.Point(318, 8);
+            this.SelectedTool.Name = "SelectedTool";
+            this.SelectedTool.Size = new System.Drawing.Size(183, 21);
+            this.SelectedTool.TabIndex = 10;
+            this.SelectedTool.SelectedIndexChanged += new System.EventHandler(this.SelectedTool_SelectedIndexChanged);
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Location = new System.Drawing.Point(238, 6);
+            this.label7.Location = new System.Drawing.Point(246, 11);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 13);
             this.label7.TabIndex = 11;
             this.label7.Text = "Select Tool:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // DataTool
+            // DateTool
             // 
-            this.DataTool.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DateTool.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DataTool.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DataTool.Controls.Add(this.SetDateInFile_Button);
-            this.DataTool.Controls.Add(this.SetDateInFolder_button);
-            this.DataTool.Controls.Add(this.label8);
-            this.DataTool.Controls.Add(this.dateTimePicker1);
-            this.DataTool.Location = new System.Drawing.Point(13, 41);
-            this.DataTool.Name = "DataTool";
-            this.DataTool.Size = new System.Drawing.Size(522, 308);
-            this.DataTool.TabIndex = 12;
+            this.DateTool.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DateTool.Controls.Add(this.SetDateInFile_Button);
+            this.DateTool.Controls.Add(this.SetDateInFolder_button);
+            this.DateTool.Controls.Add(this.label8);
+            this.DateTool.Controls.Add(this.dateTimePicker1);
+            this.DateTool.Location = new System.Drawing.Point(12, 56);
+            this.DateTool.Name = "DateTool";
+            this.DateTool.Size = new System.Drawing.Size(522, 323);
+            this.DateTool.TabIndex = 12;
+            this.DateTool.Visible = false;
             // 
             // SetDateInFile_Button
             // 
-            this.SetDateInFile_Button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.SetDateInFile_Button.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SetDateInFile_Button.BackColor = System.Drawing.Color.White;
             this.SetDateInFile_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.SetDateInFile_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SetDateInFile_Button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.SetDateInFile_Button.Location = new System.Drawing.Point(253, 66);
+            this.SetDateInFile_Button.Location = new System.Drawing.Point(253, 73);
             this.SetDateInFile_Button.Name = "SetDateInFile_Button";
             this.SetDateInFile_Button.Size = new System.Drawing.Size(88, 23);
             this.SetDateInFile_Button.TabIndex = 9;
             this.SetDateInFile_Button.Text = "Set in file";
             this.SetDateInFile_Button.UseVisualStyleBackColor = false;
+            this.SetDateInFile_Button.Click += new System.EventHandler(this.SetDateInFile_Button_Click);
             // 
             // SetDateInFolder_button
             // 
-            this.SetDateInFolder_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.SetDateInFolder_button.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SetDateInFolder_button.BackColor = System.Drawing.Color.White;
             this.SetDateInFolder_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.SetDateInFolder_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SetDateInFolder_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.SetDateInFolder_button.Location = new System.Drawing.Point(141, 66);
+            this.SetDateInFolder_button.Location = new System.Drawing.Point(141, 73);
             this.SetDateInFolder_button.Name = "SetDateInFolder_button";
             this.SetDateInFolder_button.Size = new System.Drawing.Size(88, 23);
             this.SetDateInFolder_button.TabIndex = 8;
@@ -520,6 +524,7 @@ namespace CMT_2
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(214, 21);
             this.label8.Name = "label8";
@@ -530,30 +535,65 @@ namespace CMT_2
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
             this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.SystemColors.Desktop;
+            this.dateTimePicker1.CustomFormat = "";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker1.Location = new System.Drawing.Point(141, 37);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 0;
+            // 
+            // OpenChangelog_button
+            // 
+            this.OpenChangelog_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.OpenChangelog_button.BackColor = System.Drawing.Color.White;
+            this.OpenChangelog_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.OpenChangelog_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenChangelog_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.OpenChangelog_button.Location = new System.Drawing.Point(574, 41);
+            this.OpenChangelog_button.Name = "OpenChangelog_button";
+            this.OpenChangelog_button.Size = new System.Drawing.Size(94, 23);
+            this.OpenChangelog_button.TabIndex = 13;
+            this.OpenChangelog_button.Text = "Changelog";
+            this.OpenChangelog_button.UseVisualStyleBackColor = false;
+            this.OpenChangelog_button.Click += new System.EventHandler(this.OpenChangelog_button_Click);
+            // 
+            // OpenCodeTools_Button
+            // 
+            this.OpenCodeTools_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OpenCodeTools_Button.BackColor = System.Drawing.Color.White;
+            this.OpenCodeTools_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.OpenCodeTools_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenCodeTools_Button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.OpenCodeTools_Button.Location = new System.Drawing.Point(587, 356);
+            this.OpenCodeTools_Button.Name = "OpenCodeTools_Button";
+            this.OpenCodeTools_Button.Size = new System.Drawing.Size(94, 23);
+            this.OpenCodeTools_Button.TabIndex = 14;
+            this.OpenCodeTools_Button.Text = "Code Tools";
+            this.OpenCodeTools_Button.UseVisualStyleBackColor = false;
+            this.OpenCodeTools_Button.Click += new System.EventHandler(this.OpenCodeTools_Button_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(717, 390);
-            this.Controls.Add(this.DataTool);
+            this.ClientSize = new System.Drawing.Size(717, 420);
+            this.Controls.Add(this.OpenCodeTools_Button);
+            this.Controls.Add(this.OpenChangelog_button);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.SelectedHash);
+            this.Controls.Add(this.SelectedTool);
             this.Controls.Add(this.MD5);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.Chat_button);
-            this.Controls.Add(this.label_ByteTool);
-            this.Controls.Add(this.ByteTool);
+            this.Controls.Add(this.label_SelectedTool);
             this.Controls.Add(this.XOR);
             this.Controls.Add(this.OpenSettings_button);
             this.Controls.Add(this.Info_Button);
+            this.Controls.Add(this.ByteTool);
+            this.Controls.Add(this.DateTool);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Form1";
@@ -568,8 +608,8 @@ namespace CMT_2
             this.FileMode.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.File2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.File1)).EndInit();
-            this.DataTool.ResumeLayout(false);
-            this.DataTool.PerformLayout();
+            this.DateTool.ResumeLayout(false);
+            this.DateTool.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -582,7 +622,7 @@ namespace CMT_2
         private System.Windows.Forms.Button XOR;
         private System.Windows.Forms.Panel ByteTool;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label_ByteTool;
+        private System.Windows.Forms.Label label_SelectedTool;
         private System.Windows.Forms.Button Chat_button;
         private System.Windows.Forms.Label File1_label;
         private System.Windows.Forms.PictureBox File2;
@@ -609,13 +649,15 @@ namespace CMT_2
         private System.Windows.Forms.CheckBox checkBox2;
         public static Icon MyIcon;
         private System.Windows.Forms.Button MD5;
-        private System.Windows.Forms.ComboBox SelectedHash;
+        private System.Windows.Forms.ComboBox SelectedTool;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel DataTool;
+        private System.Windows.Forms.Panel DateTool;
         private System.Windows.Forms.Button SetDateInFile_Button;
         private System.Windows.Forms.Button SetDateInFolder_button;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button OpenChangelog_button;
+        private System.Windows.Forms.Button OpenCodeTools_Button;
     }
 }
 
