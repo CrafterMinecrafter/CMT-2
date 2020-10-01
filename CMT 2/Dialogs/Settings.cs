@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -44,21 +45,24 @@ namespace CMT_2.Dialogs
         {
             ThemeEngine.InitTheme(this);
             ThemeLabel.Text = ":  " + ThemeIsDark;
+            GetPro.Visible = !Main.IsPro;
         }
 
         private void ThemeSettings_button_Click(object sender, EventArgs e)
         {
             if (!Main.IsPro)
             {
-                MessageBox.Show("You not have pro version :(\nhttps://vk.com/o_privet_t");
+                MessageBox.Show("You not have pro version :(\nSorry bro");
             }
             else
             {
-                this.Controls.Clear();
-                this.Controls.AddRange(new ThemeSettings().Controls.Cast<Control>().ToArray());
-                this.Text = "Theme Settings";
-                ThemeEngine.InitTheme(this);
+                new ThemeSettings().ShowDialog();
             }
+        }
+
+        private void GetPro_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://vk.com/o_privet_t");
         }
     }
 }

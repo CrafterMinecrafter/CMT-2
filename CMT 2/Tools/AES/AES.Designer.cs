@@ -1,6 +1,6 @@
 ﻿namespace CMT_2.Tools
 {
-    partial class XOR
+    partial class AES
     {
         /// <summary>
         /// Required designer variable.
@@ -23,6 +23,9 @@
         #region Windows Form Designer generated code
 
         /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
             this.RememberedSelector = new System.Windows.Forms.ComboBox();
@@ -77,7 +80,7 @@
             this.KeyBox.Name = "KeyBox";
             this.KeyBox.Size = new System.Drawing.Size(156, 88);
             this.KeyBox.TabIndex = 2;
-            this.KeyBox.Text = "z0c8pwApJ";
+            this.KeyBox.Text = "defaultKeyString";
             // 
             // panel1
             // 
@@ -232,7 +235,7 @@
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // XOR
+            // AES
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -241,9 +244,9 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Name = "XOR";
-            this.Text = "XOR Tool";
-            this.Load += new System.EventHandler(this.XOR_Load);
+            this.Name = "AES";
+            this.Text = "AES Tool";
+            this.Load += new System.EventHandler(this.AES_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

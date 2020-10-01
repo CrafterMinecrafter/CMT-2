@@ -28,10 +28,11 @@ namespace CMT_2
     public partial class Main : Form
     {
         #region *******Vars*******
-        private string[] OnlineData;
+
+        public static List<string[]> WebData = new List<string[]>();
         public static bool IsPro;
         public static string CMTFolder = Path.GetPathRoot(Environment.SystemDirectory) + "/CrafterMinecrafter Tool/" + Environment.UserName + '/';
-        private string[] dlls = new string[3]; //3-1 is selected file in StringModz
+        private string[] dlls = new string[3]; //3-1 is selected file in StringMode
         #endregion
 
         public Main()
@@ -46,8 +47,10 @@ namespace CMT_2
                 #region Проверка ID на про версию
                 using (WebClient wb = new WebClient())
                 {
-                    OnlineData = wb.DownloadString("https://ideone.com/plain/bAROiC").Split('|');
-                    if (OnlineData[3] == "1" || OnlineData[0].Contains(IDsManager.id[3]))
+                    
+                    WebData.Add(wb.DownloadString("https://ideone.com/plain/h42QvK").Trim('\n').Split('|'));
+                    WebData.Add(wb.DownloadString("https://ideone.com/plain/bAROiC").Split('|'));
+                    if (WebData[0].Contains(IDsManager.id[3]))
                     {
                         IsPro = true;
                         Text = "CrafterMinecrafter Tool Pro";
@@ -57,13 +60,20 @@ namespace CMT_2
                         IsPro = false;
                         Text = "CrafterMinecrafter Tool Community";
                     }
-                    if (OnlineData[1] != ProductVersion)
+                    if (WebData[1][2] == "1" && !WebData[0].Contains(IDsManager.id[3]))
                     {
-                        Process.Start(Utils.FromBase64(OnlineData[2]));
+                        IsPro = true;
+                        Text = "CrafterMinecrafter Tool Pro(demo)";
+                    }
+                    if (WebData[1][0] != ProductVersion)
+                    {
+                        this.Controls.Clear();
+                        Process.Start(Utils.FromBase64(WebData[1][1]));
                         MessageBox.Show("PLS Update Version\nUpdate link opened in browser");
                         Application.Exit();
                         return;
                     }
+                    
                 }
                 #endregion
                 #region проверка на нужные файлы настроек
@@ -77,6 +87,7 @@ namespace CMT_2
             }
             catch
             {
+                this.Controls.Clear();
                 Application.Exit();
             }
             #region загружаем настройки темы.
@@ -84,37 +95,69 @@ namespace CMT_2
             {
                 try
                 {
+                    if(!string.IsNullOrEmpty(Properties.Settings.Default.customSettings))
                     ThemeSettings.ToSettings();
                 }
                 catch
                 {
-
+                    MessageBox.Show("Error in saved theme");
                 }
             }
             #endregion
             #region Загрузка ключей XOR
-            string KeysConfig = File.ReadAllText(CMTFolder + "RememberedXORKeys.cmt");
-            if (!string.IsNullOrEmpty(KeysConfig))
+            try
             {
-                string[] XORKeys = KeysConfig.Split('\n');
-                for (int i = XORKeys.Length - 1; i >= 0; i--)
+                string[] KeysConfigs = new string[] {
+                File.ReadAllText(CMTFolder + "RememberedXORKeys.cmt"),
+                File.ReadAllText(CMTFolder + "RememberedAESKeys.cmt")
+                    };
+                if (!string.IsNullOrEmpty(KeysConfigs[0]))
                 {
-                    Tools.XOR.Keys.Add(XORKeys[i]);
+                    string[] XORKeys = KeysConfigs[0].Split('§');
+                    for (int i = XORKeys.Length - 1; i >= 0; i--)
+                    {
+                        Tools.XOR.Keys.Add(XORKeys[i]);
+                    }
                 }
+                if (!string.IsNullOrEmpty(KeysConfigs[1]))
+                {
+                    string[] AESKeys = KeysConfigs[1].Split('§');
+                    for (int i = AESKeys.Length - 1; i >= 0; i--)
+                    {
+                        Tools.AES.Keys.Add(AESKeys[i]);
+                    }
+                }
+            }
+            catch
+            {
+                File.Delete(CMTFolder + "RememberedXORKeys.cmt");
+                File.Delete(CMTFolder + "RememberedAESKeys.cmt");
+                MessageBox.Show("Failed to load XOR/AES deleted\nRestart program");
+                Application.Exit();
             }
             #endregion
             ThemeEngine.InitTheme(this);
+
         }
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
             string buffer = "";
             for (int i = Tools.XOR.Keys.Count - 1; i >= 0; i--)
                 if (!string.IsNullOrWhiteSpace(Tools.XOR.Keys[i]))
-                    buffer += Tools.XOR.Keys[i] + "\n";
+                    buffer += Tools.XOR.Keys[i] + "§";
             File.WriteAllText(CMTFolder + "RememberedXORKeys.cmt", buffer);
+            buffer = "";
+            for (int i = Tools.AES.Keys.Count - 1; i >= 0; i--)
+                if (!string.IsNullOrWhiteSpace(Tools.AES.Keys[i]))
+                    buffer += Tools.AES.Keys[i] + "§";
+            File.WriteAllText(CMTFolder + "RememberedAESKeys.cmt", buffer);
         }
         #endregion
-        #region Open Buttons
+        #region Open Buttons  
+        private void OpenAes_button_Click(object sender, EventArgs e)
+        {
+            new AES().Show();
+        }  
         private void OpenInfo_Button_Click(object sender, EventArgs e)
         {
             new Info().ShowDialog();
@@ -313,7 +356,7 @@ namespace CMT_2
             label_SelectedTool.Text = SelectedTool.Text + ':';
         }
 
-
+      
     }
 
     #endregion

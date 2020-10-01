@@ -73,6 +73,7 @@ namespace CMT_2
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.OpenChangelog_button = new System.Windows.Forms.Button();
             this.OpenCodeTools_Button = new System.Windows.Forms.Button();
+            this.OpenAes_button = new System.Windows.Forms.Button();
             this.ByteTool.SuspendLayout();
             this.StringMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.File3)).BeginInit();
@@ -406,7 +407,7 @@ namespace CMT_2
             this.Chat_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Chat_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Chat_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Chat_button.Location = new System.Drawing.Point(587, 91);
+            this.Chat_button.Location = new System.Drawing.Point(587, 70);
             this.Chat_button.Name = "Chat_button";
             this.Chat_button.Size = new System.Drawing.Size(67, 23);
             this.Chat_button.TabIndex = 7;
@@ -575,12 +576,28 @@ namespace CMT_2
             this.OpenCodeTools_Button.UseVisualStyleBackColor = false;
             this.OpenCodeTools_Button.Click += new System.EventHandler(this.OpenCodeTools_Button_Click);
             // 
+            // OpenAes_button
+            // 
+            this.OpenAes_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OpenAes_button.BackColor = System.Drawing.Color.White;
+            this.OpenAes_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.OpenAes_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenAes_button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.OpenAes_button.Location = new System.Drawing.Point(601, 327);
+            this.OpenAes_button.Name = "OpenAes_button";
+            this.OpenAes_button.Size = new System.Drawing.Size(67, 23);
+            this.OpenAes_button.TabIndex = 15;
+            this.OpenAes_button.Text = "AES";
+            this.OpenAes_button.UseVisualStyleBackColor = false;
+            this.OpenAes_button.Click += new System.EventHandler(this.OpenAes_button_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(717, 420);
+            this.Controls.Add(this.OpenAes_button);
             this.Controls.Add(this.OpenCodeTools_Button);
             this.Controls.Add(this.OpenChangelog_button);
             this.Controls.Add(this.label7);
@@ -658,6 +675,7 @@ namespace CMT_2
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button OpenChangelog_button;
         private System.Windows.Forms.Button OpenCodeTools_Button;
+        private System.Windows.Forms.Button OpenAes_button;
     }
 }
 

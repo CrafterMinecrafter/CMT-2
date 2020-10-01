@@ -208,7 +208,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Hashs";
-            this.Text = "Hashs";
+            this.Text = "Hashs Tool";
             this.Load += new System.EventHandler(this.Hashs_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

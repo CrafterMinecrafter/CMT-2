@@ -6,15 +6,13 @@ using System.Text;
 
 namespace CMT_2.BS
 {
-    public class AesEncryptor
+    class AesEncryptor
     {
 
-        AesEncryptor()
+        public AesEncryptor()
         {
             aes.BlockSize = 128;
         }
-
-
         public byte[] GenerateIV()
         {
             aes.GenerateIV();
@@ -81,21 +79,23 @@ namespace CMT_2.BS
         }
 
 
-        public string Encrypt(string unencrypted)
+        public string Encrypt(string unencrypted, string key)
         {
+            keyString = key;
             return Convert.ToBase64String(Encrypt(encoder.GetBytes(unencrypted)));
         }
 
 
         [Obsolete("Decrypt(string) has been made obsolete. Please use the DecryptString(string).")]
-        public string Decrypt(string encrypted)
+        public string Decrypt(string encrypted,string key)
         {
-            return DecryptString(encrypted);
+            return DecryptString(encrypted,key);
         }
 
 
-        public string DecryptString(string encrypted)
+        public string DecryptString(string encrypted, string key)
         {
+            keyString = key;
             return DecryptString(Convert.FromBase64String(encrypted));
         }
 
@@ -303,9 +303,14 @@ namespace CMT_2.BS
         private const int keySize = 16;
 
 
-        private const string keyString = "defaultKeyString";
+        public string keyString
+        {
+            set
+            {
+                aes.Key = encoder.GetBytes(value).Take(value.Length).ToArray<byte>();
+            }
 
-
+        }
         private const int IvLength = 16;
 
 

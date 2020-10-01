@@ -20,7 +20,7 @@ namespace CMT_2.Dialogs
         {
             InitializeComponent();
         }
-        string F;
+        readonly string F;
         public FileInfo(string path)
         {
             InitializeComponent();

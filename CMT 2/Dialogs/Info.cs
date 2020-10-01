@@ -32,5 +32,10 @@ namespace CMT_2.Dialogs
         {
             Process.Start("https://vk.com/o_privet_t");
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://www.youtube.com/channel/UCyJfMzp4DSty_O--W4ezHKw");
+        }
     }
 }

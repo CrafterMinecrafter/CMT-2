@@ -18,3 +18,4 @@ C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT 2.pdb
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Dialogs.TextBoxDialog.resources
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Tools.Hashs.Hashs.resources
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Tools.Code_Tools.CodeTools.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Release\CMT_2.Tools.AES.resources

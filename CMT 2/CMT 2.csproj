@@ -144,6 +144,12 @@
     <Compile Include="Tools\Hashs\Hashs.Designer.cs">
       <DependentUpon>Hashs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\AES\AES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\AES\AES.Designer.cs">
+      <DependentUpon>AES.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\XOR\XOR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     <EmbeddedResource Include="Tools\Hashs\Hashs.resx">
       <DependentUpon>Hashs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\AES\AES.resx">
+      <DependentUpon>AES.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tools\XOR\XOR.resx">
       <DependentUpon>XOR.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,7 +231,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

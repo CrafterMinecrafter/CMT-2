@@ -31,6 +31,7 @@
             this.Theme_Button = new System.Windows.Forms.Button();
             this.ThemeLabel = new System.Windows.Forms.Label();
             this.ThemeSettings_button = new System.Windows.Forms.Button();
+            this.GetPro = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Theme_Button
@@ -68,11 +69,25 @@
             this.ThemeSettings_button.UseVisualStyleBackColor = true;
             this.ThemeSettings_button.Click += new System.EventHandler(this.ThemeSettings_button_Click);
             // 
+            // GetPro
+            // 
+            this.GetPro.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.GetPro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GetPro.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.GetPro.Location = new System.Drawing.Point(47, 258);
+            this.GetPro.Name = "GetPro";
+            this.GetPro.Size = new System.Drawing.Size(265, 23);
+            this.GetPro.TabIndex = 6;
+            this.GetPro.Text = "get pro version and support the developer";
+            this.GetPro.UseVisualStyleBackColor = true;
+            this.GetPro.Click += new System.EventHandler(this.GetPro_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 293);
+            this.Controls.Add(this.GetPro);
             this.Controls.Add(this.ThemeSettings_button);
             this.Controls.Add(this.ThemeLabel);
             this.Controls.Add(this.Theme_Button);
@@ -90,5 +105,6 @@
         private System.Windows.Forms.Button Theme_Button;
         private System.Windows.Forms.Label ThemeLabel;
         private System.Windows.Forms.Button ThemeSettings_button;
+        private System.Windows.Forms.Button GetPro;
     }
 }
