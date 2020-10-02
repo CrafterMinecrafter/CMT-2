@@ -1,0 +1,4 @@
+C:\Users\Crafter\Documents\GitHub\CMT-2\Server\obj\Release\netcoreapp3.1\Server.csprojAssemblyReference.cache
+C:\Users\Crafter\Documents\GitHub\CMT-2\Server\obj\Release\netcoreapp3.1\Server.AssemblyInfoInputs.cache
+C:\Users\Crafter\Documents\GitHub\CMT-2\Server\obj\Release\netcoreapp3.1\Server.AssemblyInfo.cs
+C:\Users\Crafter\Documents\GitHub\CMT-2\Server\obj\Release\netcoreapp3.1\Server.csproj.CoreCompileInputs.cache
