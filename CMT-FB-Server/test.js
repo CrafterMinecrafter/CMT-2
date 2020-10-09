@@ -1,35 +1,21 @@
-
-function EncryptDecrypt(str, key) {
-    var s = [], j = 0, x, res = '';
-    for (var i = 0; i < 256; i++) {
-        s[i] = i;
-    }
-    for (i = 0; i < 256; i++) {
-        j = (j + s[i] + key.charCodeAt(i % key.length)) % 256;
-        x = s[i];
-        s[i] = s[j];
-        s[j] = x;
-    }
-    i = 0;
-    j = 0;
-    for (var y = 0; y < str.length; y++) {
-        i = (i + 1) % 256;
-        j = (j + s[i]) % 256;
-        x = s[i];
-        s[i] = s[j];
-        s[j] = x;
-        res += String.fromCharCode(str.charCodeAt(y) ^ s[(s[i] + s[j]) % 256]);
-    }
-    return res;
+/*function ToBytesText(Text = "") {
+    let Buffer = "";
+    for(let i = 0;i<Text.length;i++)
+        Buffer += Text.charCodeAt(i).toString(16).padStart(2,"0");
+    return Buffer;
 }
+function FromBytesText(Text){
+    let Buffer = "";
+    for(let i = 0;i<Text.length;i+=2)
+        Buffer += String.fromCharCode(parseInt(Text.charAt(i)+Text.charAt(i+1),16));
+    return Buffer;
+}
+console.log(ToBytesText("testjzkaJj7@@@   "));
+console.log(FromBytesText('746573746a7a6b614a6a37404040202020'));
 
-function XOR(text, key, encrypt)
+ */
+let date = new Date();
+setInterval(()=>
 {
-    if (encrypt)
-    {
-        return window.btoa(EncryptDecrypt(text, key),'utf8');
-    }
-    return EncryptDecrypt(window.atob(text), key);
-}
-
-console.log(XOR("gT38","keylol",false));
+    console.log(date.getSeconds() + '.' + date.getMilliseconds());
+},20,null);

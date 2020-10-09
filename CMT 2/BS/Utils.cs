@@ -47,20 +47,7 @@ namespace CMT_2.BS
             }
             return StringOutput.PadLeft(32, '0');
         }
-        public static string FileToCodeArray(string Path)
-        {
-            return ByteArrayToCodeArray(File.ReadAllBytes(Path));
-        }
-        public static string ByteArrayToCodeArray(byte[] array)
-        {
-            string buffer = "{";
-            for (int a = 0, b = array.Length; a < b;)
-            {
-                buffer += "0x"+Convert.ToString(array[a], 16).PadLeft(2, '0') + ',';
-                a++;
-            }
-            return buffer.Substring(0, buffer.Length - 1).ToUpper().Replace('X', 'x') + '}';
-        }
+
         public static string AllHashesFile(string FilePath, string HashName)
         {
             byte[] bytes = File.ReadAllBytes(FilePath);
@@ -121,21 +108,37 @@ namespace CMT_2.BS
         {
             if (encrypt)
             {
-                return Convert.ToBase64String(EncryptDecrypt(Encoding.UTF8.GetBytes(text), Encoding.UTF8.GetBytes(key)));
+                return Convert.ToBase64String(XOREncryptDecrypt(Encoding.UTF8.GetBytes(text), Encoding.UTF8.GetBytes(key)));
             }
-            return Encoding.UTF8.GetString(EncryptDecrypt(Convert.FromBase64String(text), Encoding.UTF8.GetBytes(key)));
+            return Encoding.UTF8.GetString(XOREncryptDecrypt(Convert.FromBase64String(text), Encoding.UTF8.GetBytes(key)));
+        }
+        public static string XORascii(string text, string key, bool encrypt)
+        {
+            if (encrypt)
+            {
+                return Convert.ToBase64String(XOREncryptDecrypt(Encoding.ASCII.GetBytes(text), Encoding.ASCII.GetBytes(key)));
+            }
+            return Encoding.UTF8.GetString(XOREncryptDecrypt(Convert.FromBase64String(text), Encoding.ASCII.GetBytes(key)));
+        }
+        public static string XORv(string text, string key)
+        {
+            //if (encrypt)
+            //{
+            return BytesToString(XOREncryptDecrypt(Encoding.ASCII.GetBytes(text), Encoding.ASCII.GetBytes(key)));
+            //}
+            //return StringBytesToString(XOREncryptDecrypt(Convert.FromBase64String(text), Encoding.UTF8.GetBytes(key)));
         }
         public static string XORFile(string FilePath, string key, bool encrypt)
         {
             if (encrypt)
             {
-                return Convert.ToBase64String(EncryptDecrypt(File.ReadAllBytes(FilePath), Encoding.UTF8.GetBytes(key)));
+                return Convert.ToBase64String(XOREncryptDecrypt(File.ReadAllBytes(FilePath), Encoding.UTF8.GetBytes(key)));
             }
-            return Encoding.UTF8.GetString(EncryptDecrypt(Convert.FromBase64String(File.ReadAllText(FilePath)), Encoding.UTF8.GetBytes(key)));
+            return Encoding.UTF8.GetString(XOREncryptDecrypt(Convert.FromBase64String(File.ReadAllText(FilePath)), Encoding.UTF8.GetBytes(key)));
         }
 
 
-        private static byte[] EncryptDecrypt(byte[] data, byte[] key)
+        private static byte[] XOREncryptDecrypt(byte[] data, byte[] key)
         {
             int num = 0;
             int num2 = 0;
@@ -147,7 +150,7 @@ namespace CMT_2.BS
             }
             for (int j = 0; j < 256; j++)
             {
-                num3 = (num3 + (int)array[j] + (int)key[j % key.Length]) % 256;
+                num3 = (num3 + array[j] + key[j % key.Length]) % 256;
                 byte b = array[j];
                 array[j] = array[num3];
                 array[num3] = b;
@@ -156,14 +159,52 @@ namespace CMT_2.BS
             for (int k = 0; k < data.Length; k++)
             {
                 num = (num + 1) % 256;
-                num2 = (num2 + (int)array[num]) % 256;
+                num2 = (num2 + array[num]) % 256;
                 byte b = array[num];
                 array[num] = array[num2];
                 array[num2] = b;
-                array2[k] = (byte)(data[k] ^ array[(int)(array[num] + array[num2]) % 256]);
+                array2[k] = (byte)(data[k] ^ array[(array[num] + array[num2]) % 256]);
             }
             return array2;
         }
+        #endregion
+        #region Other Tools
+        public static string FileToCodeArray(string Path)
+        {
+            return ByteArrayToCodeArray(File.ReadAllBytes(Path));
+        }
+        public static string ByteArrayToCodeArray(byte[] array)
+        {
+            string buffer = "{";
+            for (int a = 0, b = array.Length; a < b;)
+            {
+                buffer += "0x" + Convert.ToString(array[a], 16).PadLeft(2, '0') + ',';
+                a++;
+            }
+            return buffer.Substring(0, buffer.Length - 1).ToUpper().Replace('X', 'x') + '}';
+        }
+        public static string BytesToString(byte[] array)
+        {
+            string buffer = "";
+            for (int a = 0, b = array.Length; a < b;)
+            {
+                buffer += Convert.ToString(array[a], 16).PadLeft(2, '0');
+                a++;
+            }
+            return buffer.Substring(0, buffer.Length - 1);
+        }
+
+        public static string StringBytesToString(string array)
+        {
+            string buffer = "";
+            for (int a = 0, b = array.Length; a < b;)
+            {
+                buffer += char.ConvertFromUtf32(Convert.ToInt32(array[a].ToString() + array[a + 1], 16));
+                a += 2;
+            }
+            return buffer.Substring(0, buffer.Length - 1);
+        }
+
         #endregion
     }
 

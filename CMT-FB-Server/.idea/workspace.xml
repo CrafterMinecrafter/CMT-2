@@ -46,21 +46,64 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.10.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.10.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="js.buildTools.grunt.grunt-cli.package" value="" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fd.bat" />
+    <property name="nodejs.protractor.protractor_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Progi\IntelliJ IDEA 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Shell Script.Firebase Deploy">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <module name="CMT-FB-Server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <useClassPathOnly />
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ShConfigurationType">
+      <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/fd.bat" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.grunt">
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Unnamed" />
+      <item itemvalue="Shell Script.Firebase Deploy" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -70,7 +113,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601579056055</updated>
-      <workItem from="1601579057247" duration="27079000" />
+      <workItem from="1601579057247" duration="76180000" />
     </task>
     <servers />
   </component>
@@ -89,14 +132,35 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="498" height="446" key="SwitcherDM" timestamp="1601592356803">
+    <state x="254" y="97" width="1092" height="763" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602233679724">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1600.860@0.0.1600.860" timestamp="1601592356803" />
+    <state x="254" y="234" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.1160@0.0.1600.1160" timestamp="1601890015753" />
+    <state x="254" y="97" width="1092" height="763" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1602233679724" />
+    <state x="580" y="219" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1602233017585">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="219" key="#com.intellij.ide.macro.MacrosDialog/0.0.1600.860@0.0.1600.860" timestamp="1602233017585" />
+    <state x="529" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1602233335047">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="529" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1602233335047" />
+    <state x="580" y="255" key="FileChooserDialogImpl" timestamp="1602238623278">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="255" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1602238623278" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1601685800531">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1600.860@0.0.1600.860" timestamp="1601685800531" />
     <state x="617" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601605820321">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="617" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1601605820321" />
+    <state x="456" y="270" key="run.anything.popup" timestamp="1601887802250">
+      <screen x="0" y="0" width="1600" height="1160" />
+    </state>
+    <state x="456" y="270" key="run.anything.popup/0.0.1600.1160@0.0.1600.1160" timestamp="1601887802250" />
     <state x="451" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1601592264008">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

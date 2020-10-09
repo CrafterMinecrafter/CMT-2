@@ -413,7 +413,6 @@ namespace CMT_2
             this.Chat_button.TabIndex = 7;
             this.Chat_button.Text = "Chat";
             this.Chat_button.UseVisualStyleBackColor = false;
-            this.Chat_button.Visible = false;
             this.Chat_button.Click += new System.EventHandler(this.OpenChat_button_Click);
             // 
             // TrashCleaner

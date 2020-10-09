@@ -47,10 +47,10 @@ namespace CMT_2
                 #region Проверка ID на про версию
                 using (WebClient wb = new WebClient())
                 {
-                    
-                    WebData.Add(wb.DownloadString("https://ideone.com/plain/h42QvK").Trim('\n').Split('|'));
+                    var str = wb.DownloadString("https://ideone.com/plain/h42QvK");
+                    WebData.Add(str.Trim('\n').Split('|'));
                     WebData.Add(wb.DownloadString("https://ideone.com/plain/bAROiC").Split('|'));
-                    if (WebData[0].Contains(IDsManager.id[3]))
+                    if (str.Contains(IDsManager.id[3]))
                     {
                         IsPro = true;
                         Text = "CrafterMinecrafter Tool Pro";
@@ -60,7 +60,7 @@ namespace CMT_2
                         IsPro = false;
                         Text = "CrafterMinecrafter Tool Community";
                     }
-                    if (WebData[1][2] == "1" && !WebData[0].Contains(IDsManager.id[3]))
+                    if (WebData[1][2] == "1" && !str.Contains(IDsManager.id[3]))
                     {
                         IsPro = true;
                         Text = "CrafterMinecrafter Tool Pro(demo)";

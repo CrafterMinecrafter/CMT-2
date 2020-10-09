@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.ChatBox = new System.Windows.Forms.TextBox();
             this.InputBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
@@ -42,7 +41,7 @@
             this.ChatBox.Multiline = true;
             this.ChatBox.Name = "ChatBox";
             this.ChatBox.ReadOnly = true;
-            this.ChatBox.Size = new System.Drawing.Size(465, 232);
+            this.ChatBox.Size = new System.Drawing.Size(596, 232);
             this.ChatBox.TabIndex = 0;
             // 
             // InputBox
@@ -55,15 +54,6 @@
             this.InputBox.TabIndex = 1;
             this.InputBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InputBox_KeyDown);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(474, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Online:0";
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
@@ -75,7 +65,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 317);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.InputBox);
             this.Controls.Add(this.ChatBox);
             this.Name = "Chat";
@@ -90,7 +79,6 @@
 
         private System.Windows.Forms.TextBox ChatBox;
         private System.Windows.Forms.TextBox InputBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
     }
 }
