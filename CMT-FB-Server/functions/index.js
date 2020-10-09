@@ -5,7 +5,7 @@
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
-
+/*
    class TextTools {
        static FromBytesText(Text) {
            let Buffer = "";
@@ -36,36 +36,65 @@
            }
            return res;
        }
-
    }
-   class BDmgr {
-       static DeleteMessage(message) {
+   */
+   class Chat {
+      /* static DeleteMessage(message) {
                    //setTimeout(() => {
                    adm.database().ref('/Chat/' + message).remove();
               // }, time, null);
+           }*/
+            static ClearChat(){
+                adm.database().ref('/Chat').set('').then(()=>{
+                    Chat.PublicMsg('System', 'Chat Cleared!', true) ;
+                });
            }
            static CheckMSGCount(){
                adm.database().ref('/Chat').once("value")
                    .then(function(snapshot) {
-                       if(snapshot.numChildren() >= 4){
-                           adm.database().ref('/Chat').set('');
-                           BDmgr.PublicMsg('System', 'Chat Cleared!', true) ;
+                       if(snapshot.numChildren() >= 31){
+                           Chat.ClearChat();
                        }
                    });
            }
 
-           static PublicMsg(User, Message, IsSystem = false) {
+           static PublicMsg(User = "", Message = "", IsSystem = false) {
+                let status = "";
+                let args = Message.split(' ');
+                args[0] == args[0].toLocaleLowerCase();
+                if(User == "System" || User == "Crafter") {
+                    status = "*";
+                    if(Message.toLocaleLowerCase() == '!clear'){
+                            this.ClearChat();
+                            return;
+                        }
+                        if(args[0] == '!send'){
+                            if(args[3] == '0')
+                             this.PublicMsg(args[1],args[2],false);
+                            if(args[3] == '1')
+                             this.PublicMsg(args[1],args[2],true);
+                            return;
+                        }
+                    }
+                if(Message == '!timenow'){
+                    this.PublicMsg('System', User+', time:' + new Date().toTimeString());
+                    return;
+                }
            if(!IsSystem) this.CheckMSGCount();
            let date = new Date();
            adm.database().ref('/Chat').push(
-               '['
+               status+'['
+               +
+               date.getHours()
+               +
+               ':'
+               +
+               date.getMinutes()
+               +
+               ':'
                +
                date.getSeconds()
-               +
-               '.'
-               +
-               date.getMilliseconds()
-               + ']' + User + ' > ' + Message);
+               + '] ' + User + ' > ' + Message);
        };
    }
  exports.funcs = funcs.https.onRequest((request, response) => {
@@ -79,14 +108,13 @@
    switch (req[0]){
        case '1':{
            try {
-               BDmgr.PublicMsg(req[1], req[2]);
+               Chat.PublicMsg(req[1], req[2]);
            } catch (er) {
                response.send("Error");
            }
-           response.send("sending msg");
+           response.send("sending msg...");
            break;
        }
    }
      response.send("Error");
-
  });

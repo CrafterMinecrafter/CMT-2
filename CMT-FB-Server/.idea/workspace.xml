@@ -51,6 +51,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/fd.bat" />
     <property name="nodejs.protractor.protractor_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="ts.external.directory.path" value="C:\Progi\IntelliJ IDEA 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunManager" selected="Shell Script.Firebase Deploy">
@@ -113,7 +114,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601579056055</updated>
-      <workItem from="1601579057247" duration="76180000" />
+      <workItem from="1601579057247" duration="85083000" />
     </task>
     <servers />
   </component>
@@ -132,11 +133,11 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="254" y="97" width="1092" height="763" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602233679724">
+    <state x="254" y="97" width="1092" height="763" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602254301109">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="254" y="234" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.1160@0.0.1600.1160" timestamp="1601890015753" />
-    <state x="254" y="97" width="1092" height="763" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1602233679724" />
+    <state x="254" y="97" width="1092" height="763" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1602254301109" />
     <state x="580" y="219" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1602233017585">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -145,6 +146,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="529" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1602233335047" />
+    <state x="531" y="360" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602257124205">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="531" y="360" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.860@0.0.1600.860" timestamp="1602257124205" />
     <state x="580" y="255" key="FileChooserDialogImpl" timestamp="1602238623278">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

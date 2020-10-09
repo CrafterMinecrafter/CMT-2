@@ -36,16 +36,22 @@
             // 
             // ChatBox
             // 
+            this.ChatBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ChatBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ChatBox.Location = new System.Drawing.Point(3, 1);
             this.ChatBox.Multiline = true;
             this.ChatBox.Name = "ChatBox";
             this.ChatBox.ReadOnly = true;
+            this.ChatBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.ChatBox.Size = new System.Drawing.Size(596, 232);
             this.ChatBox.TabIndex = 0;
             // 
             // InputBox
             // 
+            this.InputBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.InputBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.InputBox.Location = new System.Drawing.Point(3, 239);
             this.InputBox.Multiline = true;

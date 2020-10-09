@@ -1,26 +1,36 @@
 ﻿using CMT_2.BS;
 using CMT_2.Engine;
 using System;
-using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace CMT_2.Tools.Chat
 {
-
     public partial class Chat : Form
     {
+        public JsonCore core = new JsonCore();
         public string Name;
-        private static readonly Uri url = new Uri("https://us-central1-crafterminecraftertool.cloudfunctions.net/funcs");
-        private WebClient web;
-
+        private static readonly Uri FuncUrl = new Uri("https://us-central1-crafterminecraftertool.cloudfunctions.net/funcs");
+        private static readonly Uri ChatUrl = new Uri("https://crafterminecraftertool.firebaseio.com/Chat.json");
+        private WebClient webRead;
+        private WebClient webWrite;
         public Chat()
         {
             InitializeComponent();
-            web = new WebClient();
+            webRead = new WebClient();
+            webWrite = new WebClient();
+            this.ChatBox.TextChanged += (sender, e) =>
+            {
+                if (ChatBox.Visible)
+                {
+                    ChatBox.SelectionStart = ChatBox.TextLength;
+                    ChatBox.ScrollToCaret();
+                }
+            };
         }
 
         private void Chat_Load(object sender, EventArgs e)
@@ -44,23 +54,36 @@ namespace CMT_2.Tools.Chat
 
         private async void InputBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (InputBox.Text.Contains("|"))
+            try
             {
-                InputBox.Clear();
-                return;
-            }
-            if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(InputBox.Text))
+                if (InputBox.Text.Contains("|"))
+                {
+                    InputBox.Clear();
+                    return;
+                }
+                if (e.KeyCode == Keys.Enter && !string.IsNullOrWhiteSpace(InputBox.Text))
+                {
+                    webWrite.Headers.Clear();
+                    webWrite.Headers.Add("req", "1" + '|' + Name + '|' + InputBox.Text.Replace("\"", "\\\"") + '|' + UHWID.IDsManager.id[3]);
+                    webWrite.DownloadStringAsync(FuncUrl);
+                    InputBox.Clear();
+                }
+            } catch
             {
-                web.Headers.Clear();
-                web.Headers.Add("req", "1" + '|' + Name + '|' + InputBox.Text + '|' + UHWID.IDsManager.id[3]);
-                MessageBox.Show(web.DownloadString(url));
-                InputBox.Clear();
+
             }
         }
 
         private async void timer1_Tick(object sender, EventArgs e)
         {
-            // web.DownloadStringAsync()
+            try
+            {
+                ChatBox.Text = core.JsonToText(await webRead.DownloadStringTaskAsync(ChatUrl));
+            }
+            catch
+            {
+            }
         }
+
     }
 }
