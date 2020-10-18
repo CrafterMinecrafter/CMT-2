@@ -70,7 +70,7 @@ namespace CMT_2.Tools.Chat
                 }
             } catch
             {
-
+                InputBox.Clear();
             }
         }
 

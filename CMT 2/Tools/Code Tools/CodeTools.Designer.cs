@@ -30,12 +30,12 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.FileToBase64 = new System.Windows.Forms.CheckBox();
             this.SelectFile = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.OutputBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.VarName = new System.Windows.Forms.TextBox();
+            this.FileToBase64 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -76,16 +76,6 @@
             this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Settings:";
-            // 
-            // FileToBase64
-            // 
-            this.FileToBase64.AutoSize = true;
-            this.FileToBase64.Location = new System.Drawing.Point(16, 35);
-            this.FileToBase64.Name = "FileToBase64";
-            this.FileToBase64.Size = new System.Drawing.Size(97, 17);
-            this.FileToBase64.TabIndex = 10;
-            this.FileToBase64.Text = "File To Base64";
-            this.FileToBase64.UseVisualStyleBackColor = true;
             // 
             // SelectFile
             // 
@@ -156,6 +146,16 @@
             this.VarName.Size = new System.Drawing.Size(95, 13);
             this.VarName.TabIndex = 12;
             // 
+            // FileToBase64
+            // 
+            this.FileToBase64.AutoSize = true;
+            this.FileToBase64.Location = new System.Drawing.Point(16, 35);
+            this.FileToBase64.Name = "FileToBase64";
+            this.FileToBase64.Size = new System.Drawing.Size(97, 17);
+            this.FileToBase64.TabIndex = 10;
+            this.FileToBase64.Text = "File To Base64";
+            this.FileToBase64.UseVisualStyleBackColor = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -216,10 +216,10 @@
             this.EncBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EncBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.EncBox.Location = new System.Drawing.Point(370, 21);
+            this.EncBox.Location = new System.Drawing.Point(374, 21);
             this.EncBox.Multiline = true;
             this.EncBox.Name = "EncBox";
-            this.EncBox.Size = new System.Drawing.Size(237, 179);
+            this.EncBox.Size = new System.Drawing.Size(237, 175);
             this.EncBox.TabIndex = 7;
             // 
             // Enc_Button

@@ -152,6 +152,12 @@
     <Compile Include="Tools\AES\AES.Designer.cs">
       <DependentUpon>AES.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\WebClientUI\WBClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\WebClientUI\WBClient.Designer.cs">
+      <DependentUpon>WBClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\XOR\XOR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\AES\AES.resx">
       <DependentUpon>AES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\WebClientUI\WBClient.resx">
+      <DependentUpon>WBClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\XOR\XOR.resx">
       <DependentUpon>XOR.cs</DependentUpon>

@@ -76,10 +76,14 @@
                             return;
                         }
                     }
-                if(Message == '!timenow'){
+                if(Message.toLowerCase() == '!timenow'){
                     this.PublicMsg('System', User+', time:' + new Date().toTimeString());
                     return;
                 }
+               if(Message.toLowerCase() == '!help'){
+                   this.PublicMsg('System', "Admin Commands\n!clear\n!send (user) (message) (IsSystem)\n\n\nUser Commands\n!timenow");
+                   return;
+               }
            if(!IsSystem) this.CheckMSGCount();
            let date = new Date();
            adm.database().ref('/Chat').push(

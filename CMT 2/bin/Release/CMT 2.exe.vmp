@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Document Version="2">
+    <Protection InputFileName="CMT 2.exe" Options="857032">
+        <Messages />
+        <Folders />
+        <Procedures>
+            <Procedure MapAddress="CMT_2.Main::Main_Load(object, class System.EventArgs)" Options="0" CompilationType="2" />
+            <Procedure MapAddress="CMT_2.Main::.ctor()" Options="0" CompilationType="2" />
+            <Procedure MapAddress="CMT_2.Dialogs.Settings::Theme_Button_Click(object, class System.EventArgs)" Options="0" CompilationType="2" />
+            <Procedure MapAddress="CMT_2.Dialogs.Settings::Settings_Load(object, class System.EventArgs)" Options="0" CompilationType="2" />
+            <Procedure MapAddress="CMT_2.Program::Main()" Options="0" CompilationType="2" />
+            <Procedure MapAddress="CMT_2.Main::.cctor()" Options="0" CompilationType="2" />
+            <Procedure MapAddress="UHWID.IDsManager::get_id()" Options="0" CompilationType="2" />
+            <Procedure MapAddress="UHWID.IDsManager::set_id(string[])" Options="0" CompilationType="2" />
+            <Procedure MapAddress="UHWID.IDsManager::init()" Options="0" CompilationType="2" />
+            <Procedure MapAddress="UHWID.CpuId::GetCpuId()" Options="0" CompilationType="2" />
+            <Procedure MapAddress="UHWID.CpuId::ExecuteCode(unsigned int8[]&amp;)" Options="0" CompilationType="2" />
+            <Procedure MapAddress="CMT_2.Engine.ThemeEngine::SetTheme()" Options="0" CompilationType="2" />
+            <Procedure MapAddress="CMT_2.Engine.ThemeEngine::.ctor()" Options="0" CompilationType="2" />
+            <Procedure MapAddress="CMT_2.Engine.ThemeEngine::InitTheme(class System.Windows.Forms.Form)" Options="0" CompilationType="2" />
+            <Procedure MapAddress="CMT_2.Engine.ThemeEngine::InitTheme(class System.Windows.Forms.Control/ControlCollection)" Options="0" CompilationType="2" />
+            <Procedure MapAddress="CMT_2.Engine.ThemeEngine/settingsClass::.cctor()" Options="0" CompilationType="2" />
+            <Procedure MapAddress="CMT_2.Engine.ThemeEngine/settingsClass::Reset()" Options="0" CompilationType="2" />
+        </Procedures>
+        <Objects />
+    </Protection>
+    <DLLBox>
+        <Folders />
+    </DLLBox>
+    <Script />
+    <LicenseManager />
+</Document>

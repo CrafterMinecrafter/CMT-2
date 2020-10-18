@@ -218,10 +218,10 @@
             this.EncBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EncBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.EncBox.Location = new System.Drawing.Point(336, 21);
+            this.EncBox.Location = new System.Drawing.Point(340, 21);
             this.EncBox.Multiline = true;
             this.EncBox.Name = "EncBox";
-            this.EncBox.Size = new System.Drawing.Size(237, 179);
+            this.EncBox.Size = new System.Drawing.Size(237, 175);
             this.EncBox.TabIndex = 7;
             // 
             // checkBox2
