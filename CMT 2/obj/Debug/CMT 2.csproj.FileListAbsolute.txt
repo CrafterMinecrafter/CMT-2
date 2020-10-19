@@ -56,3 +56,4 @@ C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Debug\System.Runtime.CompilerS
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT 2.exe.config
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT 2.csproj.CopyComplete
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Tools.Chat.Chat.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Tools.WebClientUI.WBClient.resources

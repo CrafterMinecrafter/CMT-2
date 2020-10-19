@@ -5,6 +5,7 @@ using CMT_2.Tools;
 using CMT_2.Tools.Chat;
 using CMT_2.Tools.Code_Tools;
 using CMT_2.Tools.Hashs;
+using CMT_2.Tools.WebClientUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -190,6 +191,10 @@ namespace CMT_2
         {
             new CodeTools().Show();
         }
+        private void OpenWebClient_Button_Click(object sender, EventArgs e)
+        {
+            new WBClient().Show();
+        }
         #endregion
         #region File Regions
         #region File
@@ -355,8 +360,6 @@ namespace CMT_2
             }
             label_SelectedTool.Text = SelectedTool.Text + ':';
         }
-
-      
     }
 
     #endregion

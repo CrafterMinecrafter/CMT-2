@@ -11,7 +11,7 @@ namespace CMT_2.Tools.Chat
             var Matches = Json.Replace("\\\\\\\"", "¬").Split('\"');
             for (int i = 0; i < Matches.Length; i++)
                 if(i%2 == 1 && Matches[i].Contains('>'))
-                 buffer += Matches[i].Replace("¬","\"") +Environment.NewLine;
+                 buffer += Matches[i].Replace("¬","\"").Replace("\\n",Environment.NewLine) +Environment.NewLine;
             return buffer;
         }
     }

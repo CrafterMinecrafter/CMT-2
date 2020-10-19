@@ -74,6 +74,7 @@ namespace CMT_2
             this.OpenChangelog_button = new System.Windows.Forms.Button();
             this.OpenCodeTools_Button = new System.Windows.Forms.Button();
             this.OpenAes_button = new System.Windows.Forms.Button();
+            this.OpenWebClient_Button = new System.Windows.Forms.Button();
             this.ByteTool.SuspendLayout();
             this.StringMode.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.File3)).BeginInit();
@@ -90,7 +91,7 @@ namespace CMT_2
             this.Info_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Info_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Info_Button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Info_Button.Location = new System.Drawing.Point(538, 12);
+            this.Info_Button.Location = new System.Drawing.Point(553, 12);
             this.Info_Button.Name = "Info_Button";
             this.Info_Button.Size = new System.Drawing.Size(73, 23);
             this.Info_Button.TabIndex = 2;
@@ -105,7 +106,7 @@ namespace CMT_2
             this.OpenSettings_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.OpenSettings_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenSettings_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OpenSettings_button.Location = new System.Drawing.Point(617, 12);
+            this.OpenSettings_button.Location = new System.Drawing.Point(632, 12);
             this.OpenSettings_button.Name = "OpenSettings_button";
             this.OpenSettings_button.Size = new System.Drawing.Size(94, 23);
             this.OpenSettings_button.TabIndex = 3;
@@ -120,7 +121,7 @@ namespace CMT_2
             this.XOR.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.XOR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.XOR.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.XOR.Location = new System.Drawing.Point(638, 385);
+            this.XOR.Location = new System.Drawing.Point(647, 385);
             this.XOR.Name = "XOR";
             this.XOR.Size = new System.Drawing.Size(73, 23);
             this.XOR.TabIndex = 4;
@@ -139,7 +140,7 @@ namespace CMT_2
             this.ByteTool.Controls.Add(this.FileMode);
             this.ByteTool.Location = new System.Drawing.Point(12, 56);
             this.ByteTool.Name = "ByteTool";
-            this.ByteTool.Size = new System.Drawing.Size(522, 323);
+            this.ByteTool.Size = new System.Drawing.Size(516, 323);
             this.ByteTool.TabIndex = 5;
             // 
             // checkBox1
@@ -407,7 +408,7 @@ namespace CMT_2
             this.Chat_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Chat_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Chat_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Chat_button.Location = new System.Drawing.Point(587, 70);
+            this.Chat_button.Location = new System.Drawing.Point(602, 70);
             this.Chat_button.Name = "Chat_button";
             this.Chat_button.Size = new System.Drawing.Size(67, 23);
             this.Chat_button.TabIndex = 7;
@@ -439,7 +440,7 @@ namespace CMT_2
             this.MD5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.MD5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MD5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.MD5.Location = new System.Drawing.Point(559, 385);
+            this.MD5.Location = new System.Drawing.Point(596, 356);
             this.MD5.Name = "MD5";
             this.MD5.Size = new System.Drawing.Size(73, 23);
             this.MD5.TabIndex = 9;
@@ -458,7 +459,7 @@ namespace CMT_2
             this.SelectedTool.Items.AddRange(new object[] {
             "File Byte Tool",
             "File Date Tool"});
-            this.SelectedTool.Location = new System.Drawing.Point(318, 8);
+            this.SelectedTool.Location = new System.Drawing.Point(333, 8);
             this.SelectedTool.Name = "SelectedTool";
             this.SelectedTool.Size = new System.Drawing.Size(183, 21);
             this.SelectedTool.TabIndex = 10;
@@ -469,7 +470,7 @@ namespace CMT_2
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Location = new System.Drawing.Point(246, 11);
+            this.label7.Location = new System.Drawing.Point(261, 11);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 13);
             this.label7.TabIndex = 11;
@@ -488,7 +489,7 @@ namespace CMT_2
             this.DateTool.Controls.Add(this.dateTimePicker1);
             this.DateTool.Location = new System.Drawing.Point(12, 56);
             this.DateTool.Name = "DateTool";
-            this.DateTool.Size = new System.Drawing.Size(522, 323);
+            this.DateTool.Size = new System.Drawing.Size(516, 323);
             this.DateTool.TabIndex = 12;
             this.DateTool.Visible = false;
             // 
@@ -499,7 +500,7 @@ namespace CMT_2
             this.SetDateInFile_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.SetDateInFile_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SetDateInFile_Button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.SetDateInFile_Button.Location = new System.Drawing.Point(253, 73);
+            this.SetDateInFile_Button.Location = new System.Drawing.Point(250, 73);
             this.SetDateInFile_Button.Name = "SetDateInFile_Button";
             this.SetDateInFile_Button.Size = new System.Drawing.Size(88, 23);
             this.SetDateInFile_Button.TabIndex = 9;
@@ -514,7 +515,7 @@ namespace CMT_2
             this.SetDateInFolder_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.SetDateInFolder_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SetDateInFolder_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.SetDateInFolder_button.Location = new System.Drawing.Point(141, 73);
+            this.SetDateInFolder_button.Location = new System.Drawing.Point(138, 73);
             this.SetDateInFolder_button.Name = "SetDateInFolder_button";
             this.SetDateInFolder_button.Size = new System.Drawing.Size(88, 23);
             this.SetDateInFolder_button.TabIndex = 8;
@@ -526,7 +527,7 @@ namespace CMT_2
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(214, 21);
+            this.label8.Location = new System.Drawing.Point(211, 21);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(49, 13);
             this.label8.TabIndex = 1;
@@ -540,7 +541,7 @@ namespace CMT_2
             this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.SystemColors.Desktop;
             this.dateTimePicker1.CustomFormat = "";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(141, 37);
+            this.dateTimePicker1.Location = new System.Drawing.Point(138, 37);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 0;
@@ -552,7 +553,7 @@ namespace CMT_2
             this.OpenChangelog_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.OpenChangelog_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenChangelog_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OpenChangelog_button.Location = new System.Drawing.Point(574, 41);
+            this.OpenChangelog_button.Location = new System.Drawing.Point(589, 41);
             this.OpenChangelog_button.Name = "OpenChangelog_button";
             this.OpenChangelog_button.Size = new System.Drawing.Size(94, 23);
             this.OpenChangelog_button.TabIndex = 13;
@@ -567,9 +568,9 @@ namespace CMT_2
             this.OpenCodeTools_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.OpenCodeTools_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenCodeTools_Button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OpenCodeTools_Button.Location = new System.Drawing.Point(587, 356);
+            this.OpenCodeTools_Button.Location = new System.Drawing.Point(553, 327);
             this.OpenCodeTools_Button.Name = "OpenCodeTools_Button";
-            this.OpenCodeTools_Button.Size = new System.Drawing.Size(94, 23);
+            this.OpenCodeTools_Button.Size = new System.Drawing.Size(80, 23);
             this.OpenCodeTools_Button.TabIndex = 14;
             this.OpenCodeTools_Button.Text = "Code Tools";
             this.OpenCodeTools_Button.UseVisualStyleBackColor = false;
@@ -582,7 +583,7 @@ namespace CMT_2
             this.OpenAes_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.OpenAes_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenAes_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OpenAes_button.Location = new System.Drawing.Point(601, 327);
+            this.OpenAes_button.Location = new System.Drawing.Point(553, 385);
             this.OpenAes_button.Name = "OpenAes_button";
             this.OpenAes_button.Size = new System.Drawing.Size(67, 23);
             this.OpenAes_button.TabIndex = 15;
@@ -590,12 +591,28 @@ namespace CMT_2
             this.OpenAes_button.UseVisualStyleBackColor = false;
             this.OpenAes_button.Click += new System.EventHandler(this.OpenAes_button_Click);
             // 
+            // OpenWebClient_Button
+            // 
+            this.OpenWebClient_Button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.OpenWebClient_Button.BackColor = System.Drawing.Color.White;
+            this.OpenWebClient_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.OpenWebClient_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenWebClient_Button.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.OpenWebClient_Button.Location = new System.Drawing.Point(639, 327);
+            this.OpenWebClient_Button.Name = "OpenWebClient_Button";
+            this.OpenWebClient_Button.Size = new System.Drawing.Size(81, 23);
+            this.OpenWebClient_Button.TabIndex = 16;
+            this.OpenWebClient_Button.Text = "Web Client";
+            this.OpenWebClient_Button.UseVisualStyleBackColor = false;
+            this.OpenWebClient_Button.Click += new System.EventHandler(this.OpenWebClient_Button_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(717, 420);
+            this.ClientSize = new System.Drawing.Size(732, 420);
+            this.Controls.Add(this.OpenWebClient_Button);
             this.Controls.Add(this.OpenAes_button);
             this.Controls.Add(this.OpenCodeTools_Button);
             this.Controls.Add(this.OpenChangelog_button);
@@ -675,6 +692,7 @@ namespace CMT_2
         private System.Windows.Forms.Button OpenChangelog_button;
         private System.Windows.Forms.Button OpenCodeTools_Button;
         private System.Windows.Forms.Button OpenAes_button;
+        private System.Windows.Forms.Button OpenWebClient_Button;
     }
 }
 
