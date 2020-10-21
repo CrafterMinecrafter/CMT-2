@@ -32,11 +32,14 @@
             this.HeadersList = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ValueHeaderBox = new System.Windows.Forms.Label();
+            this.HeaderBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.ClearAllHeadersButton = new System.Windows.Forms.Button();
             this.HeaderRemoveButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.AddHeaderButton = new System.Windows.Forms.Button();
-            this.HeaderBox = new System.Windows.Forms.TextBox();
+            this.KeyHeaderBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.TimerControlButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,14 +49,21 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.SendRequestButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.URLBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.LogsEnabled = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.LogBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.ClearLogs = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.RequestsInSec_label = new System.Windows.Forms.Label();
+            this.RequestAnalitics = new System.Windows.Forms.Timer(this.components);
+            this.windowsIdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.windowsIdBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // HeadersList
@@ -78,16 +88,53 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.ValueHeaderBox);
+            this.panel1.Controls.Add(this.HeaderBox);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.ClearAllHeadersButton);
             this.panel1.Controls.Add(this.HeaderRemoveButton);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.AddHeaderButton);
-            this.panel1.Controls.Add(this.HeaderBox);
+            this.panel1.Controls.Add(this.KeyHeaderBox);
             this.panel1.Controls.Add(this.HeadersList);
             this.panel1.Location = new System.Drawing.Point(12, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(363, 139);
+            this.panel1.Size = new System.Drawing.Size(363, 147);
             this.panel1.TabIndex = 3;
+            // 
+            // ValueHeaderBox
+            // 
+            this.ValueHeaderBox.AutoSize = true;
+            this.ValueHeaderBox.Location = new System.Drawing.Point(4, 96);
+            this.ValueHeaderBox.Name = "ValueHeaderBox";
+            this.ValueHeaderBox.Size = new System.Drawing.Size(37, 13);
+            this.ValueHeaderBox.TabIndex = 20;
+            this.ValueHeaderBox.Text = "Value:";
+            // 
+            // HeaderBox
+            // 
+            this.HeaderBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.HeaderBox.AutoCompleteCustomSource.AddRange(new string[] {
+            "test",
+            "lol",
+            "tron"});
+            this.HeaderBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.HeaderBox.Location = new System.Drawing.Point(7, 112);
+            this.HeaderBox.Multiline = true;
+            this.HeaderBox.Name = "HeaderBox";
+            this.HeaderBox.Size = new System.Drawing.Size(231, 26);
+            this.HeaderBox.TabIndex = 19;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 51);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(28, 13);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Key:";
             // 
             // ClearAllHeadersButton
             // 
@@ -96,7 +143,7 @@
             this.ClearAllHeadersButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ClearAllHeadersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClearAllHeadersButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ClearAllHeadersButton.Location = new System.Drawing.Point(157, 14);
+            this.ClearAllHeadersButton.Location = new System.Drawing.Point(157, 3);
             this.ClearAllHeadersButton.Name = "ClearAllHeadersButton";
             this.ClearAllHeadersButton.Size = new System.Drawing.Size(110, 25);
             this.ClearAllHeadersButton.TabIndex = 17;
@@ -111,7 +158,7 @@
             this.HeaderRemoveButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.HeaderRemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HeaderRemoveButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.HeaderRemoveButton.Location = new System.Drawing.Point(157, 45);
+            this.HeaderRemoveButton.Location = new System.Drawing.Point(157, 34);
             this.HeaderRemoveButton.Name = "HeaderRemoveButton";
             this.HeaderRemoveButton.Size = new System.Drawing.Size(110, 25);
             this.HeaderRemoveButton.TabIndex = 16;
@@ -135,29 +182,29 @@
             this.AddHeaderButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.AddHeaderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddHeaderButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.AddHeaderButton.Location = new System.Drawing.Point(243, 89);
+            this.AddHeaderButton.Location = new System.Drawing.Point(244, 89);
             this.AddHeaderButton.Name = "AddHeaderButton";
-            this.AddHeaderButton.Size = new System.Drawing.Size(101, 27);
+            this.AddHeaderButton.Size = new System.Drawing.Size(103, 27);
             this.AddHeaderButton.TabIndex = 14;
             this.AddHeaderButton.Text = "Add";
             this.AddHeaderButton.UseVisualStyleBackColor = false;
             this.AddHeaderButton.Click += new System.EventHandler(this.AddHeaderButton_Click);
             // 
-            // HeaderBox
+            // KeyHeaderBox
             // 
-            this.HeaderBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.KeyHeaderBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.HeaderBox.AutoCompleteCustomSource.AddRange(new string[] {
+            this.KeyHeaderBox.AutoCompleteCustomSource.AddRange(new string[] {
             "test",
             "lol",
             "tron"});
-            this.HeaderBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.HeaderBox.Location = new System.Drawing.Point(6, 76);
-            this.HeaderBox.Multiline = true;
-            this.HeaderBox.Name = "HeaderBox";
-            this.HeaderBox.Size = new System.Drawing.Size(231, 53);
-            this.HeaderBox.TabIndex = 13;
+            this.KeyHeaderBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.KeyHeaderBox.Location = new System.Drawing.Point(7, 67);
+            this.KeyHeaderBox.Multiline = true;
+            this.KeyHeaderBox.Name = "KeyHeaderBox";
+            this.KeyHeaderBox.Size = new System.Drawing.Size(231, 26);
+            this.KeyHeaderBox.TabIndex = 13;
             // 
             // panel2
             // 
@@ -169,17 +216,17 @@
             this.panel2.Controls.Add(this.MSIntervalBox);
             this.panel2.Location = new System.Drawing.Point(629, 187);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(117, 139);
+            this.panel2.Size = new System.Drawing.Size(117, 131);
             this.panel2.TabIndex = 4;
             // 
             // TimerControlButton
             // 
-            this.TimerControlButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TimerControlButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TimerControlButton.BackColor = System.Drawing.Color.White;
             this.TimerControlButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.TimerControlButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TimerControlButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.TimerControlButton.Location = new System.Drawing.Point(5, 93);
+            this.TimerControlButton.Location = new System.Drawing.Point(5, 85);
             this.TimerControlButton.Name = "TimerControlButton";
             this.TimerControlButton.Size = new System.Drawing.Size(106, 27);
             this.TimerControlButton.TabIndex = 17;
@@ -228,15 +275,14 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.SendRequestButton);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.URLBox);
             this.panel3.Location = new System.Drawing.Point(381, 23);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(365, 139);
+            this.panel3.Size = new System.Drawing.Size(365, 147);
             this.panel3.TabIndex = 5;
             // 
             // SendRequestButton
@@ -246,12 +292,13 @@
             this.SendRequestButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.SendRequestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SendRequestButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.SendRequestButton.Location = new System.Drawing.Point(130, 90);
+            this.SendRequestButton.Location = new System.Drawing.Point(120, 98);
             this.SendRequestButton.Name = "SendRequestButton";
             this.SendRequestButton.Size = new System.Drawing.Size(106, 27);
             this.SendRequestButton.TabIndex = 17;
             this.SendRequestButton.Text = "Send Request";
             this.SendRequestButton.UseVisualStyleBackColor = false;
+            this.SendRequestButton.Click += new System.EventHandler(this.SendRequestButton_Click);
             // 
             // label5
             // 
@@ -262,22 +309,23 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "URL:";
             // 
-            // textBox1
+            // URLBox
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.URLBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            this.URLBox.AutoCompleteCustomSource.AddRange(new string[] {
             "test",
             "lol",
             "tron"});
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(3, 28);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(353, 56);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "1000";
+            this.URLBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.URLBox.Location = new System.Drawing.Point(3, 28);
+            this.URLBox.Multiline = true;
+            this.URLBox.Name = "URLBox";
+            this.URLBox.Size = new System.Drawing.Size(353, 64);
+            this.URLBox.TabIndex = 13;
+            this.URLBox.Text = "https://pastebin.com/raw/f3vxdY0P";
+            this.URLBox.TextChanged += new System.EventHandler(this.URLBox_TextChanged);
             // 
             // label6
             // 
@@ -291,30 +339,35 @@
             // 
             // LogsEnabled
             // 
+            this.LogsEnabled.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LogsEnabled.AutoSize = true;
+            this.LogsEnabled.Checked = true;
+            this.LogsEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
             this.LogsEnabled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogsEnabled.Location = new System.Drawing.Point(502, 189);
+            this.LogsEnabled.Location = new System.Drawing.Point(511, 15);
             this.LogsEnabled.Name = "LogsEnabled";
             this.LogsEnabled.Size = new System.Drawing.Size(68, 17);
             this.LogsEnabled.TabIndex = 17;
             this.LogsEnabled.Text = "Use Logs";
             this.LogsEnabled.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // LogBox
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.LogBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.AutoCompleteCustomSource.AddRange(new string[] {
+            this.LogBox.AutoCompleteCustomSource.AddRange(new string[] {
             "test",
             "lol",
             "tron"});
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(12, 189);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(484, 137);
-            this.textBox2.TabIndex = 18;
+            this.LogBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LogBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LogBox.Location = new System.Drawing.Point(11, 17);
+            this.LogBox.Multiline = true;
+            this.LogBox.Name = "LogBox";
+            this.LogBox.ReadOnly = true;
+            this.LogBox.Size = new System.Drawing.Size(484, 97);
+            this.LogBox.TabIndex = 18;
             // 
             // label7
             // 
@@ -325,20 +378,67 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Logs:";
             // 
+            // ClearLogs
+            // 
+            this.ClearLogs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClearLogs.BackColor = System.Drawing.Color.White;
+            this.ClearLogs.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ClearLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearLogs.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ClearLogs.Location = new System.Drawing.Point(511, 38);
+            this.ClearLogs.Name = "ClearLogs";
+            this.ClearLogs.Size = new System.Drawing.Size(70, 27);
+            this.ClearLogs.TabIndex = 20;
+            this.ClearLogs.Text = "Clear Logs";
+            this.ClearLogs.UseVisualStyleBackColor = false;
+            this.ClearLogs.Click += new System.EventHandler(this.ClearLogs_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.RequestsInSec_label);
+            this.panel4.Controls.Add(this.ClearLogs);
+            this.panel4.Controls.Add(this.LogBox);
+            this.panel4.Controls.Add(this.LogsEnabled);
+            this.panel4.Location = new System.Drawing.Point(12, 187);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(611, 131);
+            this.panel4.TabIndex = 21;
+            // 
+            // RequestsInSec_label
+            // 
+            this.RequestsInSec_label.AutoSize = true;
+            this.RequestsInSec_label.Location = new System.Drawing.Point(499, 68);
+            this.RequestsInSec_label.Name = "RequestsInSec_label";
+            this.RequestsInSec_label.Size = new System.Drawing.Size(107, 26);
+            this.RequestsInSec_label.TabIndex = 21;
+            this.RequestsInSec_label.Text = "Requests In Second:\r\n0";
+            // 
+            // RequestAnalitics
+            // 
+            this.RequestAnalitics.Enabled = true;
+            this.RequestAnalitics.Interval = 1000;
+            this.RequestAnalitics.Tick += new System.EventHandler(this.RequestAnalitics_Tick);
+            // 
+            // windowsIdBindingSource
+            // 
+            this.windowsIdBindingSource.DataSource = typeof(UHWID.WindowsId);
+            // 
             // WBClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 338);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.LogsEnabled);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel4);
             this.Name = "WBClient";
             this.Text = "WBClient";
             this.Load += new System.EventHandler(this.WBClient_Load);
@@ -348,6 +448,9 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.windowsIdBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,7 +461,7 @@
         private System.Windows.Forms.ComboBox HeadersList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox HeaderBox;
+        private System.Windows.Forms.TextBox KeyHeaderBox;
         private System.Windows.Forms.Button AddHeaderButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
@@ -372,10 +475,18 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button SendRequestButton;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox URLBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox LogsEnabled;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox LogBox;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label ValueHeaderBox;
+        private System.Windows.Forms.TextBox HeaderBox;
+        private System.Windows.Forms.BindingSource windowsIdBindingSource;
+        private System.Windows.Forms.Button ClearLogs;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Timer RequestAnalitics;
+        private System.Windows.Forms.Label RequestsInSec_label;
     }
 }

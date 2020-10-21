@@ -25,11 +25,8 @@ namespace CMT_2.Tools.Chat
             webWrite = new WebClient();
             this.ChatBox.TextChanged += (sender, e) =>
             {
-                if (ChatBox.Visible)
-                {
-                    ChatBox.SelectionStart = ChatBox.TextLength;
-                    ChatBox.ScrollToCaret();
-                }
+                    (sender as TextBox).SelectionStart = (sender as TextBox).TextLength;
+                    (sender as TextBox).ScrollToCaret();
             };
         }
 
