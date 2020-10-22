@@ -47,3 +47,4 @@ C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Tools.Hashs.Hashs.
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Tools.AES.resources
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Tools.Chat.Chat.resources
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Tools.WebClientUI.WBClient.resources
+C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT 2.csprojAssemblyReference.cache
