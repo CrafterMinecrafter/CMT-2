@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CMT_2.BS;
+using System;
 using System.Windows.Forms;
-using CMT_2.BS;
 namespace CMT_2.Tools.Hashs
 {
     public partial class Hashs : Form
@@ -46,7 +38,7 @@ namespace CMT_2.Tools.Hashs
 
         private void GetCode_Button_Click(object sender, EventArgs e)
         {
-            new Dialogs.TextBoxDialog(Utils.FromBase64(UniversalCode).Replace("HashName", SelectedHash.Text),"Code view").ShowDialog();
+            new Dialogs.TextBoxDialog(Utils.FromBase64(UniversalCode).Replace("HashName", SelectedHash.Text), "Code view").ShowDialog();
         }
 
         private void GetCodeForFiles_Button_Click(object sender, EventArgs e)

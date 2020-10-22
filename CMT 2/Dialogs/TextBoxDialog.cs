@@ -20,4 +20,4 @@ namespace CMT_2.Dialogs
             Engine.ThemeEngine.InitTheme(this);
         }
     }
-} 
+}

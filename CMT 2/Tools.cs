@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CMT_2.BS;
+using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using System.Drawing;
-using System.Xml.Linq;
-using CMT_2.BS;
-using System.Linq;
 
 namespace CMT_2
 {
@@ -34,18 +30,18 @@ namespace CMT_2
         public static Image FileToImage(string Path)
         {
             var bitmap = new Bitmap(30, 30);
-            var Rand = new Random(BitConverter.ToInt32(Utils.MD5FileV(Path), 0)) ;
+            var Rand = new Random(BitConverter.ToInt32(Utils.MD5FileV(Path), 0));
             for (int x = 29; x >= 0; x--)
             {
                 for (int y = 29; y >= 0; y--)
                 {
-                    bitmap.SetPixel(x, y, Color.FromArgb(Convert.ToInt32("FF"+Convert.ToString(Rand.Next(0, 16777215),16), 16)));
+                    bitmap.SetPixel(x, y, Color.FromArgb(Convert.ToInt32("FF" + Convert.ToString(Rand.Next(0, 16777215), 16), 16)));
                 }
             }
             return Image.FromHbitmap(bitmap.GetHbitmap());
         }
 
-        public static void AddBytes(string path,long length)
+        public static void AddBytes(string path, long length)
         {
             using (var fs = new FileStream(path, FileMode.Open, FileAccess.Write))
                 fs.SetLength(fs.Length + length);

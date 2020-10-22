@@ -403,7 +403,7 @@ namespace CMT_2
             // 
             // Chat_button
             // 
-            this.Chat_button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Chat_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Chat_button.BackColor = System.Drawing.Color.White;
             this.Chat_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Chat_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -593,7 +593,7 @@ namespace CMT_2
             // 
             // OpenWebClient_Button
             // 
-            this.OpenWebClient_Button.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.OpenWebClient_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OpenWebClient_Button.BackColor = System.Drawing.Color.White;
             this.OpenWebClient_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.OpenWebClient_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

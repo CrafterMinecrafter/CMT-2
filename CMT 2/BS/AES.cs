@@ -87,9 +87,9 @@ namespace CMT_2.BS
 
 
         [Obsolete("Decrypt(string) has been made obsolete. Please use the DecryptString(string).")]
-        public string Decrypt(string encrypted,string key)
+        public string Decrypt(string encrypted, string key)
         {
-            return DecryptString(encrypted,key);
+            return DecryptString(encrypted, key);
         }
 
 

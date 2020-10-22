@@ -1,13 +1,6 @@
 ﻿using CMT_2.BS;
 using CMT_2.Engine;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CMT_2.Tools.Code_Tools
@@ -44,18 +37,18 @@ namespace CMT_2.Tools.Code_Tools
         }
         #endregion. 
         private void SelectFile_Click(object sender, EventArgs e)
-        {  
-            if(string.IsNullOrEmpty(VarName.Text))
+        {
+            if (string.IsNullOrEmpty(VarName.Text))
             {
                 MessageBox.Show("Enter variable name");
                 return;
             }
             var File = FileTools.OpenFile();
-            if(File == null)
+            if (File == null)
             {
                 return;
             }
-          
+
             if (FileToBase64.Checked)
                 OutputBox.Text = $"public static string {VarName.Text} = \"{Utils.ToBase64File(File)}\";";
             else

@@ -1,13 +1,6 @@
 ﻿using CMT_2.Engine;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CMT_2.Tools.WebClientUI
@@ -15,6 +8,7 @@ namespace CMT_2.Tools.WebClientUI
     public partial class WBClient : Form
     {
         private WebClient Web = new WebClient();
+        private WebClient WebTwo = new WebClient();
         private Uri URL;
         private int RequestsInOneSecond;
         private WebHeaderCollection webHeaders = new WebHeaderCollection();
@@ -39,13 +33,16 @@ namespace CMT_2.Tools.WebClientUI
         {
             try
             {
-                int Val = int.Parse(MSIntervalBox.Text);
-                if (Val < 1)
+                if (!timer1.Enabled)
                 {
-                    MessageBox.Show("Minimal value 1");
-                    return;
-                }
-                timer1.Interval = int.Parse(MSIntervalBox.Text);
+                    int Val = int.Parse(MSIntervalBox.Text);
+                    if (Val < 1)
+                    {
+                        MessageBox.Show("Minimal value 1");
+                        return;
+                    }
+                    timer1.Interval = int.Parse(MSIntervalBox.Text);
+                } 
             }
             catch
             {
@@ -72,6 +69,7 @@ namespace CMT_2.Tools.WebClientUI
             try
             {
                 webHeaders.Remove(HeadersList.Text);
+                HeadersList.Items.Remove(HeadersList.SelectedItem as string);
             }
             catch
             {
@@ -86,8 +84,13 @@ namespace CMT_2.Tools.WebClientUI
         }
         private async void SendRequest()
         {
+            if (Web.IsBusy)
+            {
+                SendRequestTwo();
+                return;
+            } 
             var log = "";
-            if (Web.IsBusy) return;
+           
             try
             {
                 Web.Headers = webHeaders;
@@ -98,7 +101,25 @@ namespace CMT_2.Tools.WebClientUI
                 log = ex.Message;
             }
             if (LogsEnabled.Checked)
-             LogBox.Text += log + Environment.NewLine;
+                LogBox.Text += log + Environment.NewLine;
+            RequestsInOneSecond++;
+        }
+        private async void SendRequestTwo()
+        {
+            if (WebTwo.IsBusy) return;
+            var log = "";
+            
+            try
+            {
+                WebTwo.Headers = webHeaders;
+                log = await WebTwo.DownloadStringTaskAsync(URL);
+            }
+            catch (Exception ex)
+            {
+                log = ex.Message;
+            }
+            if (LogsEnabled.Checked)
+                LogBox.Text += log + Environment.NewLine;
             RequestsInOneSecond++;
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -113,6 +134,12 @@ namespace CMT_2.Tools.WebClientUI
 
         private void URLBox_TextChanged(object sender, EventArgs e)
         {
+            if((sender as TextBox).Text.ToLower().Contains("crafterminecraftertool"))
+            {
+                MessageBox.Show("Lol bro, don't touch my funcs :/");
+                (sender as TextBox).Clear();
+                return;
+            }
             try
             {
                 URL = new Uri((sender as TextBox).Text);
@@ -129,6 +156,11 @@ namespace CMT_2.Tools.WebClientUI
         {
             RequestsInSec_label.Text = "Requests In Second:" + Environment.NewLine + RequestsInOneSecond;
             RequestsInOneSecond = 0;
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            TopMost = (sender as CheckBox).Checked;
         }
     }
 }

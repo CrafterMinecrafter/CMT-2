@@ -58,6 +58,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.RequestsInSec_label = new System.Windows.Forms.Label();
             this.RequestAnalitics = new System.Windows.Forms.Timer(this.components);
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.windowsIdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,6 +69,7 @@
             // 
             // HeadersList
             // 
+            this.HeadersList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HeadersList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HeadersList.FormattingEnabled = true;
             this.HeadersList.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -79,6 +81,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label1.Location = new System.Drawing.Point(175, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
@@ -105,6 +108,7 @@
             // ValueHeaderBox
             // 
             this.ValueHeaderBox.AutoSize = true;
+            this.ValueHeaderBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ValueHeaderBox.Location = new System.Drawing.Point(4, 96);
             this.ValueHeaderBox.Name = "ValueHeaderBox";
             this.ValueHeaderBox.Size = new System.Drawing.Size(37, 13);
@@ -130,6 +134,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label8.Location = new System.Drawing.Point(4, 51);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(28, 13);
@@ -143,6 +148,7 @@
             this.ClearAllHeadersButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ClearAllHeadersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClearAllHeadersButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ClearAllHeadersButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ClearAllHeadersButton.Location = new System.Drawing.Point(157, 3);
             this.ClearAllHeadersButton.Name = "ClearAllHeadersButton";
             this.ClearAllHeadersButton.Size = new System.Drawing.Size(110, 25);
@@ -158,6 +164,7 @@
             this.HeaderRemoveButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.HeaderRemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.HeaderRemoveButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.HeaderRemoveButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.HeaderRemoveButton.Location = new System.Drawing.Point(157, 34);
             this.HeaderRemoveButton.Name = "HeaderRemoveButton";
             this.HeaderRemoveButton.Size = new System.Drawing.Size(110, 25);
@@ -169,6 +176,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
@@ -182,6 +190,7 @@
             this.AddHeaderButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.AddHeaderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddHeaderButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.AddHeaderButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.AddHeaderButton.Location = new System.Drawing.Point(244, 89);
             this.AddHeaderButton.Name = "AddHeaderButton";
             this.AddHeaderButton.Size = new System.Drawing.Size(103, 27);
@@ -226,6 +235,7 @@
             this.TimerControlButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.TimerControlButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TimerControlButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.TimerControlButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.TimerControlButton.Location = new System.Drawing.Point(5, 85);
             this.TimerControlButton.Name = "TimerControlButton";
             this.TimerControlButton.Size = new System.Drawing.Size(106, 27);
@@ -237,6 +247,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label4.Location = new System.Drawing.Point(2, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
@@ -263,6 +274,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label3.Location = new System.Drawing.Point(631, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
@@ -292,6 +304,7 @@
             this.SendRequestButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.SendRequestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SendRequestButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.SendRequestButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.SendRequestButton.Location = new System.Drawing.Point(120, 98);
             this.SendRequestButton.Name = "SendRequestButton";
             this.SendRequestButton.Size = new System.Drawing.Size(106, 27);
@@ -303,6 +316,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label5.Location = new System.Drawing.Point(3, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
@@ -331,6 +345,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label6.Location = new System.Drawing.Point(521, 7);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 13);
@@ -344,6 +359,7 @@
             this.LogsEnabled.Checked = true;
             this.LogsEnabled.CheckState = System.Windows.Forms.CheckState.Checked;
             this.LogsEnabled.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogsEnabled.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.LogsEnabled.Location = new System.Drawing.Point(511, 15);
             this.LogsEnabled.Name = "LogsEnabled";
             this.LogsEnabled.Size = new System.Drawing.Size(68, 17);
@@ -372,6 +388,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label7.Location = new System.Drawing.Point(12, 173);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 13);
@@ -385,6 +402,7 @@
             this.ClearLogs.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ClearLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClearLogs.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ClearLogs.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ClearLogs.Location = new System.Drawing.Point(511, 38);
             this.ClearLogs.Name = "ClearLogs";
             this.ClearLogs.Size = new System.Drawing.Size(70, 27);
@@ -410,6 +428,7 @@
             // RequestsInSec_label
             // 
             this.RequestsInSec_label.AutoSize = true;
+            this.RequestsInSec_label.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.RequestsInSec_label.Location = new System.Drawing.Point(499, 68);
             this.RequestsInSec_label.Name = "RequestsInSec_label";
             this.RequestsInSec_label.Size = new System.Drawing.Size(107, 26);
@@ -422,6 +441,17 @@
             this.RequestAnalitics.Interval = 1000;
             this.RequestAnalitics.Tick += new System.EventHandler(this.RequestAnalitics_Tick);
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(12, 3);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(71, 17);
+            this.checkBox2.TabIndex = 22;
+            this.checkBox2.Text = "Top Most";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
             // windowsIdBindingSource
             // 
             this.windowsIdBindingSource.DataSource = typeof(UHWID.WindowsId);
@@ -431,6 +461,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 338);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
@@ -440,7 +471,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Name = "WBClient";
-            this.Text = "WBClient";
+            this.Text = "Web Client Tool";
             this.Load += new System.EventHandler(this.WBClient_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -488,5 +519,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Timer RequestAnalitics;
         private System.Windows.Forms.Label RequestsInSec_label;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

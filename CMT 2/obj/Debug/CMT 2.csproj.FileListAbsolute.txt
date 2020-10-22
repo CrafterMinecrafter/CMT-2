@@ -29,7 +29,6 @@ C:\Users\Crafter\source\repos\CMT-2\CMT 2\bin\Debug\CMT 2.pdb
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Debug\CMT 2.exe.config
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Debug\CMT 2.exe
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Debug\CMT 2.pdb
-C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT 2.csprojAssemblyReference.cache
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Dialogs.ThemeSettings.resources
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.test.test.resources
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Dialogs.Info.resources
@@ -46,14 +45,5 @@ C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Dialogs.TextBoxDia
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Tools.Code_Tools.CodeTools.resources
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Tools.Hashs.Hashs.resources
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Tools.AES.resources
-C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Debug\System.Text.Json.dll
-C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Debug\System.Memory.dll
-C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Debug\System.Text.Encodings.Web.dll
-C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT 2.exe.config
-C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT 2.csproj.CopyComplete
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Tools.Chat.Chat.resources
 C:\Users\Crafter\Documents\GitHub\CMT-2\CMT 2\obj\Debug\CMT_2.Tools.WebClientUI.WBClient.resources

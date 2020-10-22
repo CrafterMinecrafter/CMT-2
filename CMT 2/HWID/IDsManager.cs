@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using System.Threading;
 
 namespace UHWID
 {
@@ -15,9 +14,9 @@ namespace UHWID
 
         public static void init()
         {
-            id = new string[] { DiskId.GetDiskId(), CpuId.GetCpuId(), WindowsId.GetWindowsId(), null};
+            id = new string[] { DiskId.GetDiskId(), CpuId.GetCpuId(), WindowsId.GetWindowsId(), null };
             using (var md5 = System.Security.Cryptography.MD5.Create())
-                    id[3] = System.BitConverter.ToString(md5.ComputeHash(Encoding.UTF8.GetBytes(id[1]+id[2]))).Replace("-", string.Empty);
-        } 
+                id[3] = System.BitConverter.ToString(md5.ComputeHash(Encoding.UTF8.GetBytes(id[1] + id[2]))).Replace("-", string.Empty);
+        }
     }
-}           
+}

@@ -1,12 +1,7 @@
-﻿using CMT_2.BS;
-using CMT_2.Engine;
+﻿using CMT_2.Engine;
 using System;
 using System.Net;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
 
 namespace CMT_2.Tools.Chat
 {
@@ -25,8 +20,8 @@ namespace CMT_2.Tools.Chat
             webWrite = new WebClient();
             this.ChatBox.TextChanged += (sender, e) =>
             {
-                    (sender as TextBox).SelectionStart = (sender as TextBox).TextLength;
-                    (sender as TextBox).ScrollToCaret();
+                (sender as TextBox).SelectionStart = (sender as TextBox).TextLength;
+                (sender as TextBox).ScrollToCaret();
             };
         }
 
@@ -65,7 +60,8 @@ namespace CMT_2.Tools.Chat
                     webWrite.DownloadStringAsync(FuncUrl);
                     InputBox.Clear();
                 }
-            } catch
+            }
+            catch
             {
                 InputBox.Clear();
             }

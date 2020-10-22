@@ -1,12 +1,5 @@
 ﻿using CMT_2.Dialogs;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CMT_2.Engine
@@ -86,10 +79,10 @@ namespace CMT_2.Engine
         /// </summary>
         public static void SetTheme()
         {
-            for (int i = Application.OpenForms.Count - 1;  i >= 0;  i--)
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
 
-            
+
                 #region form
                 Application.OpenForms[i].Font = settingsClass.DefaultFont;
                 if (Settings.ThemeIsDark)
@@ -108,7 +101,7 @@ namespace CMT_2.Engine
             {
 
                 #region button
-                if (control[CI].GetType() == new Button().GetType())
+                if (control[CI].GetType() == typeof(Button))
                 {
                     (control[CI] as Button).Font = settingsClass.DefaultFont;
                     if (Settings.ThemeIsDark)
@@ -126,7 +119,7 @@ namespace CMT_2.Engine
                 }
                 #endregion
                 #region label
-                if (control[CI].GetType() == new Label().GetType())
+                if (control[CI].GetType() == typeof(Label))
                 {
                     (control[CI] as Label).Font = settingsClass.DefaultFont;
                     if (Settings.ThemeIsDark)
@@ -136,7 +129,7 @@ namespace CMT_2.Engine
                 }
                 #endregion
                 #region textbox
-                if (control[CI].GetType() == new TextBox().GetType())
+                if (control[CI].GetType() == typeof(TextBox))
                 {
                     (control[CI] as TextBox).Font = settingsClass.DefaultFont;
                     if (Settings.ThemeIsDark)
@@ -152,7 +145,7 @@ namespace CMT_2.Engine
                 }
                 #endregion
                 #region Panel
-                if (control[CI].GetType() == new Panel().GetType())
+                if (control[CI].GetType() == typeof(Panel))
                 {
                     (control[CI] as Panel).Font = settingsClass.DefaultFont;
                     if (Settings.ThemeIsDark)
@@ -169,7 +162,7 @@ namespace CMT_2.Engine
                 }
                 #endregion
                 #region ComboBox
-                if (control[CI].GetType() == new ComboBox().GetType())
+                if (control[CI].GetType() == typeof(ComboBox))
                 {
                     (control[CI] as ComboBox).Font = settingsClass.DefaultFont;
                     if (Settings.ThemeIsDark)
@@ -186,7 +179,7 @@ namespace CMT_2.Engine
                 }
                 #endregion
                 #region CheckBox
-                if (control[CI].GetType() == new CheckBox().GetType())
+                if (control[CI].GetType() == typeof(CheckBox))
                 {
                     (control[CI] as CheckBox).Font = settingsClass.DefaultFont;
                     if (Settings.ThemeIsDark)
@@ -210,7 +203,7 @@ namespace CMT_2.Engine
             {
                 form.Text = Application.OpenForms[0].Text + " | " + form.Text;
                 form.Icon = Application.OpenForms[0].Icon;
-            } 
+            }
             form.Font = settingsClass.DefaultFont;
             if (Settings.ThemeIsDark)
                 form.BackColor = settingsClass.Dark_Form_BackColor;

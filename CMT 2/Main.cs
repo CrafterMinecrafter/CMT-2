@@ -8,20 +8,10 @@ using CMT_2.Tools.Hashs;
 using CMT_2.Tools.WebClientUI;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration.Assemblies;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
-using System.Xml.XPath;
 using UHWID;
 
 namespace CMT_2
@@ -74,7 +64,7 @@ namespace CMT_2
                         Application.Exit();
                         return;
                     }
-                    
+
                 }
                 #endregion
                 #region проверка на нужные файлы настроек
@@ -96,8 +86,8 @@ namespace CMT_2
             {
                 try
                 {
-                    if(!string.IsNullOrEmpty(Properties.Settings.Default.customSettings))
-                    ThemeSettings.ToSettings();
+                    if (!string.IsNullOrEmpty(Properties.Settings.Default.customSettings))
+                        ThemeSettings.ToSettings();
                 }
                 catch
                 {
@@ -158,7 +148,7 @@ namespace CMT_2
         private void OpenAes_button_Click(object sender, EventArgs e)
         {
             new AES().Show();
-        }  
+        }
         private void OpenInfo_Button_Click(object sender, EventArgs e)
         {
             new Info().ShowDialog();
@@ -253,8 +243,8 @@ namespace CMT_2
         #region String Panel
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            FileMode.Visible = checkBox1.Checked;
-            StringMode.Visible = !checkBox1.Checked;
+            FileMode.Visible = (sender as CheckBox).Checked;
+            StringMode.Visible = !(sender as CheckBox).Checked;
         }
         private void File3_Click(object sender, MouseEventArgs e)
         {

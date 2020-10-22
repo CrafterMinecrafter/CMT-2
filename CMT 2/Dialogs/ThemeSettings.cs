@@ -1,12 +1,6 @@
 ﻿using CMT_2.Engine;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CMT_2.Dialogs
@@ -25,16 +19,17 @@ namespace CMT_2.Dialogs
                 ThemeEngine.InitTheme(this);
                 label2.Text = "Selected Font:" + ThemeEngine.settingsClass.DefaultFont.Name;
                 FromText(CMT_2.Properties.Settings.Default.customSettings);
-            } catch
+            }
+            catch
             { }
         }
 
         private void SetIS(object sender, EventArgs e)
         {
-            if(colorDialog1.ShowDialog() == DialogResult.OK)
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
                 (sender as PictureBox).BackColor = colorDialog1.Color;
-                
+
             }
         }
 
@@ -55,8 +50,8 @@ namespace CMT_2.Dialogs
         public static void ToSettings()
         {
             var colors = CMT_2.Properties.Settings.Default.customSettings.Split('\n');//setting load
-            ThemeEngine.settingsClass.Dark_Form_BackColor= Color.FromArgb(int.Parse(colors[0]));//form
-            ThemeEngine.settingsClass.Dark_Button_BackColor  = Color.FromArgb(int.Parse(colors[1]));//button
+            ThemeEngine.settingsClass.Dark_Form_BackColor = Color.FromArgb(int.Parse(colors[0]));//form
+            ThemeEngine.settingsClass.Dark_Button_BackColor = Color.FromArgb(int.Parse(colors[1]));//button
             ThemeEngine.settingsClass.Light_Label_ForeColor = Color.FromArgb(int.Parse(colors[2]));//label
             ThemeEngine.settingsClass.Dark_Button_BorderColor = Color.FromArgb(int.Parse(colors[3]));//button line
             ThemeEngine.settingsClass.Dark_textbox_BackColor = Color.FromArgb(int.Parse(colors[4]));//textbox
@@ -73,7 +68,7 @@ namespace CMT_2.Dialogs
 
         private void Font_Button_Click(object sender, EventArgs e)
         {
-            if(fontDialog1.ShowDialog() == DialogResult.OK)
+            if (fontDialog1.ShowDialog() == DialogResult.OK)
             {
                 (sender as Button).Font = new Font(fontDialog1.Font.Name, 8f, GraphicsUnit.Point);
                 label2.Text = "Selected Font:" + ThemeEngine.settingsClass.DefaultFont.Name;

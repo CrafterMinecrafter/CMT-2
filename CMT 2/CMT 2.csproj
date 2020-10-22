@@ -70,7 +70,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
-    <Reference Include="System.Text.Json, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -222,32 +221,6 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="app.manifest" />
-    <None Include="Properties\DataSources\CMT_2.BS.AesEncryptor.datasource" />
-    <None Include="Properties\DataSources\CMT_2.BS.Utils.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Dialogs.FileInfo.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Dialogs.Info.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Dialogs.Settings.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Dialogs.TextBoxDialog.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Dialogs.ThemeSettings.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Engine.ThemeEngine+settingsClass.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Engine.ThemeEngine.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Properties.Resources.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Properties.Settings.datasource" />
-    <None Include="Properties\DataSources\CMT_2.test.test.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Tools.AES.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Tools.Chat.Chat.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Tools.Chat.JsonCore.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Tools.Code_Tools.CodeTools.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Tools.Hashs.Hashs.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Tools.WebClientUI.WBClient.datasource" />
-    <None Include="Properties\DataSources\CMT_2.Tools.XOR.datasource" />
-    <None Include="Properties\DataSources\FileTools.datasource" />
-    <None Include="Properties\DataSources\Main.datasource" />
-    <None Include="Properties\DataSources\Program.datasource" />
-    <None Include="Properties\DataSources\UHWID.CpuId.datasource" />
-    <None Include="Properties\DataSources\UHWID.DiskId.datasource" />
-    <None Include="Properties\DataSources\UHWID.IDsManager.datasource" />
-    <None Include="Properties\DataSources\UHWID.WindowsId.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
