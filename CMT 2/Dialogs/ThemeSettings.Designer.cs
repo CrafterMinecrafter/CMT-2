@@ -44,12 +44,21 @@
             this.textbox_color = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.SetBackgrouns_button = new System.Windows.Forms.Button();
+            this.AlphaBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.FormColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ButtonLineColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LabelColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textbox_color)).BeginInit();
             this.SuspendLayout();
+            // 
+            // colorDialog1
+            // 
+            this.colorDialog1.AnyColor = true;
+            this.colorDialog1.FullOpen = true;
+            this.colorDialog1.SolidColorOnly = true;
             // 
             // FormColor
             // 
@@ -130,13 +139,18 @@
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(122, 258);
+            this.button2.Location = new System.Drawing.Point(110, 260);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 23);
+            this.button2.Size = new System.Drawing.Size(140, 23);
             this.button2.TabIndex = 9;
-            this.button2.Text = "Set Custom Theme!";
+            this.button2.Text = "Update Custom Theme!";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // fontDialog1
+            // 
+            this.fontDialog1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.fontDialog1.MaxSize = 8;
             // 
             // Font_Button
             // 
@@ -171,6 +185,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label2.Location = new System.Drawing.Point(130, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 13);
@@ -189,11 +204,51 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // SetBackgrouns_button
+            // 
+            this.SetBackgrouns_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SetBackgrouns_button.Location = new System.Drawing.Point(122, 164);
+            this.SetBackgrouns_button.Name = "SetBackgrouns_button";
+            this.SetBackgrouns_button.Size = new System.Drawing.Size(115, 23);
+            this.SetBackgrouns_button.TabIndex = 15;
+            this.SetBackgrouns_button.Text = "Set Background";
+            this.SetBackgrouns_button.UseVisualStyleBackColor = true;
+            this.SetBackgrouns_button.Click += new System.EventHandler(this.SetBackgrouns_button_Click);
+            // 
+            // AlphaBox
+            // 
+            this.AlphaBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AlphaBox.AutoCompleteCustomSource.AddRange(new string[] {
+            "test",
+            "lol",
+            "tron"});
+            this.AlphaBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.AlphaBox.Location = new System.Drawing.Point(12, 103);
+            this.AlphaBox.Name = "AlphaBox";
+            this.AlphaBox.Size = new System.Drawing.Size(55, 13);
+            this.AlphaBox.TabIndex = 20;
+            this.AlphaBox.Text = "255";
+            this.AlphaBox.TextChanged += new System.EventHandler(this.AlphaBox_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Alpha:";
+            // 
             // ThemeSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 293);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.AlphaBox);
+            this.Controls.Add(this.SetBackgrouns_button);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textbox_label);
@@ -240,5 +295,8 @@
         private System.Windows.Forms.PictureBox textbox_color;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SetBackgrouns_button;
+        private System.Windows.Forms.TextBox AlphaBox;
+        private System.Windows.Forms.Label label3;
     }
 }

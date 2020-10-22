@@ -57,6 +57,7 @@ namespace CMT_2.Engine
             #region form
             public static Color Dark_Form_BackColor;
             public static Color Light_Form_BackColor;
+            public static Image All_Form_Img;
             #endregion
             #region font
             public static Font DefaultFont;
@@ -82,6 +83,7 @@ namespace CMT_2.Engine
         {
             for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
+                Application.OpenForms[i].BackgroundImage = settingsClass.All_Form_Img;
                 if (Settings.ThemeIsDark)
                     Application.OpenForms[i].BackColor = settingsClass.Dark_Form_BackColor;
                 else
@@ -215,6 +217,7 @@ namespace CMT_2.Engine
                 form.Text = Application.OpenForms[0].Text + " | " + form.Text;
                 form.Icon = Application.OpenForms[0].Icon;
             }
+            form.BackgroundImage = settingsClass.All_Form_Img;
             form.Font = settingsClass.DefaultFont;
             if (Settings.ThemeIsDark)
                 form.BackColor = settingsClass.Dark_Form_BackColor;

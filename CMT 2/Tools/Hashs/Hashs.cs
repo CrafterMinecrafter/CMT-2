@@ -18,9 +18,9 @@ namespace CMT_2.Tools.Hashs
             InitializeComponent();
         }
 
-        private void Hashs_Load(object sender, EventArgs e)
+        private async void Hashs_Load(object sender, EventArgs e)
         {
-            Engine.ThemeEngine.InitTheme(this);
+            await Engine.ThemeEngine.InitTheme(this);
             SelectedHash.Text = "MD5";
         }
         private void textBox_TextChanged(object sender, EventArgs e)

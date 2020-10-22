@@ -31,7 +31,7 @@ namespace CMT_2
             InitializeComponent();
         }
         #region Main
-        private void Main_Load(object sender, EventArgs e)
+        private async void Main_Load(object sender, EventArgs e)
         {
             try
             {
@@ -127,7 +127,7 @@ namespace CMT_2
                 Application.Exit();
             }
             #endregion
-            ThemeEngine.InitTheme(this);
+            await ThemeEngine.InitTheme(this);
 
         }
         private void Main_FormClosing(object sender, FormClosingEventArgs e)

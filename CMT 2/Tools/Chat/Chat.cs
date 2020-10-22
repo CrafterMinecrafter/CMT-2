@@ -11,7 +11,7 @@ namespace CMT_2.Tools.Chat
         public string Name;
         private static readonly Uri FuncUrl = new Uri("https://us-central1-crafterminecraftertool.cloudfunctions.net/funcs");
         private static readonly Uri ChatUrl = new Uri("https://crafterminecraftertool.firebaseio.com/Chat.json");
-        private WebClient webRead;
+        private readonly WebClient webRead;
         private WebClient webWrite;
         public Chat()
         {
@@ -25,9 +25,9 @@ namespace CMT_2.Tools.Chat
             };
         }
 
-        private void Chat_Load(object sender, EventArgs e)
+        private async void Chat_Load(object sender, EventArgs e)
         {
-            ThemeEngine.InitTheme(this);
+            await ThemeEngine.InitTheme(this);
             bool IsActive = false;
             for (int i = Main.WebData[0].Length - 1; i >= 0; i--)
             {

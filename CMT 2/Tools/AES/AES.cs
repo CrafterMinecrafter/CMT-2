@@ -16,9 +16,9 @@ namespace CMT_2.Tools
             InitializeComponent();
         }
 
-        private void AES_Load(object sender, EventArgs e)
+        private async void AES_Load(object sender, EventArgs e)
         {
-            ThemeEngine.InitTheme(this);
+            await ThemeEngine.InitTheme(this);
             aes = new AesEncryptor();
         }
 

@@ -59,12 +59,10 @@
             this.RequestsInSec_label = new System.Windows.Forms.Label();
             this.RequestAnalitics = new System.Windows.Forms.Timer(this.components);
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.windowsIdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.windowsIdBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // HeadersList
@@ -452,10 +450,6 @@
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // windowsIdBindingSource
-            // 
-            this.windowsIdBindingSource.DataSource = typeof(UHWID.WindowsId);
-            // 
             // WBClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -481,7 +475,6 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.windowsIdBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,7 +507,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label ValueHeaderBox;
         private System.Windows.Forms.TextBox HeaderBox;
-        private System.Windows.Forms.BindingSource windowsIdBindingSource;
         private System.Windows.Forms.Button ClearLogs;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Timer RequestAnalitics;

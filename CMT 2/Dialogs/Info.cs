@@ -13,9 +13,9 @@ namespace CMT_2.Dialogs
             InitializeComponent();
         }
 
-        private void Info_Load(object sender, EventArgs e)
+        private async void Info_Load(object sender, EventArgs e)
         {
-            ThemeEngine.InitTheme(this);
+            await ThemeEngine.InitTheme(this);
             IDbox.Text = IDsManager.id[3];
             label2.Text = Application.OpenForms[0].Text + ' ' + Application.ProductVersion;
             GetPro_button.Visible = !Main.IsPro;

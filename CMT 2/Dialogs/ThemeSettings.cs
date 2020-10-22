@@ -1,22 +1,24 @@
 ﻿using CMT_2.Engine;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace CMT_2.Dialogs
 {
     public partial class ThemeSettings : Form
     {
+        private byte Alpha;
         public ThemeSettings()
         {
             InitializeComponent();
         }
 
-        private void ThemeSettings_Load(object sender, EventArgs e)
+        private async void ThemeSettings_Load(object sender, EventArgs e)
         {
             try
             {
-                ThemeEngine.InitTheme(this);
+                await ThemeEngine.InitTheme(this);
                 label2.Text = "Selected Font:" + ThemeEngine.settingsClass.DefaultFont.Name;
                 FromText(CMT_2.Properties.Settings.Default.customSettings);
             }
@@ -26,10 +28,10 @@ namespace CMT_2.Dialogs
 
         private void SetIS(object sender, EventArgs e)
         {
+            colorDialog1.Color = (sender as PictureBox).BackColor;
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
-                (sender as PictureBox).BackColor = colorDialog1.Color;
-
+                (sender as PictureBox).BackColor = Color.FromArgb(Alpha,colorDialog1.Color);
             }
         }
 
@@ -50,12 +52,20 @@ namespace CMT_2.Dialogs
         public static void ToSettings()
         {
             var colors = CMT_2.Properties.Settings.Default.customSettings.Split('\n');//setting load
-            ThemeEngine.settingsClass.Dark_Form_BackColor = Color.FromArgb(int.Parse(colors[0]));//form
+            ThemeEngine.settingsClass.Dark_Form_BackColor = Color.FromArgb(255,Color.FromArgb(int.Parse(colors[0])));//form
             ThemeEngine.settingsClass.Dark_Button_BackColor = Color.FromArgb(int.Parse(colors[1]));//button
-            ThemeEngine.settingsClass.Light_Label_ForeColor = Color.FromArgb(int.Parse(colors[2]));//label
+            ThemeEngine.settingsClass.Light_Label_ForeColor = Color.FromArgb(255, Color.FromArgb(int.Parse(colors[2])));//label
             ThemeEngine.settingsClass.Dark_Button_BorderColor = Color.FromArgb(int.Parse(colors[3]));//button line
             ThemeEngine.settingsClass.Dark_textbox_BackColor = Color.FromArgb(int.Parse(colors[4]));//textbox
             ThemeEngine.settingsClass.DefaultFont = new Font(colors[5], 8f, GraphicsUnit.Point);//font
+            try
+            {
+                ThemeEngine.settingsClass.All_Form_Img = Image.FromFile(Main.CMTFolder+"/Background.CMT");//Background image
+            }
+            catch
+            {
+                ThemeEngine.settingsClass.All_Form_Img = null;
+            }
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -81,6 +91,37 @@ namespace CMT_2.Dialogs
             Properties.Settings.Default.customSettings = "";
             Properties.Settings.Default.Save();
             ThemeEngine.SetTheme();
+        }
+
+        private void SetBackgrouns_button_Click(object sender, EventArgs e)
+        {
+            using(FileDialog d = new OpenFileDialog())
+            {
+                d.Filter = "png image files(*.png) | *.png";
+                if(d.ShowDialog() == DialogResult.OK)
+                {
+                    File.Copy(d.FileName, Main.CMTFolder + "/Background.CMT", true);
+                    MessageBox.Show("Background setted");
+                }
+                     
+            }
+        }
+
+        private void AlphaBox_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty((sender as TextBox).Text)) return;
+            try {
+                if(Convert.ToByte((sender as TextBox).Text) < 0)
+                {
+                    (sender as TextBox).Text = "0";
+                }
+                            
+            }
+            catch
+            {
+                (sender as TextBox).Text = "0";
+            }
+            Alpha = Convert.ToByte((sender as TextBox).Text);
         }
     }
 }

@@ -34,9 +34,9 @@ namespace CMT_2.Dialogs
 
         }
 
-        private void Settings_Load(object sender, EventArgs e)
+        private async void Settings_Load(object sender, EventArgs e)
         {
-            ThemeEngine.InitTheme(this);
+            await ThemeEngine.InitTheme(this);
             ThemeLabel.Text = ":  " + ThemeIsDark;
             GetPro.Visible = !Main.IsPro;
         }

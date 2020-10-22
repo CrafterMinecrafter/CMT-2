@@ -18,9 +18,9 @@ namespace CMT_2.Dialogs
             F = path;
         }
 
-        private void FileInfo_Load(object sender, EventArgs e)
+        private async void FileInfo_Load(object sender, EventArgs e)
         {
-            ThemeEngine.InitTheme(this);
+            await ThemeEngine.InitTheme(this);
             var FInfo = new System.IO.FileInfo(F);
             FName.Text = FInfo.Name;
             FSize.Text = "" + FInfo.Length;

@@ -55,9 +55,9 @@ namespace CMT_2.Tools.Code_Tools
                 OutputBox.Text = $"public static byte[] {VarName.Text} = new byte[]\n {Utils.FileToCodeArray(File)};";
         }
 
-        private void CodeTools_Load(object sender, EventArgs e)
+        private async void CodeTools_Load(object sender, EventArgs e)
         {
-            ThemeEngine.InitTheme(this);
+            await ThemeEngine.InitTheme(this);
         }
 
     }

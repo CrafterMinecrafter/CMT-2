@@ -15,9 +15,9 @@ namespace CMT_2.Dialogs
             Box.Text = Text;
         }
 
-        private void TextBoxDialog_Load(object sender, System.EventArgs e)
+        private async void TextBoxDialog_Load(object sender, System.EventArgs e)
         {
-            Engine.ThemeEngine.InitTheme(this);
+            await Engine.ThemeEngine.InitTheme(this);
         }
     }
 }

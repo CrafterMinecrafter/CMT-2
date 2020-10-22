@@ -121,9 +121,9 @@ namespace CMT_2
             this.XOR.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.XOR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.XOR.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.XOR.Location = new System.Drawing.Point(647, 385);
+            this.XOR.Location = new System.Drawing.Point(632, 356);
             this.XOR.Name = "XOR";
-            this.XOR.Size = new System.Drawing.Size(73, 23);
+            this.XOR.Size = new System.Drawing.Size(67, 23);
             this.XOR.TabIndex = 4;
             this.XOR.Text = "XOR";
             this.XOR.UseVisualStyleBackColor = false;
@@ -440,7 +440,7 @@ namespace CMT_2
             this.MD5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.MD5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MD5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.MD5.Location = new System.Drawing.Point(596, 356);
+            this.MD5.Location = new System.Drawing.Point(589, 327);
             this.MD5.Name = "MD5";
             this.MD5.Size = new System.Drawing.Size(73, 23);
             this.MD5.TabIndex = 9;
@@ -568,7 +568,7 @@ namespace CMT_2
             this.OpenCodeTools_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.OpenCodeTools_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenCodeTools_Button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OpenCodeTools_Button.Location = new System.Drawing.Point(553, 327);
+            this.OpenCodeTools_Button.Location = new System.Drawing.Point(546, 385);
             this.OpenCodeTools_Button.Name = "OpenCodeTools_Button";
             this.OpenCodeTools_Button.Size = new System.Drawing.Size(80, 23);
             this.OpenCodeTools_Button.TabIndex = 14;
@@ -583,7 +583,7 @@ namespace CMT_2
             this.OpenAes_button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.OpenAes_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenAes_button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OpenAes_button.Location = new System.Drawing.Point(553, 385);
+            this.OpenAes_button.Location = new System.Drawing.Point(559, 356);
             this.OpenAes_button.Name = "OpenAes_button";
             this.OpenAes_button.Size = new System.Drawing.Size(67, 23);
             this.OpenAes_button.TabIndex = 15;
@@ -598,7 +598,7 @@ namespace CMT_2
             this.OpenWebClient_Button.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.OpenWebClient_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OpenWebClient_Button.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.OpenWebClient_Button.Location = new System.Drawing.Point(639, 327);
+            this.OpenWebClient_Button.Location = new System.Drawing.Point(639, 385);
             this.OpenWebClient_Button.Name = "OpenWebClient_Button";
             this.OpenWebClient_Button.Size = new System.Drawing.Size(81, 23);
             this.OpenWebClient_Button.TabIndex = 16;

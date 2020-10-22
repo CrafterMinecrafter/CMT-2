@@ -77,9 +77,9 @@ namespace CMT_2.Tools.WebClientUI
             }
         }
 
-        private void WBClient_Load(object sender, EventArgs e)
+        private async void WBClient_Load(object sender, EventArgs e)
         {
-            ThemeEngine.InitTheme(this);
+            await ThemeEngine.InitTheme(this);
             Web = new WebClient();
         }
         private async void SendRequest()
@@ -88,9 +88,8 @@ namespace CMT_2.Tools.WebClientUI
             {
                 SendRequestTwo();
                 return;
-            } 
-            var log = "";
-           
+            }
+            string log;
             try
             {
                 Web.Headers = webHeaders;
@@ -107,8 +106,7 @@ namespace CMT_2.Tools.WebClientUI
         private async void SendRequestTwo()
         {
             if (WebTwo.IsBusy) return;
-            var log = "";
-            
+            string log;
             try
             {
                 WebTwo.Headers = webHeaders;
@@ -136,7 +134,7 @@ namespace CMT_2.Tools.WebClientUI
         {
             if((sender as TextBox).Text.ToLower().Contains("crafterminecraftertool"))
             {
-                MessageBox.Show("Lol bro, don't touch my funcs :/");
+                MessageBox.Show("Lol bro, don't touch my server :/");
                 (sender as TextBox).Clear();
                 return;
             }
